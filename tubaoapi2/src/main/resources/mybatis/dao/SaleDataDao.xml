@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.tubaoapi.dao.SaleDataDao">
+  	
+	<resultMap id="saleResult" type="com.tubaoapi.model.SaleData" >
+	    <id property="id" column="fordercustomerid" />
+	    <result property="amount" column="amount"/>
+		<result property="qty" column="qty"/>
+	</resultMap>
+
+  	<select id="findSaleA" parameterType="SaleDataSO"  resultMap="saleResult">
+		select sie.fordercustomerid, sum(SIE.FNONTAXAMOUNT+SIE.FDiscountAmount/1.16) amount ,sum(sie.FQTY)qty
+		from T_IM_SALEISSUEENTRY sie INNER JOIN T_IM_SALEISSUEBILL SIB ON sib.fid=SIE.FPARENTID
+		inner join T_BD_MATERIAL m  ON  SIE.FMATERIALID=M.FID
+		inner join T_BD_MATERIALGroup mg  on M.FMATERIALGROUPID=mg.fid
+		where SIE.FBIZDATE >= to_date(#{startTime},'yyyy-mm-dd hh24:mi:ss')
+		and  SIE.FBIZDATE <![CDATA[ < ]]> to_date(#{endTime},'yyyy-mm-dd hh24:mi:ss')
+		and SIE.FSALEORGUNITID=#{orgId}
+			<if test="userId != null">
+			 and sie.FSalePersonID = ( select fpersonId from T_PM_USER where fid=#{userId})
+			</if>
+			<if test="number != null">
+			and MG.FLONGNUMBER like #{number}
+			</if>
+			and sib.FBaseStatus='4'
+			<if test="ids != null">
+				and SIE.FORDERCUSTOMERID in <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+			</if>
+			<if test="id != null">
+				and SIE.FORDERCUSTOMERID =#{id}
+			</if>
+			group by sie.fordercustomerid
+			order by  sie.fordercustomerid asc
+			</select>
+
+		<select id="findSaleB" parameterType="SaleDataSO"  resultMap="saleResult">
+				select o.cfcustomerid fordercustomerid, sum(e.CFOemAmount)/1.06 amount  from CT_OEM_OemApplicationEntry  e
+				inner  join CT_OEM_OemApplication o on o.fid=E.FPARENTID
+				WHERE
+				o.FBizDate >= to_date(#{startTime},'yyyy-mm-dd hh24:mi:ss')
+				and
+				o.FBizDate <![CDATA[ < ]]>  to_date(#{endTime},'yyyy-mm-dd hh24:mi:ss')
+				and o.CFBizType=20
+				and O.CFSaleOrgID=#{orgId}
+				<if test="userId != null">
+					and o.CFSalePersonID in (select FID from T_BD_SalePerson where FPersonID = ( select fpersonId from T_PM_USER where fid=#{userId}))
+				</if>
+				<if test="ids != null">
+					and o.cfcustomerid in <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+				</if>
+				<if test="id != null">
+					and o.cfcustomerid =#{id}
+				</if>
+<!--				<if test="yzB != null and yzB">-->
+<!--					and o.CFSALEGOODSTYPE = 10-->
+<!--				</if>-->
+				<if test="yzPt != null and yzPt">
+					and e.CFMaterialNumID = '1roAAAIWJO1ECefw' <!--易装配套产品-->
+				</if>
+			group by o.cfcustomerid
+			order by o.cfcustomerid asc
+		</select>
+</mapper>

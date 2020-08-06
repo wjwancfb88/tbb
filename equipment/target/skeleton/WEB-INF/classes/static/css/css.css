@@ -1,0 +1,553 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body{
+    font-size:14px;
+	font-family:"微软雅黑";
+	color:#3f3f3f;
+	background:#e9ecf1;
+}
+*{
+    margin:0px;
+	border:0px;
+	padding:0px;
+	}
+ul,li{ 
+   list-style:none;
+   list-style-type:none;
+}
+div{
+	word-break:break-all;
+	word-wrap:break-word;
+	}
+.clear{
+	clear:both;
+	font-size:1px;
+	visibility:hidden;
+	width:1px;
+	line-height:1px!important;height:0;
+}	
+a{
+	color:#3f3f3f;
+	text-decoration:none;
+}
+a:hover{
+	color:#3f3f3f;
+}
+/*模板首页开始*/
+.topW{
+	width:100%;
+	height:87px;
+	overflow:hidden;
+}
+.topW2{
+	width:100%;
+	height:45px;
+	overflow:hidden;
+}
+.top{
+	max-width:640px;
+	height:45px;
+	line-height:45px;
+	background:#94d301;
+	color:#fff;
+	margin:0 auto;
+}
+.fixedNav{
+    position:fixed;
+    top:0px;
+    width:100%;
+    z-index:100000;
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop));
+	margin:0 auto;
+}
+.top a{
+	color:#fff;
+}
+.top_left{
+	width:25%;
+	float:left;
+	font-size:15px;
+	font-weight:500;
+	text-indent:12px;
+}
+.btnl{
+	font-family:"宋体";
+	font-weight:bold;
+	font-size:16px;
+	padding:0 3px;
+}
+.top_left a{
+	color:#fff;
+}
+.top_left img{
+	height:auto;
+	padding-left:12px;
+	vertical-align:middle;
+}
+.top_center{
+	width:50%;
+	float:left;
+	font-size:18px;
+	font-weight:500;
+	text-align:center;
+}
+.top_right{
+	width:25%;
+	float:left;
+	font-size:15px;
+	font-weight:500;
+	text-align:right;
+}
+.top_right div{
+	padding-right:12px;
+}
+.leave_main{
+	max-width:640px;
+	margin:0 auto;
+	height:auto;
+}
+.count{
+	max-width:640px;
+	height:42px;
+	line-height:42px;
+	text-align:center;
+	margin:0 auto;
+	font-family:"宋体";
+	font-weight:bold;
+	font-size:16px;
+	color:#9a9a9a;
+	background:#fff;
+}
+.count span{
+	color:#94d301;
+	padding:0px 10px;
+	font-weight:500;
+}
+.tabsTitle01{
+	max-width:640px;
+	height:42px;
+	line-height:41px;
+	background:#eee url(../images/wp_02.png)  no-repeat center  center;
+	overflow:hidden-y;
+	cursor:pointer;
+	text-align:center;
+	margin:0 auto;
+	font-size:15px;
+	font-weight:500;
+}
+.tabsTitle01 li{
+	width:50%;
+	text-align:center;
+	margin:0px;
+	float:left;
+	background:fff;
+	border-bottom:1px solid #d1d4d8;
+	
+}
+#tabs01>li.active{
+	color:#31d2ea;
+	line-height:40px;
+	border-bottom:2px solid #31d2ea;
+}
+.panes01{
+	max-width:640px;
+	margin:0 auto;
+	height:auto;
+	padding-bottom:45px;
+}
+.notice{
+	max-width:596px;
+	height:auto;
+	margin:10px auto 0px auto;
+	background:#ffffff;
+	padding:10px;
+	-moz-border-radius: 10px; 
+    -webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+.notice_title{
+	line-height:22px;
+}
+.notice_title a{
+	display:block;
+}
+.notice_title img{
+	vertical-align:middle;
+	margin-left:10px;
+}
+.notice_date{
+	font-size:12px;
+	color:#9a9a9a;
+	line-height:28px;
+	border-bottom:1px solid #dce1e8;
+}
+.notice_date a{
+	display:block;
+	color:#9a9a9a;
+}
+.notice_date img{
+	float:right;
+}
+.notice_content{
+	padding-top:5px;
+	line-height:20px;
+	color:#9a9a9a;
+}
+.notice_content a{
+	display:block;
+	color:#9a9a9a;
+}
+
+.bottomW{
+	width:100%;
+	height:45px;
+	position:fixed;
+	bottom:0px;
+	z-index:1000;
+	display:block;
+	margin-left: -3px;
+	
+}
+.bottom{
+	max-width:640px;
+	height:45px;
+	line-height:45px;
+	border-top:1px solid #ddd;
+	background:#fff;
+	text-align:center;
+	font-size:16px;
+	font-weight:500;
+	margin:0 auto;
+	z-index:1000;
+	color:#94d301;
+	
+}
+.bottom img{
+	margin-top:8px;
+}
+.bottom a{
+	color:#94d301;
+}
+.bottom li{
+	height:45px;
+	width:50%;
+	float:left;
+	background:#fff;
+}
+.bottom li.bgline{
+	margin-left: -5px;
+	background:#fff url(../images/wp_13.png) no-repeat right center;
+}
+.h45{
+	max-width:640px;
+	height:45px;
+	margin:0 auto;
+	clear:both;
+
+}
+.h45 a{
+	display:block;
+	color:#9a9a9a;
+}
+.bottom a.f1{
+	color:#9a9a9a;
+}
+/*首页结束*/
+/*详情页开始*/
+.detail_top{
+	max-width:616px;
+	height:60px;
+	margin:0 auto;
+	padding:10px 12px 0px 12px; 
+	color:#fff;
+	font-size:15px;
+	line-height:22px;
+	background:#31d2ea url(../images/approval_06.png) no-repeat 20px bottom;
+}
+.detail_top span{
+	font-size:14px;
+	padding-left:5px;
+}
+.detail_main01{
+	max-width:616px;
+	margin:0 auto;
+	padding:10px 12px 10px 12px; 
+	line-height:20px;
+	background:#fff;
+}
+.detail_h10{
+	max-width:640px;
+	height:10px;
+	background:url(../images/approval_07.png) no-repeat 50px top; 
+	margin:0 auto;
+}
+.detail_main02{
+	max-width:596px;
+	height:50px;
+	margin:0px auto;
+	background:#ffffff;
+	padding:10px 10px 0px 10px;
+	-moz-border-radius: 10px; 
+    -webkit-border-radius: 10px;
+	border-radius: 10px;
+	clear:both;
+}
+.detail_date{
+	width:45px;
+	color:#9a9a9a;
+	font-size:13px;
+	float:left;
+	line-height:20px;
+}
+.detail_img{
+	width:50px;
+	height:40px;
+	float:left;
+	overflow:hidden;
+}
+.detail_img img{
+	width:40px;
+	height:40px;
+	-moz-border-radius:5px; 
+    -webkit-border-radius:5px;
+	border-radius: 5px;
+}
+.detail_right{
+	width:auto;
+	float:left;
+	line-height:40px;
+}
+.agree{
+	color:#94d301;
+}
+.agree2{
+	line-height:20px;
+	color:#94d301;
+}
+.agree2 span{
+	color:#9a9a9a;
+	cursor:pointer;
+}
+.NotPass{
+	color:#f35959;
+}
+.agreebox{
+	width:250px;
+	min-height:130px;
+	background:#fff;
+	-moz-border-radius: 10px; 
+    -webkit-border-radius: 10px;
+	border-radius: 10px;
+	position:absolute;
+	display:none;
+	margin-left: 20px;
+}
+.agreebox_title{
+	height:30px;
+	line-height:30px;
+	text-align:center;
+}
+.agreebox_conent{
+	height:30px;
+	padding:37px 20px 0px 20px;
+}
+.text03{
+	width:210px;
+	line-height:22px;
+	border-bottom:1px solid #dce1e8;
+
+}
+.agreebox_bottom{
+	border-top:1px solid #dce1e8;
+	line-height:30px;
+	text-align:center;
+}
+.agreebox_bottom li{
+	width:50%;
+	float:left;
+}
+.agreebox_bottom{
+	cursor:pointer;
+}
+.agreebox_bottom a{
+	color:#31d2ea;
+}
+/*详情页结束*/
+/*新建页开始*/
+.add_title{
+	max-width:616px;
+	padding:8px 12px;
+	margin:10px auto 0 auto;
+	background:#fff;
+}
+
+.text01{
+	width:100%;
+	height:25px;
+	border:0px;
+	
+}
+.tipped{
+	color:#bbb;
+	font-size:14px;
+	font-family:"微软雅黑"
+}
+.add_main01{
+	max-width:616px;
+	padding:10px 12px;
+	margin:0px auto 0 auto;
+	background:#fff;
+}
+.textarea2{
+	border:0px;
+	overflow:hidden;
+	width:100%;
+	height:150px;
+	font-size:14px;
+}
+.add_main02{
+	max-width:616px;
+	padding:0px 12px 10px 12px;
+	margin:0px auto 0px auto;
+	background:#fff;
+	line-height:25px;
+	color:#9a9a9a;
+}
+.add_main02 a{
+    padding:2px 10px;
+	border:1px solid #e1e1e1;
+	-moz-border-radius: 40px; 
+    -webkit-border-radius: 40px;
+	border-radius: 40px;
+	margin-right:10px;
+	color:#9a9a9a;
+}
+.add_main02 a.clickclass{
+	color:#fff;
+	border:1px solid #7ac6f8;
+	background:#7ac6f8;
+}
+.dp{
+	display:none;
+}
+.dp2{
+	display:block;
+}
+.more{
+	padding:2px 10px;
+	border:1px solid #e1e1e1;
+	-moz-border-radius: 50px; 
+    -webkit-border-radius: 50px;
+	border-radius: 50px;
+	margin-right:10px;
+	letter-spacing:2px;
+	cursor:pointer;
+	font-weight:bold;
+}
+.more2{
+	display:none;
+}
+.add_main02 img{
+	margin-left:10px;
+}
+.add_mian03{
+	max-width:616px;
+	background:#fff;
+	margin:0 auto;
+	clear:both;
+	padding:20px 12px 20px 12px;
+}
+.text02{
+	width:60%;
+	height:25px;
+	border:0px;
+	padding-right:50px;
+	
+}
+.add_mian04{
+	max-width:616px;
+	height:25px;
+	padding:10px 12px;
+	margin:10px auto 0px auto;
+	background:#fff;
+}
+.choose{
+	width:34px;
+	height:25px;
+	background:url(../images/dt_02.png) no-repeat;
+	float:left;
+}
+.choose2{
+	width:34px;
+	height:25px;
+	background:url(../images/dt_03.png) no-repeat;
+	float:left;
+}
+.add_mian04_text{
+	width:50%;
+	float:left;
+	line-height:25px;
+}
+.add_mian05{
+	max-width:616px;
+	padding:8px 12px;
+	margin:10px auto 0 auto;
+	background:#fff;
+	height:25px;
+	line-height:25px;
+	clear:both;
+}
+.add_mian05 dt{
+	float:left;
+	
+}
+.add_mian05 dd{
+	float:right;
+	text-align:right;
+	color:#31d2ea;
+	cursor:pointer;
+}
+.add_mian05 a{
+	color:#94d301;
+}
+.cmtop{
+	margin-top:0px;
+	height:50px;
+	border-bottom:1px solid #dce1e8;
+	border-top:1px solid #dce1e8;
+}
+.cmtop span{
+	color:#c3c3c3;
+}
+.cmtop dd{
+	background:none;
+	font-family:"宋体";
+	font-weight:bold;
+	font-size:18px;
+	color:#bdbdbd;
+	padding-right:0px;
+}
+.btnlr{
+	font-family:"宋体";
+	font-weight:bold;
+	font-size:18px;
+	color:#bdbdbd;
+	padding:0 3px;
+}
+/*新建页结束*/
+.btn-primary{
+	background: #49A2F5;
+}
+
+/*-- 按钮样式 --*/
+.btn{
+	display: inline-block;
+	text-align: center;
+	font-size: 1.1em;
+	border-radius: .2em;
+	width: 100%;
+	padding: .58em 0;
+	color: #fff;
+	text-decoration: none;
+}

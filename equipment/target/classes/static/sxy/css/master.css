@@ -1,0 +1,23 @@
+
+
+/* Fonts */
+/*@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Lora:400,400i,700,700i|Raleway:300,400,600,700,800");*/
+/*@import url("font-awesome.min.css");*/
+/*@import url("fonts/elegant_font/style.css");*/
+
+/* PLUGIN CSS */
+@import url("../assets/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css");
+@import url("../assets/slider-pro-master/css/slider-pro.min.css");
+@import url("../assets/owl-carousel/assets/owl.carousel.css");
+@import url("../assets/owl-carousel/assets/owl.theme.default.css");
+@import url("../assets/bootstrap-select/bootstrap-select.min.css");
+@import url("../assets/hamburgers/hamburgers.css");
+
+/* MAIN CSS */
+@import url("animate.css");
+@import url("bootstrap.min.css");
+@import url("typography.css");
+@import url("theme.css");
+@import url("responsive.css");
+@import url('color.css');
+@import url("custom.css");

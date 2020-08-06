@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.tubaoapi.dao.MaterialGroupDao">
+	  <resultMap id="materialGroupResult" type="MaterialGroup">
+	<id property="id" column="FID" />
+	<result property="number" column="FNUMBER"/>
+	<result property="longNumber" column="FLONGNUMBER"/>
+	<result property="name" column="FNAME_L2"/>
+	<result property="leaf" column="FISLEAF"/>
+	<result property="level" column="FLEVEL"/>
+	</resultMap>
+  	
+  	<select id="get" parameterType="string" resultMap="materialGroupResult">
+    	select * from T_BD_MaterialGroup where FID=#{id}
+  	</select>
+  	
+  	<select id="findBySO" resultMap="materialGroupResult">
+    	select * from T_BD_MaterialGroup  
+		<where>
+			 <if test="ids != null">
+			  FID in <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>		
+			 </if>
+			 <if test="id != null">
+			  and FID = #{id}			
+			 </if>		
+           	 <if test = "groupStandardId != null">
+             FGroupStandard=#{groupStandardId}
+             </if> 
+             <if test = "parentId != null">
+             and FPARENTID=#{parentId}
+             </if> 
+             <if test = "level != null">
+             and FLEVEL=#{level}
+             </if> 
+		</where>  	
+    	
+  	</select>
+
+
+  	
+</mapper>

@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>设备巡检</title>
+<link rel="stylesheet" th:href="@{/mystatic/bootstrap/css/bootstrap.min-custom.css}">
+<link rel="stylesheet" th:href="@{/mystatic/bootstrap/css/bootstrap-table.css}">
+<link rel="stylesheet" th:href="@{/mystatic/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css}">
+<link rel="stylesheet" th:href="@{/mystatic/multiselect/css/bootstrap-multiselect.css}">
+<link rel="stylesheet" th:href="@{/mystatic/css/admin.css}">
+<link rel="stylesheet" th:href="@{/mystatic/css/ui.css}">
+<link rel="stylesheet" th:href="@{/mystatic/css/ui2.css}">
+<link rel="stylesheet" th:href="@{/mystatic/progressbar/css/mprogress.css}">
+<link rel="stylesheet" th:href="@{/mystatic/progressbar/css/style.css}">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script th:src="@{/mystatic/html5shiv/html5shiv.min.js}"></script>
+    <script th:src="@{/mystatic/respond/respond.min.js}"></script>
+  <![endif]-->
+<style>
+/* 外面盒子样式---自己定义 */
+.page_div {
+	margin: 20px 10px 20px 0;
+	color: #666
+}
+/* 页数按钮样式 */
+.page_div button {
+	display: inline-block;
+	min-width: 30px;
+	height: 28px;
+	cursor: pointer;
+	color: #666;
+	font-size: 13px;
+	line-height: 28px;
+	background-color: #f9f9f9;
+	border: 1px solid #dce0e0;
+	text-align: center;
+	margin: 0 4px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+#firstPage, #lastPage, #nextPage, #prePage {
+	width: 50px;
+	color: #0073A9;
+	border: 1px solid #0073A9
+}
+
+#nextPage, #prePage {
+	width: 70px
+}
+
+.page_div .current {
+	background-color: #0073A9;
+	border-color: #0073A9;
+	color: #FFF
+}
+/* 页面数量 */
+.totalPages {
+	margin: 0 10px
+}
+
+.totalPages span, .totalSize span {
+	color: #0073A9;
+	margin: 0 5px
+}
+/*button禁用*/
+.page_div button:disabled {
+	opacity: .5;
+	cursor: no-drop
+}
+</style>
+</head>
+
+<body class="admin-body toggle-nav fs">
+	<div class="container-fluid">
+		<div class="row" style="padding-left: 0">
+			<div class="main" style="padding-top: 0">
+				<div class="container-fluid">
+					<div class="admin-new-box ui-admin-content">
+						<!--后台正文区域-->
+						<div class="ui-panel">
+							<div class="ui-title-bar">
+								<div class="ui-title">设备巡检表</div>
+							</div>
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane active" id="uiTab01">
+									<!-- 查询区域 -->
+									<div>
+										巡检日期：
+										<input type="date" id="creattime-query" placeholder="巡检时间" style="margin-top: 10px"/>&nbsp;
+										<button type="button" class="btn btn-primary btn-sm" onclick="queryInfo()">查询</button>&nbsp;
+										<button type="button" class="btn btn-primary btn-sm" onclick="exportExcel()">导出excel</button>
+									</div>
+									<!-- 查询区域 end-->
+									<!-- 添加数据区域 -->
+									<div style="text-align: right;">
+										<button type="button" class="btn btn-success btn-sm" onclick="addMsg()" style="margin: 8px">添加数据</button>
+									</div>
+									<!-- 查询结果表格显示区域 -->
+									<div class="table-responsive" style="overflow: scroll;">
+										<table id="newsContent" class="table table-hover table-bordered text-nowrap">
+											<tr>
+												<th style="text-align:center;">操作</th>
+												<th style="text-align:center;">巡检日期<a href='#' onclick='$crud.setAscColumn(this,"creattime")'>↑</a>&nbsp;<a href='#' onclick='$crud.setDescColumn(this,"creattime")'>↓</a></th>
+												<th style="text-align:center;">检查地点</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查地点</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查地点</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查地点</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查地点</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查地点</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查地点</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+												<th style="text-align:center;">检查内容</th>
+												<th style="text-align:center;">检查结果</th>
+												<th style="text-align:center;">备注</th>
+											</tr>
+											<tbody id="dataTable">
+
+											</tbody>
+										</table>
+										<div id="pageID" class="page_div"></div>
+									</div>
+									<!-- 查询结果表格显示区域 end-->
+								</div>
+							</div>
+						</div>
+						<!--后台正文区域结束-->
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 查看模态框 -->
+	<div class="modal fade" id="lookModal" tabindex="-1" role="dialog" aria-labelledby="lookModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="lookModalLabel">查看信息</h4>
+				</div>
+				<div class="modal-body" id="lookModalBody">
+
+				</div>
+				<div class="modal-footer">
+<!--					<button type="button" class="btn btn-primary" onclick="confirmUp()">确认</button>-->
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 修改模态框 -->
+	<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="updateModalLabel">修改信息</h4>
+				</div>
+				<div class="modal-body" id="updateModalBody">
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" onclick="confirmUp()">确认</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 添加模态框 -->
+	<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="addModalLabel">添加信息</h4>
+				</div>
+				<div class="modal-body" id="addModalBody">
+					<form>
+								<div class="form-group">
+									<label for="creattime-insert" class="control-label">巡检日期:</label>
+									<input type="date" id="creattime-insert" class="form-control"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="sale-insert" class="control-label">销售公司会议室:</label>-->
+									<input type="hidden" class="form-control" id="sale-insert" th:value="销售公司会议室"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="sc-insert" class="control-label">销售公司幕布:</label>-->
+									<input type="hidden" class="form-control" id="sc-insert" th:value="幕布"/>
+								</div>
+								<div class="form-group">
+									<label for="scresult-insert" class="control-label">销售公司幕布检查结果:</label>
+									<select type="radio" class="form-control" id="scresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="scremarks-insert" class="control-label">销售公司幕布检查备注:</label>
+									<input type="text" class="form-control" id="scremarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="sp-insert" class="control-label">销售公司投影仪:</label>-->
+									<input type="hidden" class="form-control" id="sp-insert" th:value="投影仪"/>
+								</div>
+								<div class="form-group">
+									<label for="spresult-insert" class="control-label">销售公司投影仪检查结果:</label>
+									<select type="radio" class="form-control" id="spresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="spremarks-insert" class="control-label">销售公司投影仪检查备注:</label>
+									<input type="text" class="form-control" id="spremarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="sf-insert" class="control-label">二楼会议室:</label>-->
+									<input type="hidden" class="form-control" id="sf-insert" th:value="二楼会议室"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="sfa-insert" class="control-label">二楼会议室一体机:</label>-->
+									<input type="hidden" class="form-control" id="sfa-insert" th:value="一体机"/>
+								</div>
+								<div class="form-group">
+									<label for="sfaresult-insert" class="control-label">二楼会议室一体机检查结果:</label>
+									<select type="radio" class="form-control" id="sfaresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="sfaremarks-insert" class="control-label">二楼会议室一体机检查备注:</label>
+									<input type="text" class="form-control" id="sfaremarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="tftc-insert" class="control-label">三楼培训中心:</label>-->
+									<input type="hidden" class="form-control" id="tftc-insert" th:value="三楼培训中心"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="tftcl-insert" class="control-label">三楼培训中心LED大屏幕:</label>-->
+									<input type="hidden" class="form-control" id="tftcl-insert" th:value="LED大屏幕"/>
+								</div>
+								<div class="form-group">
+									<label for="tftclresult-insert" class="control-label">三楼培训中心LED大屏幕检查结果:</label>
+									<select type="radio" class="form-control" id="tftclresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="tftclremarks-insert" class="control-label">三楼培训中心LED大屏幕检查备注:</label>
+									<input type="text" class="form-control" id="tftclremarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="tftcs-insert" class="control-label">三楼培训中心音响:</label>-->
+									<input type="hidden" class="form-control" id="tftcs-insert" th:value="音响"/>
+								</div>
+								<div class="form-group">
+									<label for="tftcsresult-insert" class="control-label">三楼培训中心音响检查结果:</label>
+									<select type="radio" class="form-control" id="tftcsresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="tftcsremarks-insert" class="control-label">三楼培训中心音响检查备注:</label>
+									<input type="text" class="form-control" id="tftcsremarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="tftcm-insert" class="control-label">三楼培训中心话筒:</label>-->
+									<input type="hidden" class="form-control" id="tftcm-insert" th:value="话筒"/>
+								</div>
+								<div class="form-group">
+									<label for="tftcmresult-insert" class="control-label">三楼培训中心话筒检查结果:</label>
+									<select type="radio" class="form-control" id="tftcmresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="tftcmremarks-insert" class="control-label">三楼培训中心话筒检查备注:</label>
+									<input type="text" class="form-control" id="tftcmremarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="tftcc-insert" class="control-label">三楼培训中心音控室电脑:</label>-->
+									<input type="hidden" class="form-control" id="tftcc-insert" th:value="音控室电脑"/>
+								</div>
+								<div class="form-group">
+									<label for="tftccresult-insert" class="control-label">三楼培训中心音控室电脑检查结果:</label>
+									<select type="radio" class="form-control" id="tftccresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="tftccremarks-insert" class="control-label">三楼培训中心音控室电脑检查备注:</label>
+									<input type="text" class="form-control" id="tftccremarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="tfm-insert" class="control-label">三楼会议室:</label>-->
+									<input type="hidden" class="form-control" id="tfm-insert" th:value="三楼会议室"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="tfml-insert" class="control-label">三楼会议室LED大屏幕:</label>-->
+									<input type="hidden" class="form-control" id="tfml-insert" th:value="LED大屏幕"/>
+								</div>
+								<div class="form-group">
+									<label for="tfmlresult-insert" class="control-label">三楼会议室LED大屏幕检查结果:</label>
+									<select type="radio" class="form-control" id="tfmlresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="tfmlremarks-insert" class="control-label">三楼会议室LED大屏幕检查备注:</label>
+									<input type="text" class="form-control" id="tfmlremarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="tfms-insert" class="control-label">三楼会议室音响:</label>-->
+									<input type="hidden" class="form-control" id="tfms-insert" th:value="音响"/>
+								</div>
+								<div class="form-group">
+									<label for="tfmsresult-insert" class="control-label">三楼会议室音响检查结果:</label>
+									<select type="radio" class="form-control" id="tfmsresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="tfmsremarks-insert" class="control-label">三楼会议室音响检查备注:</label>
+									<input type="text" class="form-control" id="tfmsremarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="tfmm-insert" class="control-label">三楼会议室话筒:</label>-->
+									<input type="hidden" class="form-control" id="tfmm-insert" th:value="话筒"/>
+								</div>
+								<div class="form-group">
+									<label for="tfmmresult-insert" class="control-label">三楼会议室话筒检查结果:</label>
+									<select type="radio" class="form-control" id="tfmmresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="tfmmremarks-insert" class="control-label">三楼会议室话筒检查备注:</label>
+									<input type="text" class="form-control" id="tfmmremarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="tfmc-insert" class="control-label">三楼会议室云控宝:</label>-->
+									<input type="hidden" class="form-control" id="tfmc-insert" th:value="云控宝"/>
+								</div>
+								<div class="form-group">
+									<label for="tfmcresult-insert" class="control-label">三楼会议室云控宝检查结果:</label>
+									<select type="radio" class="form-control" id="tfmcresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="tfmcremarks-insert" class="control-label">三楼会议室云控宝检查备注:</label>
+									<input type="text" class="form-control" id="tfmcremarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="ffm-insert" class="control-label">五楼会议室:</label>-->
+									<input type="hidden" class="form-control" id="ffm-insert" th:value="五楼会议室"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="ffmc-insert" class="control-label">五楼会议室幕布:</label>-->
+									<input type="hidden" class="form-control" id="ffmc-insert" th:value="幕布1"/>
+								</div>
+								<div class="form-group">
+									<label for="ffmcresult-insert" class="control-label">五楼会议室幕布1检查结果:</label>
+									<select type="radio" class="form-control" id="ffmcresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="ffmcremarks-insert" class="control-label">五楼会议室幕布1检查备注:</label>
+									<input type="text" class="form-control" id="ffmcremarks-insert"/>
+								</div>
+								<div class="form-group">
+									<!--									<label for="ffmc-insert" class="control-label">五楼会议室幕布:</label>-->
+									<input type="hidden" class="form-control" id="ffmc2-insert" th:value="幕布2"/>
+								</div>
+								<div class="form-group">
+									<label for="ffmc2result-insert" class="control-label">五楼会议室幕布2检查结果:</label>
+									<select type="radio" class="form-control" id="ffmc2result-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="ffmc2remarks-insert" class="control-label">五楼会议室幕布2检查备注:</label>
+									<input type="text" class="form-control" id="ffmc2remarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="ffmp-insert" class="control-label">五楼会议室投影仪:</label>-->
+									<input type="hidden" class="form-control" id="ffmp-insert" th:value="投影仪"/>
+								</div>
+								<div class="form-group">
+									<label for="ffmpresult-insert" class="control-label">五楼会议室投影仪检查结果:</label>
+									<select type="radio" class="form-control" id="ffmpresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="ffmpremarks-insert" class="control-label">五楼会议室投影仪检查备注:</label>
+									<input type="text" class="form-control" id="ffmpremarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="ifofm-insert" class="control-label">研究院四楼会议室:</label>-->
+									<input type="hidden" class="form-control" id="ifofm-insert" th:value="研究院四楼会议室"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="ifofmc-insert" class="control-label">研究院四楼会议室幕布:</label>-->
+									<input type="hidden" class="form-control" id="ifofmc-insert" th:value="幕布"/>
+								</div>
+								<div class="form-group">
+									<label for="ifofmcresult-insert" class="control-label">研究院四楼会议室幕布检查结果:</label>
+									<select type="radio" class="form-control" id="ifofmcresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="ifofmcremarks-insert" class="control-label">研究院四楼会议室幕布检查备注:</label>
+									<input type="text" class="form-control" id="ifofmcremarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="ifofmp-insert" class="control-label">研究院四楼会议室投影仪:</label>-->
+									<input type="hidden" class="form-control" id="ifofmp-insert" th:value="投影仪"/>
+								</div>
+								<div class="form-group">
+									<label for="ifofmpresult-insert" class="control-label">研究院四楼会议室投影仪检查结果:</label>
+									<select type="radio" class="form-control" id="ifofmpresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="ifofmpremarks-insert" class="control-label">研究院四楼会议室投影仪检查备注:</label>
+									<input type="text" class="form-control" id="ifofmpremarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="iffm-insert" class="control-label">研究院五楼会议室:</label>-->
+									<input type="hidden" class="form-control" id="iffm-insert" th:value="研究院五楼会议室"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="iffmc-insert" class="control-label">研究院五楼会议室幕布:</label>-->
+									<input type="hidden" class="form-control" id="iffmc-insert" th:value="幕布"/>
+								</div>
+								<div class="form-group">
+									<label for="iffmcresult-insert" class="control-label">研究院五楼会议室幕布检查结果:</label>
+									<select type="radio" class="form-control" id="iffmcresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="iffmcremarks-insert" class="control-label">研究院五楼会议室幕布检查备注:</label>
+									<input type="text" class="form-control" id="iffmcremarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="iffms-insert" class="control-label">研究院五楼会议室音响:</label>-->
+									<input type="hidden" class="form-control" id="iffms-insert" th:value="音响"/>
+								</div>
+								<div class="form-group">
+									<label for="iffmsresult-insert" class="control-label">研究院五楼会议室音响检查结果:</label>
+									<select type="radio" class="form-control" id="iffmsresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="iffmsremarks-insert" class="control-label">研究院五楼会议室音响检查备注:</label>
+									<input type="text" class="form-control" id="iffmsremarks-insert"/>
+								</div>
+								<div class="form-group">
+<!--									<label for="iffmm-insert" class="control-label">研究院五楼会议室话筒:</label>-->
+									<input type="hidden" class="form-control" id="iffmm-insert" th:value="话筒"/>
+								</div>
+								<div class="form-group">
+									<label for="iffmmresult-insert" class="control-label">研究院五楼会议室话筒检查结果:</label>
+									<select type="radio" class="form-control" id="iffmmresult-insert">
+										<option value="1">正常</option>
+										<option value="0">异常</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label for="iffmmremarks-insert" class="control-label">研究院五楼会议室话筒检查备注:</label>
+									<input type="text" class="form-control" id="iffmmremarks-insert"/>
+								</div>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" onclick="confirmAdd()">确认</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- look内容模板  -->
+	<script id="lookTemplate" type="text/html">
+		<form>
+			<div class="form-group">
+				<label for="creattime-attr" class="control-label">巡检日期:</label>
+				<input type="date" id="creattime-look" value="{{creattime}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>
+			</div>
+			<hr style="height:1px;border:none;border-top:1px dashed #0066CC;">
+			<div class="form-group" style="text-align:center"><label for="scresult-attr" class="control-label">行政一楼大厅销售公司会议室</label></div>
+			<div class="form-group">
+				<label for="scresult-attr" class="control-label">幕布检查结果:</label>
+				<input type="text" id="scresult-look" value="{{scresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="scremarks-attr" class="control-label">备注:</label>
+				<input type="text" id="scremarks-look" value="{{scremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="scremarks-attr" class="control-label">幕布检查备注:</label>-->
+			<!--						<input type="text" id="scremarks-attr" value="{{scremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<div class="form-group" style="margin-top: -41px;margin-left: 267px;">
+				<label for="spresult-attr" class="control-label">投影仪检查结果:</label>
+				<input type="text" id="spresult-look" value="{{spresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="spremarks-attr" class="control-label">备注:</label>
+				<input type="text" id="spremarks-look" value="{{spremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="spremarks-attr" class="control-label">投影仪检查备注:</label>-->
+			<!--						<input type="text" id="spremarks-attr" value="{{spremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<hr style="height:1px;border:none;border-top:1px dashed #0066CC;">
+			<div class="form-group" style="text-align:center"><label for="scresult-attr" class="control-label">行政二楼会议室</label></div>
+			<div class="form-group">
+				<label for="sfaresult-attr" class="control-label">一体机检查结果:</label>
+				<input type="text" id="sfaresult-look" value="{{sfaresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="sfaremarks-attr" class="control-label">备注:</label>
+				<input type="text" id="sfaremarks-look" value="{{sfaremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="sfaremarks-attr" class="control-label">一体机检查备注:</label>-->
+			<!--						<input type="text" id="sfaremarks-attr" value="{{sfaremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<hr style="height:1px;border:none;border-top:1px dashed #0066CC;">
+			<div class="form-group" style="text-align:center"><label for="scresult-look" class="control-label">行政三楼培训中心</label></div>
+			<div class="form-group">
+				<label for="tftclresult-look" class="control-label">LED大屏幕检查结果:</label>
+				<input type="text" id="tftclresult-look" value="{{tftclresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="tftclremarks-look" class="control-label">备注:</label>
+				<input type="text" id="tftclremarks-look" value="{{tftclremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="tftclremarks-attr" class="control-label">LED大屏幕检查备注:</label>-->
+			<!--						<input type="text" id="tftclremarks-attr" value="{{tftclremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<div class="form-group">
+				<label for="tftcsresult-look" class="control-label">音响检查结果:</label>
+				<input type="text" id="tftcsresult-look" value="{{tftcsresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="tftcsremarks-look" class="control-label">备注:</label>
+				<input type="text" id="tftcsremarks-look" value="{{tftcsremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="tftcsremarks-attr" class="control-label">音响检查备注:</label>-->
+			<!--						<input type="text" id="tftcsremarks-attr" value="{{tftcsremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<div class="form-group" style="margin-top: -82px;margin-left: 304px;">
+				<label for="tftcmresult-look" class="control-label">话筒检查结果:</label>
+				<input type="text" id="tftcmresult-look" value="{{tftcmresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="tftcmremarks-look" class="control-label">备注:</label>
+				<input type="text" id="tftcmremarks-look" value="{{tftcmremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="tftcmremarks-attr" class="control-label">话筒检查备注:</label>-->
+			<!--						<input type="text" id="tftcmremarks-attr" value="{{tftcmremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<div class="form-group" style="margin-top: 0px;margin-left: 261px;">
+				<label for="tftccresult-look" class="control-label">音控室电脑检查结果:</label>
+				<input type="text" id="tftccresult-look" value="{{tftccresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="tftccremarks-look" class="control-label">备注:</label>
+				<input type="text" id="tftccremarks-look" value="{{tftccremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="tftccremarks-attr" class="control-label">音控室电脑检查备注:</label>-->
+			<!--						<input type="text" id="tftccremarks-attr" value="{{tftccremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<hr style="height:1px;border:none;border-top:1px dashed #0066CC;">
+			<div class="form-group" style="text-align:center"><label for="scresult-look" class="control-label">行政三楼会议室</label></div>
+			<div class="form-group">
+				<label for="tfmlresult-look" class="control-label">LED大屏幕检查结果:</label>
+				<input type="text" id="tfmlresult-look" value="{{tfmlresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="tfmlremarks-look" class="control-label">备注:</label>
+				<input type="text" id="tfmlremarks-look" value="{{tfmlremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="tfmlremarks-attr" class="control-label">LED大屏幕检查备注:</label>-->
+			<!--						<input type="text" id="tfmlremarks-attr" value="{{tfmlremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<div class="form-group">
+				<label for="tfmsresult-look" class="control-label">音响检查结果:</label>
+				<input type="text" id="tfmsresult-look" value="{{tfmsresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="tfmsremarks-look" class="control-label">备注:</label>
+				<input type="text" id="tfmsremarks-look" value="{{tfmsremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="tfmsremarks-attr" class="control-label">音响检查备注:</label>-->
+			<!--						<input type="text" id="tfmsremarks-attr" value="{{tfmsremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<div class="form-group" style="margin-top: -82px;margin-left: 304px;">
+				<label for="tfmmresult-look" class="control-label">话筒检查结果:</label>
+				<input type="text" id="tfmmresult-look" value="{{tfmmresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="tfmmremarks-look" class="control-label">备注:</label>
+				<input type="text" id="tfmmremarks-look" value="{{tfmmremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="tfmmremarks-attr" class="control-label">话筒检查备注:</label>-->
+			<!--						<input type="text" id="tfmmremarks-attr" value="{{tfmmremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<div class="form-group" style="margin-top: 0px;margin-left: 267px;">
+				<label for="tfmcresult-look" class="control-label">云控宝检查结果:</label>
+				<input type="text" id="tfmcresult-look" value="{{tfmcresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="tfmcremarks-look" class="control-label">备注:</label>
+				<input type="text" id="tfmcremarks-look" value="{{tfmcremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="tfmcremarks-attr" class="control-label">云控宝检查备注:</label>-->
+			<!--						<input type="text" id="tfmcremarks-attr" value="{{tfmcremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<hr style="height:1px;border:none;border-top:1px dashed #0066CC;">
+			<div class="form-group" style="text-align:center"><label for="scresult-look" class="control-label">行政五楼会议室</label></div>
+			<div class="form-group">
+				<label for="ffmcresult-look" class="control-label">幕布1检查结果:</label>
+				<input type="text" id="ffmcresult-look" value="{{ffmcresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="ffmcremarks-look" class="control-label">备注:</label>
+				<input type="text" id="ffmcremarks-look" value="{{ffmcremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="ffmcremarks-attr" class="control-label">幕布1检查备注:</label>-->
+			<!--						<input type="text" id="ffmcremarks-attr" value="{{ffmcremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<div class="form-group">
+				<label for="ffmc2result-look" class="control-label">幕布2检查结果:</label>
+				<input type="text" id="ffmc2result-look" value="{{ffmc2result}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="ffmc2remarks-look" class="control-label">备注:</label>
+				<input type="text" id="ffmc2remarks-look" value="{{ffmc2remarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="ffmc2remarks-attr" class="control-label">幕布2检查备注:</label>-->
+			<!--						<input type="text" id="ffmc2remarks-attr" value="{{ffmc2remarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<div class="form-group">
+				<label for="ffmpresult-look" class="control-label">投影仪检查结果:</label>
+				<input type="text" id="ffmpresult-look" value="{{ffmpresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="ffmpremarks-look" class="control-label">备注:</label>
+				<input type="text" id="ffmpremarks-look" value="{{ffmpremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="ffmpremarks-attr" class="control-label">投影仪检查备注:</label>-->
+			<!--						<input type="text" id="ffmpremarks-attr" value="{{ffmpremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<hr style="height:1px;border:none;border-top:1px dashed #0066CC;">
+			<div class="form-group" style="text-align:center"><label for="scresult-look" class="control-label">研究院四楼会议室</label></div>
+			<div class="form-group">
+				<label for="ifofmcresult-look" class="control-label">幕布检查结果:</label>
+				<input type="text" id="ifofmcresult-look" value="{{ifofmcresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="ifofmcremarks-look" class="control-label">备注:</label>
+				<input type="text" id="ifofmcremarks-look" value="{{ifofmcremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="ifofmcremarks-attr" class="control-label">幕布检查备注:</label>-->
+			<!--						<input type="text" id="ifofmcremarks-attr" value="{{ifofmcremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<div class="form-group" style="margin-top: -41px;margin-left: 267px;">
+				<label for="ifofmpresult-look" class="control-label">投影仪检查结果:</label>
+				<input type="text" id="ifofmpresult-look" value="{{ifofmpresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="ifofmpremarks-look" class="control-label">备注:</label>
+				<input type="text" id="ifofmpremarks-look" value="{{ifofmpremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="ifofmpremarks-attr" class="control-label">投影仪检查备注:</label>-->
+			<!--						<input type="text" id="ifofmpremarks-attr" value="{{ifofmpremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<hr style="height:1px;border:none;border-top:1px dashed #0066CC;">
+			<div class="form-group" style="text-align:center"><label for="scresult-look" class="control-label">研究院五楼会议室</label></div>
+			<div class="form-group">
+				<label for="iffmcresult-look" class="control-label">幕布检查结果:</label>
+				<input type="text" id="iffmcresult-look" value="{{iffmcresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="iffmcremarks-look" class="control-label">备注:</label>
+				<input type="text" id="iffmcremarks-look" value="{{iffmcremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="iffmcremarks-attr" class="control-label">幕布检查备注:</label>-->
+			<!--						<input type="text" id="iffmcremarks-attr" value="{{iffmcremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<div class="form-group">
+				<label for="iffmsresult-look" class="control-label">音响检查结果:</label>
+				<input type="text" id="iffmsresult-look" value="{{iffmsresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="iffmsremarks-look" class="control-label">备注:</label>
+				<input type="text" id="iffmsremarks-look" value="{{iffmsremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="iffmsremarks-attr" class="control-label">音响检查备注:</label>-->
+			<!--						<input type="text" id="iffmsremarks-attr" value="{{iffmsremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<div class="form-group">
+				<label for="iffmmresult-look" class="control-label">话筒检查结果:</label>
+				<input type="text" id="iffmmresult-look" value="{{iffmmresult}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 30px"/>
+				<label for="iffmmremarks-look" class="control-label">备注:</label>
+				<input type="text" id="iffmmremarks-look" value="{{iffmmremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none;width: 100px"/>
+			</div>
+			<!--					<div class="form-group">-->
+			<!--						<label for="iffmmremarks-attr" class="control-label">话筒检查备注:</label>-->
+			<!--						<input type="text" id="iffmmremarks-attr" value="{{iffmmremarks}}" disabled="disabled" style="border:0 none;outline: none;background: none"/>-->
+			<!--					</div>-->
+			<div class="form-group">
+				<input type="hidden" id="inspectionId-look" value="{{inspectionId}}"/>
+			</div>
+		</form>
+	</script>
+
+	<!-- 修改内容模板  -->
+	<script id="updateTemplate" type="text/html">
+		<form>
+					<div class="form-group">
+						<label for="creattime-attr" class="control-label">巡检日期:</label>
+						<input type="date" class="form-control" id="creattime-attr" value="{{creattime}}" disabled="disabled"/>
+					</div>
+					<div class="form-group">
+						<label for="scresult-attr" class="control-label">行政一楼大厅销售公司会议室幕布检查结果:</label>
+<!--						<input type="text" class="form-control" id="scresult-attr" value="{{scresult}}"/>-->
+						<select class="form-control" id="scresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="scremarks-attr" class="control-label">行政一楼大厅销售公司会议室幕布检查备注:</label>
+						<input type="text" class="form-control" id="scremarks-attr" value="{{scremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="spresult-attr" class="control-label">行政一楼大厅销售公司会议室投影仪检查结果:</label>
+<!--						<input type="text" class="form-control" id="spresult-attr" value="{{spresult}}"/>-->
+						<select class="form-control" id="spresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="spremarks-attr" class="control-label">行政一楼大厅销售公司会议室投影仪检查备注:</label>
+						<input type="text" class="form-control" id="spremarks-attr" value="{{spremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="sfaresult-attr" class="control-label">行政二楼会议室一体机检查结果:</label>
+<!--						<input type="text" class="form-control" id="sfaresult-attr" value="{{sfaresult}}"/>-->
+						<select class="form-control" id="sfaresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="sfaremarks-attr" class="control-label">行政二楼会议室一体机检查备注:</label>
+						<input type="text" class="form-control" id="sfaremarks-attr" value="{{sfaremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="tftclresult-attr" class="control-label">行政三楼培训中心LED大屏幕检查结果:</label>
+<!--						<input type="text" class="form-control" id="tftclresult-attr" value="{{tftclresult}}"/>-->
+						<select class="form-control" id="tftclresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="tftclremarks-attr" class="control-label">行政三楼培训中心LED大屏幕检查备注:</label>
+						<input type="text" class="form-control" id="tftclremarks-attr" value="{{tftclremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="tftcsresult-attr" class="control-label">行政三楼培训中心音响检查结果:</label>
+<!--						<input type="text" class="form-control" id="tftcsresult-attr" value="{{tftcsresult}}"/>-->
+						<select class="form-control" id="tftcsresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="tftcsremarks-attr" class="control-label">行政三楼培训中心音响检查备注:</label>
+						<input type="text" class="form-control" id="tftcsremarks-attr" value="{{tftcsremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="tftcmresult-attr" class="control-label">行政三楼培训中心话筒检查结果:</label>
+<!--						<input type="text" class="form-control" id="tftcmresult-attr" value="{{tftcmresult}}"/>-->
+						<select class="form-control" id="tftcmresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="tftcmremarks-attr" class="control-label">行政三楼培训中心话筒检查备注:</label>
+						<input type="text" class="form-control" id="tftcmremarks-attr" value="{{tftcmremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="tftccresult-attr" class="control-label">行政三楼培训中心音控室电脑检查结果:</label>
+<!--						<input type="text" class="form-control" id="tftccresult-attr" value="{{tftccresult}}"/>-->
+						<select class="form-control" id="tftccresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="tftccremarks-attr" class="control-label">行政三楼培训中心音控室电脑检查备注:</label>
+						<input type="text" class="form-control" id="tftccremarks-attr" value="{{tftccremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="tfmlresult-attr" class="control-label">行政三楼会议室LED大屏幕检查结果:</label>
+<!--						<input type="text" class="form-control" id="tfmlresult-attr" value="{{tfmlresult}}"/>-->
+						<select class="form-control" id="tfmlresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="tfmlremarks-attr" class="control-label">行政三楼会议室LED大屏幕检查备注:</label>
+						<input type="text" class="form-control" id="tfmlremarks-attr" value="{{tfmlremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="tfmsresult-attr" class="control-label">行政三楼会议室音响检查结果:</label>
+<!--						<input type="text" class="form-control" id="tfmsresult-attr" value="{{tfmsresult}}"/>-->
+						<select class="form-control" id="tfmsresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="tfmsremarks-attr" class="control-label">行政三楼会议室音响检查备注:</label>
+						<input type="text" class="form-control" id="tfmsremarks-attr" value="{{tfmsremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="tfmmresult-attr" class="control-label">行政三楼会议室话筒检查结果:</label>
+<!--						<input type="text" class="form-control" id="tfmmresult-attr" value="{{tfmmresult}}"/>-->
+						<select class="form-control" id="tfmmresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="tfmmremarks-attr" class="control-label">行政三楼会议室话筒检查备注:</label>
+						<input type="text" class="form-control" id="tfmmremarks-attr" value="{{tfmmremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="tfmcresult-attr" class="control-label">行政三楼会议室云控宝检查结果:</label>
+<!--						<input type="text" class="form-control" id="tfmcresult-attr" value="{{tfmcresult}}"/>-->
+						<select class="form-control" id="tfmcresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="tfmcremarks-attr" class="control-label">行政三楼会议室云控宝检查备注:</label>
+						<input type="text" class="form-control" id="tfmcremarks-attr" value="{{tfmcremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="ffmcresult-attr" class="control-label">行政五楼会议室幕布1检查结果:</label>
+<!--						<input type="text" class="form-control" id="ffmcresult-attr" value="{{ffmcresult}}"/>-->
+						<select class="form-control" id="ffmcresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="ffmcremarks-attr" class="control-label">行政五楼会议室幕布1检查备注:</label>
+						<input type="text" class="form-control" id="ffmcremarks-attr" value="{{ffmcremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="ffmc2result-attr" class="control-label">行政五楼会议室幕布2检查结果:</label>
+<!--						<input type="text" class="form-control" id="ffmc2result-attr" value="{{ffmc2result}}"/>-->
+						<select class="form-control" id="ffmc2result-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="ffmc2remarks-attr" class="control-label">行政五楼会议室幕布2检查备注:</label>
+						<input type="text" class="form-control" id="ffmc2remarks-attr" value="{{ffmc2remarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="ffmpresult-attr" class="control-label">行政五楼会议室投影仪检查结果:</label>
+<!--						<input type="text" class="form-control" id="ffmpresult-attr" value="{{ffmpresult}}"/>-->
+						<select class="form-control" id="ffmpresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="ffmpremarks-attr" class="control-label">行政五楼会议室投影仪检查备注:</label>
+						<input type="text" class="form-control" id="ffmpremarks-attr" value="{{ffmpremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="ifofmcresult-attr" class="control-label">研究院四楼会议室幕布检查结果:</label>
+<!--						<input type="text" class="form-control" id="ifofmcresult-attr" value="{{ifofmcresult}}"/>-->
+						<select class="form-control" id="ifofmcresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="ifofmcremarks-attr" class="control-label">研究院四楼会议室幕布检查备注:</label>
+						<input type="text" class="form-control" id="ifofmcremarks-attr" value="{{ifofmcremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="ifofmpresult-attr" class="control-label">研究院四楼会议室投影仪检查结果:</label>
+<!--						<input type="text" class="form-control" id="ifofmpresult-attr" value="{{ifofmpresult}}"/>-->
+						<select class="form-control" id="ifofmpresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="ifofmpremarks-attr" class="control-label">研究院四楼会议室投影仪检查备注:</label>
+						<input type="text" class="form-control" id="ifofmpremarks-attr" value="{{ifofmpremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="iffmcresult-attr" class="control-label">研究院五楼会议室幕布检查结果:</label>
+<!--						<input type="text" class="form-control" id="iffmcresult-attr" value="{{iffmcresult}}"/>-->
+						<select class="form-control" id="iffmcresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="iffmcremarks-attr" class="control-label">研究院五楼会议室幕布检查备注:</label>
+						<input type="text" class="form-control" id="iffmcremarks-attr" value="{{iffmcremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="iffmsresult-attr" class="control-label">研究院五楼会议室音响检查结果:</label>
+<!--						<input type="text" class="form-control" id="iffmsresult-attr" value="{{iffmsresult}}"/>-->
+						<select class="form-control" id="iffmsresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="iffmsremarks-attr" class="control-label">研究院五楼会议室音响检查备注:</label>
+						<input type="text" class="form-control" id="iffmsremarks-attr" value="{{iffmsremarks}}"/>
+					</div>
+					<div class="form-group">
+						<label for="iffmmresult-attr" class="control-label">研究院五楼会议室话筒检查结果:</label>
+<!--						<input type="text" class="form-control" id="iffmmresult-attr" value="{{iffmmresult}}"/>-->
+						<select class="form-control" id="iffmmresult-attr">
+<!--							<option value="1">正常</option>-->
+<!--							<option value="0">异常</option>-->
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="iffmmremarks-attr" class="control-label">研究院五楼会议室话筒检查备注:</label>
+						<input type="text" class="form-control" id="iffmmremarks-attr" value="{{iffmmremarks}}"/>
+					</div>
+					<div class="form-group">
+						<input type="hidden" class="form-control" id="inspectionId-attr" value="{{inspectionId}}"/>
+					</div>
+		</form>
+	</script>
+
+	<!-- 表格内容模板  -->
+	<script id="tableContentTemplate" type="text/html">
+		{{#result}}
+			<tr>
+				<td style="text-align:center;vertical-align:middle">
+					 <button type="button" class="btn btn-lg btn-sm" onclick="lookMsg('{{inspectionId}}','/dh_inspection/select')">查看</button>&nbsp;
+					 <button type="button" class="btn btn-info btn-sm" onclick="upMsg('{{inspectionId}}','/dh_inspection/select')">更新</button>&nbsp;
+					 <button type="button" class="btn btn-danger btn-sm" onclick="delMsg('{{inspectionId}}','/dh_inspection/delete',this)">删除</button>&nbsp;
+				</td>
+				<td style="text-align:center;vertical-align:middle">{{creattime}}</td>
+				<td style="text-align:center;vertical-align:middle">{{sale}}</td>
+				<td style="text-align:center;vertical-align:middle">{{sc}}</td>
+				<td style="text-align:center;vertical-align:middle">{{scresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{scremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{sp}}</td>
+				<td style="text-align:center;vertical-align:middle">{{spresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{spremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{sf}}</td>
+				<td style="text-align:center;vertical-align:middle">{{sfa}}</td>
+				<td style="text-align:center;vertical-align:middle">{{sfaresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{sfaremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tftc}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tftcl}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tftclresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tftclremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tftcs}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tftcsresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tftcsremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tftcm}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tftcmresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tftcmremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tftcc}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tftccresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tftccremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tfm}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tfml}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tfmlresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tfmlremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tfms}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tfmsresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tfmsremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tfmm}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tfmmresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tfmmremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tfmc}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tfmcresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{tfmcremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ffm}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ffmc}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ffmcresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ffmcremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ffmc2}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ffmc2result}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ffmc2remarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ffmp}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ffmpresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ffmpremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ifofm}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ifofmc}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ifofmcresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ifofmcremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ifofmp}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ifofmpresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{ifofmpremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{iffm}}</td>
+				<td style="text-align:center;vertical-align:middle">{{iffmc}}</td>
+				<td style="text-align:center;vertical-align:middle">{{iffmcresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{iffmcremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{iffms}}</td>
+				<td style="text-align:center;vertical-align:middle">{{iffmsresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{iffmsremarks}}</td>
+				<td style="text-align:center;vertical-align:middle">{{iffmm}}</td>
+				<td style="text-align:center;vertical-align:middle">{{iffmmresult}}</td>
+				<td style="text-align:center;vertical-align:middle">{{iffmmremarks}}</td>
+			</tr>
+		{{/result}}
+	</script>
+
+	<script th:src="@{/mystatic/jquery/jquery.min.js}"></script>
+	<script th:src="@{/mystatic/js/pageMe.js}"></script>
+	<script th:src="@{/mystatic/bootstrap/js/bootstrap.min.js}"></script>
+	<script th:src="@{/mystatic/bootstrap/js/bootstrap-table.js}"></script>
+	<script th:src="@{/mystatic/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js}"></script>
+	<script th:src="@{/mystatic/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js}"></script>
+	<script th:src="@{/mystatic/multiselect/js/bootstrap-multiselect.js}"></script>
+	<script th:src="@{/mystatic/js/admin.js}"></script>
+	<script th:src="@{/mystatic/js/ajaxFactory.js}"></script>
+	<script th:src="@{/mystatic/js/crudFactory.js}"></script>
+    <script th:src="@{/mystatic/js/jqAlert.js}"></script>
+	<script th:src="@{/mystatic/echarts/echarts.min.js}"></script>
+	<!-- 进度条  -->
+	<script th:src="@{/mystatic/progressbar/js/mprogress.js}"></script>
+	<script th:src="@{/mystatic/progressbar/js/init-mprogress.js}"></script>
+	<script th:src="@{/mystatic/js/mustache/mustache.min.js}"></script>
+	<script th:src="@{/mystatic/js/config.js}"></script>
+
+	<script>
+
+		var currentPage = 1;
+		var totalPage;
+		var sqlMap = {};
+		//排序的数据
+		var orderData = [];
+		var controllerPrefix = "dh_inspection";
+		var methodName = "likeSelect";
+
+		$(function() {
+
+			//后面可以根据自身业务具体添加查询条件，目前条件只有当前页
+
+			//crudFactory.js
+			$crud.getDataByCurrentPage();
+
+		});
+
+		function queryInfo() {
+			sqlMap = {};
+			sqlMap.creattime=$("#creattime-query").val();
+			currentPage = 1;
+			orderData = [];
+			$crud.getDataByCurrentPage();
+		}
+
+		function delMsg(inspectionId, path, thisVal) {
+
+            $.MsgBox.Confirm("温馨提示", "执行删除后将无法恢复，确定继续吗？",function () {
+                $z.ajaxStrAndJson({
+                    url : basePath + path,
+                    data : {
+                inspectionId : inspectionId
+                    },
+                    success : function(data) {
+                    	$z.dealCommonResult(data, function () {
+                    		$crud.getDataByCurrentPage();
+                        	$.MsgBox.Alert("提示","删除成功！");
+                    	});
+                    }
+                });
+            });
+
+		}
+
+		function lookMsg(inspectionId, path) {
+				$z.ajaxStrAndJson({
+					url : basePath + path,
+					data : {
+						inspectionId : inspectionId
+					},
+					success : function(data) {
+						$z.dealCommonResult(data,function () {
+							data = data.result;
+							if(data[0]["scresult"] == "1"){
+								data[0]["scresult"] = "正常";
+							}else if(data[0]["scresult"] == "0"){
+								data[0]["scresult"] = "异常";
+							}
+
+							if(data[0]["spresult"] == "1"){
+								data[0]["spresult"] = "正常";
+							}else if(data[0]["spresult"] == "0"){
+								data[0]["spresult"] = "异常";
+							}
+
+							if(data[0]["sfaresult"] == "1"){
+								data[0]["sfaresult"] = "正常";
+							}else if(data[0]["sfaresult"] == "0"){
+								data[0]["sfaresult"] = "异常";
+							}
+
+							if(data[0]["tftclresult"] == "1"){
+								data[0]["tftclresult"] = "正常";
+							}else if(data[0]["tftclresult"] == "0"){
+								data[0]["tftclresult"] = "异常";
+							}
+
+							if(data[0]["tftcsresult"] == "1"){
+								data[0]["tftcsresult"] = "正常";
+							}else if(data[0]["tftcsresult"] == "0"){
+								data[0]["tftcsresult"] = "异常";
+							}
+
+							if(data[0]["tftcmresult"] == "1"){
+								data[0]["tftcmresult"] = "正常";
+							}else if(data[0]["tftcmresult"] == "0"){
+								data[0]["tftcmresult"] = "异常";
+							}
+
+							if(data[0]["tftccresult"] == "1"){
+								data[0]["tftccresult"] = "正常";
+							}else if(data[0]["tftccresult"] == "0"){
+								data[0]["tftccresult"] = "异常";
+							}
+
+							if(data[0]["tfmlresult"] == "1"){
+								data[0]["tfmlresult"] = "正常";
+							}else if(data[0]["tfmlresult"] == "0"){
+								data[0]["tfmlresult"] = "异常";
+							}
+
+							if(data[0]["tfmsresult"] == "1"){
+								data[0]["tfmsresult"] = "正常";
+							}else if(data[0]["tfmsresult"] == "0"){
+								data[0]["tfmsresult"] = "异常";
+							}
+
+							if(data[0]["tfmmresult"] == "1"){
+								data[0]["tfmmresult"] = "正常";
+							}else if(data[0]["tfmmresult"] == "0"){
+								data[0]["tfmmresult"] = "异常";
+							}
+
+							if(data[0]["tfmcresult"] == "1"){
+								data[0]["tfmcresult"] = "正常";
+							}else if(data[0]["tfmcresult"] == "0"){
+								data[0]["tfmcresult"] = "异常";
+							}
+
+							if(data[0]["ffmcresult"] == "1"){
+								data[0]["ffmcresult"] = "正常";
+							}else if(data[0]["ffmcresult"] == "0"){
+								data[0]["ffmcresult"] = "异常";
+							}
+
+							if(data[0]["ffmc2result"] == "1"){
+								data[0]["ffmc2result"] = "正常";
+							}else if(data[0]["ffmc2result"] == "0"){
+								data[0]["ffmc2result"] = "异常";
+							}
+
+							if(data[0]["ffmpresult"] == "1"){
+								data[0]["ffmpresult"] = "正常";
+							}else if(data[0]["ffmpresult"] == "0"){
+								data[0]["ffmpresult"] = "异常";
+							}
+
+							if(data[0]["ifofmcresult"] == "1"){
+								data[0]["ifofmcresult"] = "正常";
+							}else if(data[0]["ifofmcresult"] == "0"){
+								data[0]["ifofmcresult"] = "异常";
+							}
+
+							if(data[0]["ifofmpresult"] == "1"){
+								data[0]["ifofmpresult"] = "正常";
+							}else if(data[0]["ifofmpresult"] == "0"){
+								data[0]["ifofmpresult"] = "异常";
+							}
+
+							if(data[0]["iffmcresult"] == "1"){
+								data[0]["iffmcresult"] = "正常";
+							}else if(data[0]["iffmcresult"] == "0"){
+								data[0]["iffmcresult"] = "异常";
+							}
+
+							if(data[0]["iffmsresult"] == "1"){
+								data[0]["iffmsresult"] = "正常";
+							}else if(data[0]["iffmsresult"] == "0"){
+								data[0]["iffmsresult"] = "异常";
+							}
+
+							if(data[0]["iffmmresult"] == "1"){
+								data[0]["iffmmresult"] = "正常";
+							}else if(data[0]["iffmmresult"] == "0"){
+								data[0]["iffmmresult"] = "异常";
+							}
+							// 把数据动态写入模态框
+							var bodyHtmlTemplate = $("#lookTemplate").html();
+							Mustache.parse(bodyHtmlTemplate); // 预编译模板
+							var bodyHtml = Mustache.render(bodyHtmlTemplate, data[0]);
+							$('#lookModalBody').html(bodyHtml);
+
+							// makeLookMsg(data[0]);
+
+							$('#lookModal').modal('show');
+						});
+
+					}
+				});
+		}
+
+		function upMsg(inspectionId, path) {
+			$z.ajaxStrAndJson({
+				url : basePath + path,
+				data : {
+					inspectionId : inspectionId
+				},
+				success : function(data) {
+					$z.dealCommonResult(data,function () {
+						data = data.result;
+						// if(data[0]["scresult"] == "1"){
+						// 	data[0]["scresult"] = "正常";
+						// }else if(data[0]["scresult"] == "0"){
+						// 	data[0]["scresult"] = "异常";
+						// }
+						//
+						// if(data[0]["spresult"] == "1"){
+						// 	data[0]["spresult"] = "正常";
+						// }else if(data[0]["spresult"] == "0"){
+						// 	data[0]["spresult"] = "异常";
+						// }
+						//
+						// if(data[0]["sfaresult"] == "1"){
+						// 	data[0]["sfaresult"] = "正常";
+						// }else if(data[0]["sfaresult"] == "0"){
+						// 	data[0]["sfaresult"] = "异常";
+						// }
+						//
+						// if(data[0]["tftclresult"] == "1"){
+						// 	data[0]["tftclresult"] = "正常";
+						// }else if(data[0]["tftclresult"] == "0"){
+						// 	data[0]["tftclresult"] = "异常";
+						// }
+						//
+						// if(data[0]["tftcsresult"] == "1"){
+						// 	data[0]["tftcsresult"] = "正常";
+						// }else if(data[0]["tftcsresult"] == "0"){
+						// 	data[0]["tftcsresult"] = "异常";
+						// }
+						//
+						// if(data[0]["tftcmresult"] == "1"){
+						// 	data[0]["tftcmresult"] = "正常";
+						// }else if(data[0]["tftcmresult"] == "0"){
+						// 	data[0]["tftcmresult"] = "异常";
+						// }
+						//
+						// if(data[0]["tftccresult"] == "1"){
+						// 	data[0]["tftccresult"] = "正常";
+						// }else if(data[0]["tftccresult"] == "0"){
+						// 	data[0]["tftccresult"] = "异常";
+						// }
+						//
+						// if(data[0]["tfmlresult"] == "1"){
+						// 	data[0]["tfmlresult"] = "正常";
+						// }else if(data[0]["tfmlresult"] == "0"){
+						// 	data[0]["tfmlresult"] = "异常";
+						// }
+						//
+						// if(data[0]["tfmsresult"] == "1"){
+						// 	data[0]["tfmsresult"] = "正常";
+						// }else if(data[0]["tfmsresult"] == "0"){
+						// 	data[0]["tfmsresult"] = "异常";
+						// }
+						//
+						// if(data[0]["tfmmresult"] == "1"){
+						// 	data[0]["tfmmresult"] = "正常";
+						// }else if(data[0]["tfmmresult"] == "0"){
+						// 	data[0]["tfmmresult"] = "异常";
+						// }
+						//
+						// if(data[0]["tfmcresult"] == "1"){
+						// 	data[0]["tfmcresult"] = "正常";
+						// }else if(data[0]["tfmcresult"] == "0"){
+						// 	data[0]["tfmcresult"] = "异常";
+						// }
+						//
+						// if(data[0]["ffmcresult"] == "1"){
+						// 	data[0]["ffmcresult"] = "正常";
+						// }else if(data[0]["ffmcresult"] == "0"){
+						// 	data[0]["ffmcresult"] = "异常";
+						// }
+						//
+						// if(data[0]["ffmc2result"] == "1"){
+						// 	data[0]["ffmc2result"] = "正常";
+						// }else if(data[0]["ffmc2result"] == "0"){
+						// 	data[0]["ffmc2result"] = "异常";
+						// }
+						//
+						// if(data[0]["ffmpresult"] == "1"){
+						// 	data[0]["ffmpresult"] = "正常";
+						// }else if(data[0]["ffmpresult"] == "0"){
+						// 	data[0]["ffmpresult"] = "异常";
+						// }
+						//
+						// if(data[0]["ifofmcresult"] == "1"){
+						// 	data[0]["ifofmcresult"] = "正常";
+						// }else if(data[0]["ifofmcresult"] == "0"){
+						// 	data[0]["ifofmcresult"] = "异常";
+						// }
+						//
+						// if(data[0]["ifofmpresult"] == "1"){
+						// 	data[0]["ifofmpresult"] = "正常";
+						// }else if(data[0]["ifofmpresult"] == "0"){
+						// 	data[0]["ifofmpresult"] = "异常";
+						// }
+						//
+						// if(data[0]["iffmcresult"] == "1"){
+						// 	data[0]["iffmcresult"] = "正常";
+						// }else if(data[0]["iffmcresult"] == "0"){
+						// 	data[0]["iffmcresult"] = "异常";
+						// }
+						//
+						// if(data[0]["iffmsresult"] == "1"){
+						// 	data[0]["iffmsresult"] = "正常";
+						// }else if(data[0]["iffmsresult"] == "0"){
+						// 	data[0]["iffmsresult"] = "异常";
+						// }
+						//
+						// if(data[0]["iffmmresult"] == "1"){
+						// 	data[0]["iffmmresult"] = "正常";
+						// }else if(data[0]["iffmmresult"] == "0"){
+						// 	data[0]["iffmmresult"] = "异常";
+						// }
+						// 把数据动态写入模态框
+						var bodyHtmlTemplate = $("#updateTemplate").html();
+						Mustache.parse(bodyHtmlTemplate); // 预编译模板
+						var bodyHtml = Mustache.render(bodyHtmlTemplate, data[0]);
+						$('#updateModalBody').html(bodyHtml);
+
+						makeUpMsg(data[0]);
+
+						$('#updateModal').modal('show');
+					});
+
+				}
+			});
+		}
+
+ 		function confirmUp() {
+			$z.ajaxStrAndJson({
+				url : basePath + "/" + controllerPrefix + "/update",
+				data : {
+					inspectionId : $("#inspectionId-attr").val(),
+					scresult : $("#scresult-attr").val(),
+					scremarks : $("#scremarks-attr").val(),
+					spresult : $("#spresult-attr").val(),
+					spremarks : $("#spremarks-attr").val(),
+					sfaresult : $("#sfaresult-attr").val(),
+					sfaremarks : $("#sfaremarks-attr").val(),
+					tftclresult : $("#tftclresult-attr").val(),
+					tftclremarks : $("#tftclremarks-attr").val(),
+					tftcsresult : $("#tftcsresult-attr").val(),
+					tftcsremarks : $("#tftcsremarks-attr").val(),
+					tftcmresult : $("#tftcmresult-attr").val(),
+					tftcmremarks : $("#tftcmremarks-attr").val(),
+					tftccresult : $("#tftccresult-attr").val(),
+					tftccremarks : $("#tftccremarks-attr").val(),
+					tfmlresult : $("#tfmlresult-attr").val(),
+					tfmlremarks : $("#tfmlremarks-attr").val(),
+					tfmsresult : $("#tfmsresult-attr").val(),
+					tfmsremarks : $("#tfmsremarks-attr").val(),
+					tfmmresult : $("#tfmmresult-attr").val(),
+					tfmmremarks : $("#tfmmremarks-attr").val(),
+					tfmcresult : $("#tfmcresult-attr").val(),
+					tfmcremarks : $("#tfmcremarks-attr").val(),
+					ffmcresult : $("#ffmcresult-attr").val(),
+					ffmcremarks : $("#ffmcremarks-attr").val(),
+					ffmc2result : $("#ffmc2result-attr").val(),
+					ffmc2remarks : $("#ffmc2remarks-attr").val(),
+					ffmpresult : $("#ffmpresult-attr").val(),
+					ffmpremarks : $("#ffmpremarks-attr").val(),
+					ifofmcresult : $("#ifofmcresult-attr").val(),
+					ifofmcremarks : $("#ifofmcremarks-attr").val(),
+					ifofmpresult : $("#ifofmpresult-attr").val(),
+					ifofmpremarks : $("#ifofmpremarks-attr").val(),
+					iffmcresult : $("#iffmcresult-attr").val(),
+					iffmcremarks : $("#iffmcremarks-attr").val(),
+					iffmsresult : $("#iffmsresult-attr").val(),
+					iffmsremarks : $("#iffmsremarks-attr").val(),
+					iffmmresult : $("#iffmmresult-attr").val(),
+					iffmmremarks : $("#iffmmremarks-attr").val(),
+					creattime : $("#creattime-attr").val()
+				},
+				success: function (data) {
+	                $z.dealCommonResult(data,function () {
+	                    $.MsgBox.Alert("提示", "更新成功！");
+	                    $('#updateModal').modal('hide');
+	                    $crud.getDataByCurrentPage();
+	                });
+            	}
+			});
+		}
+
+
+		function addMsg() {
+			$('#addModal').modal('show');
+		}
+
+		function confirmAdd() {
+			$z.ajaxStrAndJson({
+				url : basePath + "/" + controllerPrefix + "/add",
+				data : {
+					sale : $("#sale-insert").val(),
+					sc : $("#sc-insert").val(),
+					scresult : $("#scresult-insert").val(),
+					scremarks : $("#scremarks-insert").val(),
+					sp : $("#sp-insert").val(),
+					spresult : $("#spresult-insert").val(),
+					spremarks : $("#spremarks-insert").val(),
+					sf : $("#sf-insert").val(),
+					sfa : $("#sfa-insert").val(),
+					sfaresult : $("#sfaresult-insert").val(),
+					sfaremarks : $("#sfaremarks-insert").val(),
+					tftc : $("#tftc-insert").val(),
+					tftcl : $("#tftcl-insert").val(),
+					tftclresult : $("#tftclresult-insert").val(),
+					tftclremarks : $("#tftclremarks-insert").val(),
+					tftcs : $("#tftcs-insert").val(),
+					tftcsresult : $("#tftcsresult-insert").val(),
+					tftcsremarks : $("#tftcsremarks-insert").val(),
+					tftcm : $("#tftcm-insert").val(),
+					tftcmresult : $("#tftcmresult-insert").val(),
+					tftcmremarks : $("#tftcmremarks-insert").val(),
+					tftcc : $("#tftcc-insert").val(),
+					tftccresult : $("#tftccresult-insert").val(),
+					tftccremarks : $("#tftccremarks-insert").val(),
+					tfm : $("#tfm-insert").val(),
+					tfml : $("#tfml-insert").val(),
+					tfmlresult : $("#tfmlresult-insert").val(),
+					tfmlremarks : $("#tfmlremarks-insert").val(),
+					tfms : $("#tfms-insert").val(),
+					tfmsresult : $("#tfmsresult-insert").val(),
+					tfmsremarks : $("#tfmsremarks-insert").val(),
+					tfmm : $("#tfmm-insert").val(),
+					tfmmresult : $("#tfmmresult-insert").val(),
+					tfmmremarks : $("#tfmmremarks-insert").val(),
+					tfmc : $("#tfmc-insert").val(),
+					tfmcresult : $("#tfmcresult-insert").val(),
+					tfmcremarks : $("#tfmcremarks-insert").val(),
+					ffm : $("#ffm-insert").val(),
+					ffmc : $("#ffmc-insert").val(),
+					ffmcresult : $("#ffmcresult-insert").val(),
+					ffmcremarks : $("#ffmcremarks-insert").val(),
+					ffmc2 : $("#ffmc2-insert").val(),
+					ffmc2result : $("#ffmc2result-insert").val(),
+					ffmc2remarks : $("#ffmc2remarks-insert").val(),
+					ffmp : $("#ffmp-insert").val(),
+					ffmpresult : $("#ffmpresult-insert").val(),
+					ffmpremarks : $("#ffmpremarks-insert").val(),
+					ifofm : $("#ifofm-insert").val(),
+					ifofmc : $("#ifofmc-insert").val(),
+					ifofmcresult : $("#ifofmcresult-insert").val(),
+					ifofmcremarks : $("#ifofmcremarks-insert").val(),
+					ifofmp : $("#ifofmp-insert").val(),
+					ifofmpresult : $("#ifofmpresult-insert").val(),
+					ifofmpremarks : $("#ifofmpremarks-insert").val(),
+					iffm : $("#iffm-insert").val(),
+					iffmc : $("#iffmc-insert").val(),
+					iffmcresult : $("#iffmcresult-insert").val(),
+					iffmcremarks : $("#iffmcremarks-insert").val(),
+					iffms : $("#iffms-insert").val(),
+					iffmsresult : $("#iffmsresult-insert").val(),
+					iffmsremarks : $("#iffmsremarks-insert").val(),
+					iffmm : $("#iffmm-insert").val(),
+					iffmmresult : $("#iffmmresult-insert").val(),
+					iffmmremarks : $("#iffmmremarks-insert").val(),
+					creattime : $("#creattime-insert").val()
+				},
+				success : function(data) {
+					$z.dealCommonResult(data,function () {
+	                    $.MsgBox.Alert("提示", "添加成功！");
+	                    $('#addModal').modal('hide');
+	                    //初始化
+	                    sqlMap = {};
+	                    currentPage = totalPage;
+	                    orderData = [];
+	                    $crud.getDataByCurrentPage();
+                	});
+				}
+			});
+		}
+
+		function makeResult(data) {
+			for (var i = 0; i < data.length; i++) {
+				if (data[i] == null) {
+					data[i] = {};
+					data[i]["sale"] = "无";
+					data[i]["sc"] = "无";
+					data[i]["scresult"] = "无";
+					data[i]["scremarks"] = "无";
+					data[i]["sp"] = "无";
+					data[i]["spresult"] = "无";
+					data[i]["spremarks"] = "无";
+					data[i]["sf"] = "无";
+					data[i]["sfa"] = "无";
+					data[i]["sfaresult"] = "无";
+					data[i]["sfaremarks"] = "无";
+					data[i]["tftc"] = "无";
+					data[i]["tftcl"] = "无";
+					data[i]["tftclresult"] = "无";
+					data[i]["tftclremarks"] = "无";
+					data[i]["tftcs"] = "无";
+					data[i]["tftcsresult"] = "无";
+					data[i]["tftcsremarks"] = "无";
+					data[i]["tftcm"] = "无";
+					data[i]["tftcmresult"] = "无";
+					data[i]["tftcmremarks"] = "无";
+					data[i]["tftcc"] = "无";
+					data[i]["tftccresult"] = "无";
+					data[i]["tftccremarks"] = "无";
+					data[i]["tfm"] = "无";
+					data[i]["tfml"] = "无";
+					data[i]["tfmlresult"] = "无";
+					data[i]["tfmlremarks"] = "无";
+					data[i]["tfms"] = "无";
+					data[i]["tfmsresult"] = "无";
+					data[i]["tfmsremarks"] = "无";
+					data[i]["tfmm"] = "无";
+					data[i]["tfmmresult"] = "无";
+					data[i]["tfmmremarks"] = "无";
+					data[i]["tfmc"] = "无";
+					data[i]["tfmcresult"] = "无";
+					data[i]["tfmcremarks"] = "无";
+					data[i]["ffm"] = "无";
+					data[i]["ffmc"] = "无";
+					data[i]["ffmcresult"] = "无";
+					data[i]["ffmcremarks"] = "无";
+					data[i]["ffmc2"] = "无";
+					data[i]["ffmc2result"] = "无";
+					data[i]["ffmc2remarks"] = "无";
+					data[i]["ffmp"] = "无";
+					data[i]["ffmpresult"] = "无";
+					data[i]["ffmpremarks"] = "无";
+					data[i]["ifofm"] = "无";
+					data[i]["ifofmc"] = "无";
+					data[i]["ifofmcresult"] = "无";
+					data[i]["ifofmcremarks"] = "无";
+					data[i]["ifofmp"] = "无";
+					data[i]["ifofmpresult"] = "无";
+					data[i]["ifofmpremarks"] = "无";
+					data[i]["iffm"] = "无";
+					data[i]["iffmc"] = "无";
+					data[i]["iffmcresult"] = "无";
+					data[i]["iffmcremarks"] = "无";
+					data[i]["iffms"] = "无";
+					data[i]["iffmsresult"] = "无";
+					data[i]["iffmsremarks"] = "无";
+					data[i]["iffmm"] = "无";
+					data[i]["iffmmresult"] = "无";
+					data[i]["iffmmremarks"] = "无";
+					data[i]["creattime"] = "无";
+				}else{
+					if(data[i]["scresult"] == "1"){
+						data[i]["scresult"] = "正常";
+					}else if(data[i]["scresult"] == "0"){
+						data[i]["scresult"] = "异常";
+					}
+
+					if(data[i]["spresult"] == "1"){
+						data[i]["spresult"] = "正常";
+					}else if(data[i]["spresult"] == "0"){
+						data[i]["spresult"] = "异常";
+					}
+
+					if(data[i]["sfaresult"] == "1"){
+						data[i]["sfaresult"] = "正常";
+					}else if(data[i]["sfaresult"] == "0"){
+						data[i]["sfaresult"] = "异常";
+					}
+
+					if(data[i]["tftclresult"] == "1"){
+						data[i]["tftclresult"] = "正常";
+					}else if(data[i]["tftclresult"] == "0"){
+						data[i]["tftclresult"] = "异常";
+					}
+
+					if(data[i]["tftcsresult"] == "1"){
+						data[i]["tftcsresult"] = "正常";
+					}else if(data[i]["tftcsresult"] == "0"){
+						data[i]["tftcsresult"] = "异常";
+					}
+
+					if(data[i]["tftcmresult"] == "1"){
+						data[i]["tftcmresult"] = "正常";
+					}else if(data[i]["tftcmresult"] == "0"){
+						data[i]["tftcmresult"] = "异常";
+					}
+
+					if(data[i]["tftccresult"] == "1"){
+						data[i]["tftccresult"] = "正常";
+					}else if(data[i]["tftccresult"] == "0"){
+						data[i]["tftccresult"] = "异常";
+					}
+
+					if(data[i]["tfmlresult"] == "1"){
+						data[i]["tfmlresult"] = "正常";
+					}else if(data[i]["tfmlresult"] == "0"){
+						data[i]["tfmlresult"] = "异常";
+					}
+
+					if(data[i]["tfmsresult"] == "1"){
+						data[i]["tfmsresult"] = "正常";
+					}else if(data[i]["tfmsresult"] == "0"){
+						data[i]["tfmsresult"] = "异常";
+					}
+
+					if(data[i]["tfmmresult"] == "1"){
+						data[i]["tfmmresult"] = "正常";
+					}else if(data[i]["tfmmresult"] == "0"){
+						data[i]["tfmmresult"] = "异常";
+					}
+
+					if(data[i]["tfmcresult"] == "1"){
+						data[i]["tfmcresult"] = "正常";
+					}else if(data[i]["tfmcresult"] == "0"){
+						data[i]["tfmcresult"] = "异常";
+					}
+
+					if(data[i]["ffmcresult"] == "1"){
+						data[i]["ffmcresult"] = "正常";
+					}else if(data[i]["ffmcresult"] == "0"){
+						data[i]["ffmcresult"] = "异常";
+					}
+
+					if(data[i]["ffmc2result"] == "1"){
+						data[i]["ffmc2result"] = "正常";
+					}else if(data[i]["ffmc2result"] == "0"){
+						data[i]["ffmc2result"] = "异常";
+					}
+
+					if(data[i]["ffmpresult"] == "1"){
+						data[i]["ffmpresult"] = "正常";
+					}else if(data[i]["ffmpresult"] == "0"){
+						data[i]["ffmpresult"] = "异常";
+					}
+
+					if(data[i]["ifofmcresult"] == "1"){
+						data[i]["ifofmcresult"] = "正常";
+					}else if(data[i]["ifofmcresult"] == "0"){
+						data[i]["ifofmcresult"] = "异常";
+					}
+
+					if(data[i]["ifofmpresult"] == "1"){
+						data[i]["ifofmpresult"] = "正常";
+					}else if(data[i]["ifofmpresult"] == "0"){
+						data[i]["ifofmpresult"] = "异常";
+					}
+
+					if(data[i]["iffmcresult"] == "1"){
+						data[i]["iffmcresult"] = "正常";
+					}else if(data[i]["iffmcresult"] == "0"){
+						data[i]["iffmcresult"] = "异常";
+					}
+
+					if(data[i]["iffmsresult"] == "1"){
+						data[i]["iffmsresult"] = "正常";
+					}else if(data[i]["iffmsresult"] == "0"){
+						data[i]["iffmsresult"] = "异常";
+					}
+
+					if(data[i]["iffmmresult"] == "1"){
+						data[i]["iffmmresult"] = "正常";
+					}else if(data[i]["iffmmresult"] == "0"){
+						data[i]["iffmmresult"] = "异常";
+					}
+				}
+			}
+		}
+
+		function makeUpMsg(data) {
+
+			if(data["scresult"] == "1"){
+				$("#scresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#scresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["scresult"] == "0"){
+				$("#scresult-attr").append("<option value='1'>正常</option>");
+				$("#scresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["spresult"] == "1"){
+				$("#spresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#spresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["spresult"] == "0"){
+				$("#spresult-attr").append("<option value='1'>正常</option>");
+				$("#spresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["sfaresult"] == "1"){
+				$("#sfaresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#sfaresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["sfaresult"] == "0"){
+				$("#sfaresult-attr").append("<option value='1'>正常</option>");
+				$("#sfaresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["tftclresult"] == "1"){
+				$("#tftclresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#tftclresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["tftclresult"] == "0"){
+				$("#tftclresult-attr").append("<option value='1'>正常</option>");
+				$("#tftclresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["tftcsresult"] == "1"){
+				$("#tftcsresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#tftcsresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["tftcsresult"] == "0"){
+				$("#tftcsresult-attr").append("<option value='1'>正常</option>");
+				$("#tftcsresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["tftcmresult"] == "1"){
+				$("#tftcmresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#tftcmresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["tftcmresult"] == "0"){
+				$("#tftcmresult-attr").append("<option value='1'>正常</option>");
+				$("#tftcmresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["tftccresult"] == "1"){
+				$("#tftccresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#tftccresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["tftccresult"] == "0"){
+				$("#tftccresult-attr").append("<option value='1'>正常</option>");
+				$("#tftccresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["tfmlresult"] == "1"){
+				$("#tfmlresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#tfmlresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["tfmlresult"] == "0"){
+				$("#tfmlresult-attr").append("<option value='1'>正常</option>");
+				$("#tfmlresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["tfmsresult"] == "1"){
+				$("#tfmsresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#tfmsresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["tfmsresult"] == "0"){
+				$("#tfmsresult-attr").append("<option value='1'>正常</option>");
+				$("#tfmsresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["tfmmresult"] == "1"){
+				$("#tfmmresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#tfmmresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["tfmmresult"] == "0"){
+				$("#tfmmresult-attr").append("<option value='1'>正常</option>");
+				$("#tfmmresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["tfmcresult"] == "1"){
+				$("#tfmcresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#tfmcresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["tfmcresult"] == "0"){
+				$("#tfmcresult-attr").append("<option value='1'>正常</option>");
+				$("#tfmcresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["ffmcresult"] == "1"){
+				$("#ffmcresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#ffmcresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["ffmcresult"] == "0"){
+				$("#ffmcresult-attr").append("<option value='1'>正常</option>");
+				$("#ffmcresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["ffmc2result"] == "1"){
+				$("#ffmc2result-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#ffmc2result-attr").append("<option value='0'>异常</option>");
+			}else if(data["ffmc2result"] == "0"){
+				$("#ffmc2result-attr").append("<option value='1'>正常</option>");
+				$("#ffmc2result-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["ffmpresult"] == "1"){
+				$("#ffmpresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#ffmpresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["ffmpresult"] == "0"){
+				$("#ffmpresult-attr").append("<option value='1'>正常</option>");
+				$("#ffmpresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["ifofmcresult"] == "1"){
+				$("#ifofmcresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#ifofmcresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["ifofmcresult"] == "0"){
+				$("#ifofmcresult-attr").append("<option value='1'>正常</option>");
+				$("#ifofmcresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["ifofmpresult"] == "1"){
+				$("#ifofmpresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#ifofmpresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["ifofmpresult"] == "0"){
+				$("#ifofmpresult-attr").append("<option value='1'>正常</option>");
+				$("#ifofmpresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["iffmcresult"] == "1"){
+				$("#iffmcresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#iffmcresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["iffmcresult"] == "0"){
+				$("#iffmcresult-attr").append("<option value='1'>正常</option>");
+				$("#iffmcresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["iffmsresult"] == "1"){
+				$("#iffmsresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#iffmsresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["iffmsresult"] == "0"){
+				$("#iffmsresult-attr").append("<option value='1'>正常</option>");
+				$("#iffmsresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+
+			if(data["iffmmresult"] == "1"){
+				$("#iffmmresult-attr").append("<option value='1' selected='selected'>正常</option>");
+				$("#iffmmresult-attr").append("<option value='0'>异常</option>");
+			}else if(data["iffmmresult"] == "0"){
+				$("#iffmmresult-attr").append("<option value='1'>正常</option>");
+				$("#iffmmresult-attr").append("<option value='0' selected='selected'>异常</option>");
+			}
+		}
+
+
+		function exportExcel() {
+
+			//显示进度条
+			InitMprogress();
+
+            var param = '';
+
+            for (var key in sqlMap) {
+                param += key + "=" + sqlMap[key] + "&";
+            }
+
+			window.location.href = basePath + "/" + controllerPrefix
+					+ "/exportExcel?" + param;
+			// 进度条消失
+			setTimeout("MprogressEnd()", totalPage / 20 * 1000);
+		}
+	</script>
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dhwooden.ep.mapper.EquipmentDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.dhwooden.ep.modal.Equipment">
+		<result column="id" property="id" />
+		<result column="code" property="code" />
+		<result column="type" property="type" />
+		<result column="name" property="name" />
+		<result column="num" property="num" />
+		<result column="user" property="user" />
+		<result column="department" property="department" />
+		<result column="buy_Date" property="buyDate" />
+		<result column="price" property="price" />
+		<result column="status" property="status" />
+		<result column="remark" property="remark" />
+		<result column="username" property="username" />
+		<result column="ip_address" property="ipAddress" />
+		<result column="off_address" property="offAddress" />
+	</resultMap>
+	<select id="selectEquipmenttList" resultMap="BaseResultMap" parameterType="Map">
+		SELECT * FROM dh_equipment
+		<where>
+			<if test="username!=null and username!=''">
+				AND username like CONCAT('%', #{username}, '%')
+			</if>
+			<if test="id!=null and id!=''">
+				AND id=#{id}
+			</if>
+			<if test="department != null and department != ''">
+				and department in <foreach collection="department" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+			</if>
+			<if test="name!=null and name!=''">
+				AND  name like CONCAT('%', #{name}, '%')
+			</if>
+			<if test="deptname!=null and deptname!=''">
+				AND  department like CONCAT('%', #{deptname}, '%')
+			</if>
+			<if test="status!=null and status!=''">
+				AND  status= #{status}
+		    </if>
+			<if test="startTime!=null and startTime!=''">
+				AND  buy_Date>= #{startTime}
+			</if>
+			<if test="user!=null and user!=''">
+				AND  user =#{user}
+			</if>
+			<if test="endTime!=null and endTime!=''">
+				AND  buy_Date<![CDATA[ < ]]> #{endTime}
+			</if>
+			<if test="type!=null and type!=''">
+				AND  type =#{type}
+			</if>
+			<if test="category!=null and category!=''">
+				AND  category =#{category}
+			</if>
+			<if test="modal!=null and modal!=''">
+				AND  modal  like CONCAT('%', #{modal}, '%')
+			</if>
+
+			<if test="belong!=null and belong!=''">
+				AND  belong =#{belong}
+			</if>
+			<if test="ipAddress!=null and ipAddress!=''">
+				AND  ip_address  like CONCAT('%', #{ipAddress}, '%')
+			</if>
+			<if test="offAddress!=null and offAddress!=''">
+				AND  off_address  like CONCAT('%', #{offAddress}, '%')
+			</if>
+			<if test="code!=null and code!=''">
+				AND  code  like CONCAT('%', #{code}, '%')
+			</if>
+			<if test="remark!=null and remark!=''">
+				AND  remark  like CONCAT('%', #{remark}, '%')
+			</if>
+
+		</where>
+		ORDER BY code DESC
+	</select>
+	<select id="selectLeave" resultMap="BaseResultMap" parameterType="Map">
+		SELECT * FROM dh_equipment
+		<where>
+			<if test="username!=null and username!=''">
+				AND username like CONCAT('%', #{username}, '%')
+			</if>
+			<if test="id!=null and id!=''">
+				AND id=#{id}
+			</if>
+
+			<if test="name!=null and name!=''">
+				AND  name like CONCAT('%', #{name}, '%')
+			</if>
+			<if test="deptname!=null and deptname!=''">
+				AND  department like CONCAT('%', #{deptname}, '%')
+			</if>
+			<if test="status!=null and status!=''">
+				AND  status= #{status}
+			</if>
+			<if test="startTime!=null and startTime!=''">
+				AND  buy_Date>= #{startTime}
+			</if>
+			<if test="user!=null and user!=''">
+				AND  user =#{user}
+			</if>
+			<if test="endTime!=null and endTime!=''">
+				AND  buy_Date<![CDATA[ < ]]> #{endTime}
+			</if>
+			<if test="type!=null and type!=''">
+				AND  type =#{type}
+			</if>
+			<if test="category!=null and category!=''">
+				AND  category =#{category}
+			</if>
+			<if test="modal!=null and modal!=''">
+				AND  modal  like CONCAT('%', #{modal}, '%')
+			</if>
+
+			<if test="belong!=null and belong!=''">
+				AND  belong =#{belong}
+			</if>
+			<if test="ipAddress!=null and ipAddress!=''">
+				AND  ip_address  like CONCAT('%', #{ipAddress}, '%')
+			</if>
+			<if test="offAddress!=null and offAddress!=''">
+				AND  off_address  like CONCAT('%', #{offAddress}, '%')
+			</if>
+			<if test="code!=null and code!=''">
+				AND  code  like CONCAT('%', #{code}, '%')
+			</if>
+			<if test="remark!=null and remark!=''">
+				AND  remark  like CONCAT('%', #{remark}, '%')
+			</if>
+		</where>
+		ORDER BY code DESC
+
+	</select>
+
+	<update id="updateUser" >
+		 UPDATE dh_equipment e,dh_user u
+			SET e.user = u.open_id
+		 where u.department = e.department and u.name = e.username
+	</update>
+	<update id="updateDepartment" >
+		 UPDATE dh_equipment e,dh_user u
+		    SET e.department = u.department
+		 where e.user = u.open_id and u.department is not null
+	</update>
+</mapper>

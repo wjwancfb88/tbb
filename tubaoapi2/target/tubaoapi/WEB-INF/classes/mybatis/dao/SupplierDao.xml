@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.tubaoapi.dao.SupplierDao">
+  	
+	<resultMap id="supplierResult" type="Supplier">
+	  <id property="id" column="FID" />
+	  <result property="number" column="FNumber"/>
+	  <result property="name" column="FNAME_L2"/>
+	  <result property="contactName" column="CFTxtContact"/>
+	  <result property="contactNumber" column="CFTxtContactNumber"/>
+
+		<result property="cityid" column="fcityid"/>
+		<result property="cfisycsupplier" column="cfisycsupplier"/>
+	</resultMap>
+  	
+  	<select id="get" parameterType="string" resultMap="supplierResult">
+    	select * from t_bd_supplier where FID=#{id}
+  	</select>
+  	
+  	<select id="findBySO" parameterType="SupplierSO" resultMap="supplierResult">
+    	select * from t_bd_supplier 
+    	
+		<where>
+
+			<if test="ids != null">
+			  and FID in <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>		
+			</if>             
+			<if test="id != null">
+			  and FID = #{id}			
+			</if>
+			<if test="number != null">
+			  and FNUMBER = #{number}			
+			</if>	
+			<if test = "q != null">
+			and (
+			  	FName_L2 like '%'||#{q}||'%'  or FNumber like '%'||#{q}||'%'
+			)
+			</if>
+			<if test="createTime!=null">
+				and FCreateTime >=to_date(#{createTime},'YYYY-MM-dd hh24:mi:ss')
+			</if>
+		</where>
+		order by FCreateTime asc
+  	</select>
+</mapper>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dhwooden.ep.mapper.DhEntryDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.dhwooden.ep.modal.DhEntry">
+		<id column="id" property="id" />
+		<result column="vistor" property="vistor" />
+		<result column="from" property="from" />
+		<result column="user" property="user" />
+		<result column="dept" property="dept" />
+		<result column="intime" property="intime" />
+		<result column="create_time" property="createTime" />
+		<result column="vistor_phone" property="vistorPhone" />
+		<result column="reason" property="reason" />
+		<result column="outtime" property="outtime" />
+		<result column="status" property="status" />
+		<result column="msg_status" property="msgStatus" />
+		<result column="type" property="type" />
+		<result column="id_card" property="idCard" />
+		<result column="flag" property="flag" />
+		<result column="plate_no" property="plateNo" />
+	</resultMap>
+	<update id="updateByid"  parameterType="com.dhwooden.ep.modal.DhEntry" >
+		UPDATE dh_entry
+		<trim prefix="set" suffixOverrides=",">
+			<if test="status!=null">status=#{status},</if>
+			<if test="outtime!=null">outtime=#{outtime},</if>
+			<if test="msgStatus!=null">msg_status=#{msgStatus},</if>
+	   </trim>
+		WHERE id=#{id}
+	</update>
+
+
+	<select id="selectMap" resultMap="BaseResultMap" parameterType="Map">
+		SELECT *  FROM dh_entry
+		<where>
+			<if test="vistor!=null and vistor!=''">
+				AND vistor like CONCAT('%', #{vistor}, '%')
+			</if>
+			<if test="id!=null and id!=''">
+				AND id=#{id}
+			</if>
+			<if test="from!=null and from!=''">
+				AND  from like CONCAT('%', #{from}, '%')
+			</if>
+
+			<if test="status!=null and status!=''">
+				AND  status= #{status}
+			</if>
+			<if test="insTime!=null">
+				and intime>#{insTime}
+			</if>
+			<if test="ineTime!=null">
+				and intime<![CDATA[ < ]]>#{ineTime}
+			</if>
+			<if test="user!=null and user!=''">
+				AND  user like CONCAT('%', #{user}, '%')
+			</if>
+			<if test="flag!=null and flag!=''">
+				AND  flag =#{flag}
+			</if>
+			<if test="plateNo!=null and plateNo!=''">
+				and plate_no like CONCAT('%', #{plateNo}, '%')
+			</if>
+		</where>
+     ORDER  by status,intime DESC
+	</select>
+
+
+	<insert id="insertTest" parameterType="com.dhwooden.ep.modal.Test">
+		INSERT INTO test(problem,answer)
+		VALUES(#{problem},#{answer})
+	</insert>
+
+</mapper>

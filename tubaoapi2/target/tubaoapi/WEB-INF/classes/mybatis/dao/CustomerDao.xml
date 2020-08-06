@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.tubaoapi.dao.CustomerDao">
+	<resultMap id="customerResult" type="Customer">
+	  <id property="id" column="FID" />
+	  <result property="number" column="FNumber"/>
+		<result property="name" column="FNAME_L2"/>
+	    <result property="simpleName" column="FSimpleName"/>
+		<result property="provinceId" column="FProvince"/>
+		<result property="cityId" column="FCityID"/>
+		<result property="regionId" column="FRegionId"/>
+		<result property="lastUpdateTime" column="FLastUpdateTime"/>
+		<result property="createTime" column="FCreateTime"/>
+		<result property="customerKind" column="FCustomerKind"/>
+		<result property="usedStatus" column="FUsedStatus"/>
+		<result property="org" column="org"/>
+		<result property="agentType" column="cfagenttype"/>
+		<result property="cfisycobj" column="cfisycobj"/>
+		<result property="personid" column="fpersonid"/>
+		<result property="parentID" column="FParentID"/>
+		<result property="cfTxtContactNumber" column="cfTxtContactNumber"/>
+		<result property="fMnemonicCode" column="FMnemonicCode"/>
+		<result property="contactPerson" column="CFContactPerson"/>
+		<result property="staCustomerID" column="cfstaCustomerID"/>
+
+	</resultMap>
+	
+  	<select id="findBySO"  parameterType="BaseSO" resultMap="customerResult" >
+    	select  * from T_BD_CUSTOMER 
+		<where>
+			<if test="ids != null">
+			  FID in <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+			</if>
+			<if test="id != null">
+			  and FID = #{id}			
+			</if>
+			<if test="customerKind != null">
+			and FCustomerKind = #{customerKind}
+		    </if>
+			<if test="number != null">
+			  and FNUMBER = #{number}			
+			</if>
+			<if test="agentType != null">
+				and cfagenttype = #{agentType}
+			</if>
+			<if test="jxs">
+				and cfagenttype is not null
+			</if>
+			<if test = "q != null">
+			and (
+			  	FName_L2 like '%'||#{q}||'%'  or FNumber like '%'||#{q}||'%' or FSimpleName like '%'||#{q}||'%'
+			)
+			</if>
+			<if test="lastUpdateTime!=null">
+				and FLastUpdateTime >=to_date(#{lastUpdateTime},'YYYY-MM-dd hh24:mi:ss')
+			</if>
+			<if test="endUpdateTime!=null">
+				and FLastUpdateTime <![CDATA[ < ]]> to_date(#{endUpdateTime},'YYYY-MM-dd hh24:mi:ss')
+			</if>
+			<if test="createTime!=null">
+				and FCreateTime >=to_date(#{createTime},'YYYY-MM-dd hh24:mi:ss')
+			</if>
+		</where>
+		order by FCreateTime asc
+  	</select>	
+  	
+  	<select id="get" parameterType="string" resultMap="customerResult">
+		select * from T_BD_CUSTOMER where FID=#{id}
+	</select>
+
+
+	<select id="findBySaler"  parameterType="BaseSO" resultMap="customerResult" >
+			select
+			distinct(a.fid),
+            a.FCreateTime,
+			a.FParentID,
+			a.CFStaCustomerID,
+			a.cfagenttype,
+			a.FNumber,a.FNAME_L2,
+			a.FSimpleName,a.FProvince,a.FCityID,a.FRegionId,a.FLastUpdateTime,a.FUsedStatus,a.FCustomerKind,e.fid fpersonid
+			from T_BD_CUSTOMER  a left join  T_BD_CUSTOMERSALEINFO b on  a.fid=b.FCUSTOMERID
+			left join  T_BD_CustomerSaler d on b.fid=d.FCUSTOMERSALEID
+				left join t_pm_user e on e.fpersonid=d.fpersonid
+		<where>
+
+			<if test="ids != null">
+				 a.FID in <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+			</if>
+			<if test="saleOrgID != null">
+				and b.FSaleOrgID = #{saleOrgID}
+			</if>
+			<if test="id != null">
+				and a.FID = #{id}
+			</if>
+			<if test="customerKind != null">
+				and a.FCustomerKind = #{customerKind}
+			</if>
+			<if test="number != null">
+				and a.FNUMBER = #{number}
+			</if>
+			<if test = "q != null">
+				and (
+				a.FName_L2 like '%'||#{q}||'%'  or a.FNumber like '%'||#{q}||'%' or a.FSimpleName like '%'||#{q}||'%'
+				)
+			</if>
+			<if test="lastUpdateTime!=null">
+				and a.FLastUpdateTime >=to_date(#{lastUpdateTime},'YYYY-MM-dd hh24:mi:ss')
+			</if>
+		</where>
+        order by a.FCreateTime asc
+
+	</select>
+
+
+</mapper>

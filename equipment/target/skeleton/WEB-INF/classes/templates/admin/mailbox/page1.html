@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<title>新页面1</title>
+	<link href="/mail/css/mui.min.css" rel="stylesheet" type="text/css" />
+	<link href="/mail/css/app.css" rel="stylesheet" type="text/css" />
+	<link href="/mail/css/icons-extra.css" rel="stylesheet" type="text/css" />
+	<link href="/mail/css/vjpage.css" rel="stylesheet" type="text/css" />
+	<link href="/mail/css/config.css" rel="stylesheet" type="text/css" />
+</head>
+<body data-curpagename="page1" >
+<header id="page1_jPanel1" class="mui-bar mui-bar-nav">
+	<span id="page1_jIconfont1" class=""></span>
+	<h1 id="page1_jLabel1" class="mui-title">信件公开</h1>
+</header>
+<div id="page1_jPanel5" class="mui-content">
+	<ul id="page1_jList1" class="mui-table-view mui-table-view-chevron">
+		<li class="mui-table-view-cell" th:each="user:${user}">
+			<div id="page1_jLabel3" class="mui-pull-right" th:text="${user.sendTime}">2017.5.12</div>
+			<div id="page1_jLabel2">标题：<a th:text="${user.title}"></a></div>
+			<div id="page1_jLabel4"  th:text="${user.content}"></div>
+			<div  th:switch="${user.anonymous}" ><span class="page1_jLabel5 "th:case="'1'" th:text="${user.sendName}">不匿名</span>
+				　　<span th:case="0" class="page1_jLabel5 ">匿名</span></div>
+		</li>
+
+	</ul>
+</div>
+
+
+</body>
+
+<script type="text/javascript" src="/mail/js/jquery.min.js"></script>
+<script type="text/javascript" src="/mail/js/mui.min.js"></script>
+<script type="text/javascript" src="/mail/page1.js"></script>
+<script type="text/javascript">
+</script>
+</html>

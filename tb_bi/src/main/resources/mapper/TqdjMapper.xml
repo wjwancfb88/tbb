@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tbb.mapper.TqdjMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.tbb.entity.Tqdj">
+		<id column="C__TQDJID" property="cTqdjid" />
+		<result column="OWNINGUSER" property="owninguser" />
+		<result column="OWNINGBUSINESSUNIT" property="owningbusinessunit" />
+		<result column="MODIFIEDON" property="modifiedon" />
+		<result column="MODIFIEDBY" property="modifiedby" />
+		<result column="ISDELETED" property="isdeleted" />
+		<result column="CREATEDON" property="createdon" />
+		<result column="CREATEDBY" property="createdby" />
+		<result column="C__ZUIJINCHULISHIJIAN" property="cZuijinchulishijian" />
+		<result column="C__ZHUANGXIUJIEDUAN" property="cZhuangxiujieduan" />
+		<result column="C__ZHUANGTAI" property="cZhuangtai" />
+		<result column="C__YUYUEMENDIAN" property="cYuyuemendian" />
+		<result column="C__YUSUANFANWEI" property="cYusuanfanwei" />
+		<result column="C__XIAOQU" property="cXiaoqu" />
+		<result column="C__XGWLYY" property="cXgwlyy" />
+		<result column="C__XGHD" property="cXghd" />
+		<result column="C__TITLE" property="cTitle" />
+		<result column="C__TIANMAOID" property="cTianmaoid" />
+		<result column="C__STORENAME" property="cStorename" />
+		<result column="SHIFOUWEIJINGXIAOSHANGDINGDAN" property="shifouweijingxiaoshangdingdan" />
+		<result column="C__REMARKS" property="cRemarks" />
+		<result column="C__PHONE" property="cPhone" />
+		<result column="C__ORDERDATE" property="cOrderdate" />
+		<result column="C__MESSAGE" property="cMessage" />
+		<result column="C__MAIJIAHUIYUANMING" property="cMaijiahuiyuanming" />
+		<result column="C__LASTASSIGNON" property="cLastassignon" />
+		<result column="C__LAIYUAN" property="cLaiyuan" />
+		<result column="C__KEHUSUOZAICHENGSHI" property="cKehusuozaichengshi" />
+		<result column="C__KEHUDENGJI" property="cKehudengji" />
+		<result column="C__HUIFANGKEFUBEIZHU" property="cHuifangkefubeizhu" />
+		<result column="C__GENDANKEFUBEIZHU" property="cGendankefubeizhu" />
+		<result column="C__FUJIAN" property="cFujian" />
+		<result column="C__FENPEIZHUANGTAI" property="cFenpeizhuangtai" />
+		<result column="C__DINGZHIYIYUAN" property="cDingzhiyiyuan" />
+		<result column="C__DINGZHICHANPIN" property="cDingzhichanpin" />
+		<result column="C__DINGDANPANDUANZHUANGTAI" property="cDingdanpanduanzhuangtai" />
+		<result column="C__DINGDANHAO" property="cDingdanhao" />
+		<result column="C__CONSIGNEE" property="cConsignee" />
+		<result column="C__AMOUNT" property="cAmount" />
+		<result column="C__ADDRESS" property="cAddress" />
+		<result column="C__ACCOUNTID" property="cAccountid" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        OWNINGUSER, OWNINGBUSINESSUNIT, MODIFIEDON, MODIFIEDBY, ISDELETED, CREATEDON, CREATEDBY, C__ZUIJINCHULISHIJIAN, C__ZHUANGXIUJIEDUAN, C__ZHUANGTAI, C__YUYUEMENDIAN, C__YUSUANFANWEI, C__XIAOQU, C__XGWLYY, C__XGHD, C__TQDJID, C__TITLE, C__TIANMAOID, C__STORENAME, SHIFOUWEIJINGXIAOSHANGDINGDAN, C__REMARKS, C__PHONE, C__ORDERDATE, C__MESSAGE, C__MAIJIAHUIYUANMING, C__LASTASSIGNON, C__LAIYUAN, C__KEHUSUOZAICHENGSHI, C__KEHUDENGJI, C__HUIFANGKEFUBEIZHU, C__GENDANKEFUBEIZHU, C__FUJIAN, C__FENPEIZHUANGTAI, C__DINGZHIYIYUAN, C__DINGZHICHANPIN, C__DINGDANPANDUANZHUANGTAI, C__DINGDANHAO, C__CONSIGNEE, C__AMOUNT, C__ADDRESS, C__ACCOUNTID
+    </sql>
+
+	<delete id="deleteAll" >
+		delete from E__TQDJ
+	</delete>
+
+</mapper>

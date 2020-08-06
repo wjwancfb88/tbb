@@ -1,0 +1,833 @@
+2020-04-26 07:51:48 -Starting Tb_inspectionApplication on LAPTOP-5F6M06KD with PID 1043932 (D:\developEclipse\tb_inspection\target\classes started by lenovo in D:\developEclipse\tb_inspection)
+2020-04-26 07:51:48 -No active profile set, falling back to default profiles: default
+2020-04-26 07:51:48 -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1978d51d: startup date [Sun Apr 26 07:51:48 CST 2020]; root of context hierarchy
+2020-04-26 07:51:51 -Tomcat initialized with port(s): 8080 (http)
+2020-04-26 07:51:51 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-26 07:51:51 -Starting service [Tomcat]
+2020-04-26 07:51:51 -Starting Servlet Engine: Apache Tomcat/8.5.34
+2020-04-26 07:51:51 -Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-26 07:51:51 -APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-26 07:51:51 -APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-26 07:51:51 -OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-26 07:51:51 -Initializing Spring embedded WebApplicationContext
+2020-04-26 07:51:51 -Root WebApplicationContext: initialization completed in 3111 ms
+2020-04-26 07:51:52 -Servlet dispatcherServlet mapped to [/]
+2020-04-26 07:51:52 -Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-04-26 07:51:52 -Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-04-26 07:51:52 -Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-04-26 07:51:52 -Mapping filter: 'requestContextFilter' to: [/*]
+2020-04-26 07:51:52 -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 07:51:53 -Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1978d51d: startup date [Sun Apr 26 07:51:48 CST 2020]; root of context hierarchy
+2020-04-26 07:51:53 -Mapped "{[/dh_inspection/add]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.add(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 07:51:53 -Mapped "{[/dh_inspection/update]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.update(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 07:51:53 -Mapped "{[/dh_inspection/delete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.delete(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 07:51:53 -Mapped "{[/dh_inspection/select]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.select(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 07:51:53 -Mapped "{[/dh_inspection/batchUpdate]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchUpdate(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 07:51:53 -Mapped "{[/dh_inspection/batchAdd]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchAdd(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 07:51:53 -Mapped "{[/dh_inspection/exportExcel]}" onto public void tb_inspection.controller.Dh_inspectionController.exportExcel(tb_inspection.entity.Dh_inspectionEntity,javax.servlet.http.HttpServletResponse)
+2020-04-26 07:51:53 -Mapped "{[/dh_inspection/batchDelete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchDelete(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 07:51:53 -Mapped "{[/dh_inspection/likeSelect]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.likeSelect(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 07:51:53 -Mapped "{[/login/doLogOut]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogOut(javax.servlet.http.HttpSession)
+2020-04-26 07:51:53 -Mapped "{[/login/doLogin]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogin(tb_inspection.entity.User,javax.servlet.http.HttpSession)
+2020-04-26 07:51:53 -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-04-26 07:51:53 -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-04-26 07:51:53 -Mapped URL path [/dh_inspection/list] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 07:51:53 -Mapped URL path [/home] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 07:51:53 -Mapped URL path [/welcome] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 07:51:53 -Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 07:51:53 -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 07:51:53 -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 07:51:53 -Detected @ExceptionHandler methods in allExceptionHandler
+2020-04-26 07:51:53 -LiveReload server is running on port 35729
+2020-04-26 07:51:53 -Registering beans for JMX exposure on startup
+2020-04-26 07:51:53 -Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-04-26 07:51:53 -Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-04-26 07:51:53 -Starting ProtocolHandler ["http-nio-8080"]
+2020-04-26 07:51:53 -Using a shared selector for servlet write/read
+2020-04-26 07:51:53 -Tomcat started on port(s): 8080 (http) with context path '/tb_inspection'
+2020-04-26 07:51:54 -Started Tb_inspectionApplication in 5.748 seconds (JVM running for 8.453)
+2020-04-26 07:52:21 -Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-04-26 07:52:21 -FrameworkServlet 'dispatcherServlet': initialization started
+2020-04-26 07:52:22 -FrameworkServlet 'dispatcherServlet': initialization completed in 63 ms
+2020-04-26 07:52:25 -======= 开始执行：LoginController — doLogin ========
+2020-04-26 07:52:25 -======= 执行结束：LoginController — doLogin ========
+2020-04-26 07:52:31 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:52:31 -{dataSource-1} inited
+2020-04-26 07:52:31 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:52:31 -==> Parameters: 
+2020-04-26 07:52:31 -<==      Total: 1
+2020-04-26 07:52:31 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:52:31 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:52:31 -<==      Total: 2
+2020-04-26 07:52:31 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 07:57:00 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:57:00 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:57:00 -==> Parameters: 
+2020-04-26 07:57:00 -<==      Total: 1
+2020-04-26 07:57:00 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:57:00 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:57:00 -<==      Total: 2
+2020-04-26 07:57:00 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:01 -======= 开始执行：LoginController — doLogOut ========
+2020-04-26 07:58:01 -======= 执行结束：LoginController — doLogOut ========
+2020-04-26 07:58:03 -======= 开始执行：LoginController — doLogin ========
+2020-04-26 07:58:03 -======= 执行结束：LoginController — doLogin ========
+2020-04-26 07:58:06 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:06 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:58:06 -==> Parameters: 
+2020-04-26 07:58:06 -<==      Total: 1
+2020-04-26 07:58:06 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:58:06 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:58:06 -<==      Total: 2
+2020-04-26 07:58:06 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:23 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:23 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:58:23 -==> Parameters: 
+2020-04-26 07:58:23 -<==      Total: 1
+2020-04-26 07:58:23 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:58:23 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:58:23 -<==      Total: 2
+2020-04-26 07:58:23 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:25 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:26 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:58:26 -==> Parameters: 
+2020-04-26 07:58:26 -<==      Total: 1
+2020-04-26 07:58:26 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:58:26 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:58:26 -<==      Total: 2
+2020-04-26 07:58:26 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:27 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:27 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:58:27 -==> Parameters: 
+2020-04-26 07:58:27 -<==      Total: 1
+2020-04-26 07:58:27 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:58:27 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:58:27 -<==      Total: 2
+2020-04-26 07:58:27 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:28 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:28 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:58:28 -==> Parameters: 
+2020-04-26 07:58:28 -<==      Total: 1
+2020-04-26 07:58:28 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:58:28 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:58:28 -<==      Total: 2
+2020-04-26 07:58:28 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:28 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:28 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:58:28 -==> Parameters: 
+2020-04-26 07:58:28 -<==      Total: 1
+2020-04-26 07:58:28 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:58:29 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:58:29 -<==      Total: 2
+2020-04-26 07:58:29 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:29 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:29 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:58:29 -==> Parameters: 
+2020-04-26 07:58:29 -<==      Total: 1
+2020-04-26 07:58:29 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:58:29 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:58:29 -<==      Total: 2
+2020-04-26 07:58:29 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:30 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:30 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:58:30 -==> Parameters: 
+2020-04-26 07:58:30 -<==      Total: 1
+2020-04-26 07:58:30 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:58:30 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:58:30 -<==      Total: 2
+2020-04-26 07:58:30 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:30 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:30 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:58:30 -==> Parameters: 
+2020-04-26 07:58:30 -<==      Total: 1
+2020-04-26 07:58:30 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:58:30 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:58:30 -<==      Total: 2
+2020-04-26 07:58:30 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:31 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:31 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:58:31 -==> Parameters: 
+2020-04-26 07:58:31 -<==      Total: 1
+2020-04-26 07:58:31 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:58:31 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:58:31 -<==      Total: 2
+2020-04-26 07:58:31 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:32 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:32 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:58:32 -==> Parameters: 
+2020-04-26 07:58:32 -<==      Total: 1
+2020-04-26 07:58:32 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:58:32 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:58:32 -<==      Total: 2
+2020-04-26 07:58:32 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:32 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:32 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:58:32 -==> Parameters: 
+2020-04-26 07:58:32 -<==      Total: 1
+2020-04-26 07:58:32 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:58:32 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:58:32 -<==      Total: 2
+2020-04-26 07:58:32 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:33 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:33 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:58:33 -==> Parameters: 
+2020-04-26 07:58:33 -<==      Total: 1
+2020-04-26 07:58:33 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:58:33 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:58:33 -<==      Total: 2
+2020-04-26 07:58:33 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:34 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:34 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:58:34 -==> Parameters: 
+2020-04-26 07:58:34 -<==      Total: 1
+2020-04-26 07:58:34 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:58:34 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:58:34 -<==      Total: 2
+2020-04-26 07:58:34 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:34 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 07:58:34 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 07:58:34 -==> Parameters: 
+2020-04-26 07:58:34 -<==      Total: 1
+2020-04-26 07:58:34 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 07:58:34 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 07:58:34 -<==      Total: 2
+2020-04-26 07:58:34 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 08:04:51 -Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1978d51d: startup date [Sun Apr 26 07:51:48 CST 2020]; root of context hierarchy
+2020-04-26 08:04:51 -Unregistering JMX-exposed beans on shutdown
+2020-04-26 08:04:51 -Unregistering JMX-exposed beans
+2020-04-26 08:04:51 -{dataSource-1} closed
+2020-04-26 08:04:58 -Starting Tb_inspectionApplication on LAPTOP-5F6M06KD with PID 1043932 (D:\developEclipse\tb_inspection\target\classes started by lenovo in D:\developEclipse\tb_inspection)
+2020-04-26 08:04:58 -No active profile set, falling back to default profiles: default
+2020-04-26 08:04:58 -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@62498619: startup date [Sun Apr 26 08:04:58 CST 2020]; root of context hierarchy
+2020-04-26 08:04:59 -No MyBatis mapper was found in '[tb_inspection]' package. Please check your configuration.
+2020-04-26 08:04:59 -Tomcat initialized with port(s): 8080 (http)
+2020-04-26 08:04:59 -Starting service [Tomcat]
+2020-04-26 08:04:59 -Starting Servlet Engine: Apache Tomcat/8.5.34
+2020-04-26 08:04:59 -Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-26 08:04:59 -APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-26 08:04:59 -APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-26 08:04:59 -OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-26 08:04:59 -Initializing Spring embedded WebApplicationContext
+2020-04-26 08:04:59 -Root WebApplicationContext: initialization completed in 1117 ms
+2020-04-26 08:04:59 -Servlet dispatcherServlet mapped to [/]
+2020-04-26 08:04:59 -Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-04-26 08:04:59 -Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-04-26 08:04:59 -Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-04-26 08:04:59 -Mapping filter: 'requestContextFilter' to: [/*]
+2020-04-26 08:04:59 -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:04:59 -Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@62498619: startup date [Sun Apr 26 08:04:58 CST 2020]; root of context hierarchy
+2020-04-26 08:04:59 -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-04-26 08:04:59 -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:04:59 -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:04:59 -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:04:59 -LiveReload server is running on port 35729
+2020-04-26 08:04:59 -Registering beans for JMX exposure on startup
+2020-04-26 08:04:59 -Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-04-26 08:04:59 -Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-04-26 08:04:59 -Tomcat started on port(s): 8080 (http) with context path '/tb_inspection'
+2020-04-26 08:04:59 -Started Tb_inspectionApplication in 1.599 seconds (JVM running for 794.301)
+2020-04-26 08:04:59 -Condition evaluation unchanged
+2020-04-26 08:05:01 -Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@62498619: startup date [Sun Apr 26 08:04:58 CST 2020]; root of context hierarchy
+2020-04-26 08:05:01 -Unregistering JMX-exposed beans on shutdown
+2020-04-26 08:05:01 -Unregistering JMX-exposed beans
+2020-04-26 08:05:02 -Starting Tb_inspectionApplication on LAPTOP-5F6M06KD with PID 1043932 (D:\developEclipse\tb_inspection\target\classes started by lenovo in D:\developEclipse\tb_inspection)
+2020-04-26 08:05:02 -No active profile set, falling back to default profiles: default
+2020-04-26 08:05:02 -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@47bf0ba0: startup date [Sun Apr 26 08:05:02 CST 2020]; root of context hierarchy
+2020-04-26 08:05:03 -Neither @ContextConfiguration nor @ContextHierarchy found for test class [tb_inspection.Tb_inspectionApplicationTests], using SpringBootContextLoader
+2020-04-26 08:05:03 -Could not detect default resource locations for test class [tb_inspection.Tb_inspectionApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-04-26 08:05:03 -Could not detect default configuration classes for test class [tb_inspection.Tb_inspectionApplicationTests]: Tb_inspectionApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-04-26 08:05:03 -Found @SpringBootConfiguration tb_inspection.Tb_inspectionApplication for test class tb_inspection.Tb_inspectionApplicationTests
+2020-04-26 08:05:04 -Tomcat initialized with port(s): 8080 (http)
+2020-04-26 08:05:04 -Starting service [Tomcat]
+2020-04-26 08:05:04 -Starting Servlet Engine: Apache Tomcat/8.5.34
+2020-04-26 08:05:04 -Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-26 08:05:04 -APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-26 08:05:04 -APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-26 08:05:04 -OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-26 08:05:04 -Initializing Spring embedded WebApplicationContext
+2020-04-26 08:05:04 -Root WebApplicationContext: initialization completed in 1229 ms
+2020-04-26 08:05:04 -Servlet dispatcherServlet mapped to [/]
+2020-04-26 08:05:04 -Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-04-26 08:05:04 -Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-04-26 08:05:04 -Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-04-26 08:05:04 -Mapping filter: 'requestContextFilter' to: [/*]
+2020-04-26 08:05:04 -Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2020-04-26 08:05:04 -Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7205765b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@47987356, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@22ef9844, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6283d8b8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3b6ddd1d, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3f6b0be5, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@611889f4, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1da2cb77, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@48f278eb, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2f217633, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@a530d0a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1a18644]
+2020-04-26 08:05:04 -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:05:04 -Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@47bf0ba0: startup date [Sun Apr 26 08:05:02 CST 2020]; root of context hierarchy
+2020-04-26 08:05:04 -Mapped "{[/dh_inspection/add]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.add(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:05:04 -Mapped "{[/dh_inspection/update]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.update(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:05:04 -Mapped "{[/dh_inspection/delete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.delete(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:05:04 -Mapped "{[/dh_inspection/select]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.select(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:05:04 -Mapped "{[/dh_inspection/batchUpdate]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchUpdate(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:05:04 -Mapped "{[/dh_inspection/batchAdd]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchAdd(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:05:04 -Mapped "{[/dh_inspection/exportExcel]}" onto public void tb_inspection.controller.Dh_inspectionController.exportExcel(tb_inspection.entity.Dh_inspectionEntity,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:05:04 -Mapped "{[/dh_inspection/batchDelete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchDelete(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:05:04 -Mapped "{[/dh_inspection/likeSelect]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.likeSelect(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:05:04 -Mapped "{[/login/doLogOut]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogOut(javax.servlet.http.HttpSession)
+2020-04-26 08:05:04 -Mapped "{[/login/doLogin]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogin(tb_inspection.entity.User,javax.servlet.http.HttpSession)
+2020-04-26 08:05:04 -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-04-26 08:05:04 -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:05:04 -Mapped URL path [/dh_inspection/list] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:05:04 -Mapped URL path [/home] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:05:04 -Mapped URL path [/welcome] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:05:04 -Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:05:04 -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:05:04 -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:05:04 -Detected @ExceptionHandler methods in allExceptionHandler
+2020-04-26 08:05:04 -Starting Tb_inspectionApplicationTests on LAPTOP-5F6M06KD with PID 1079752 (started by lenovo in D:\developEclipse\tb_inspection)
+2020-04-26 08:05:04 -No active profile set, falling back to default profiles: default
+2020-04-26 08:05:04 -Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3b74ac8: startup date [Sun Apr 26 08:05:04 CST 2020]; root of context hierarchy
+2020-04-26 08:05:04 -LiveReload server is running on port 35729
+2020-04-26 08:05:04 -Registering beans for JMX exposure on startup
+2020-04-26 08:05:04 -Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-04-26 08:05:05 -Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-04-26 08:05:05 -Tomcat started on port(s): 8080 (http) with context path '/tb_inspection'
+2020-04-26 08:05:05 -Started Tb_inspectionApplication in 2.406 seconds (JVM running for 799.656)
+2020-04-26 08:05:05 -Condition evaluation unchanged
+2020-04-26 08:05:08 -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:05:09 -Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@3b74ac8: startup date [Sun Apr 26 08:05:04 CST 2020]; root of context hierarchy
+2020-04-26 08:05:09 -Mapped "{[/dh_inspection/add]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.add(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:05:09 -Mapped "{[/dh_inspection/update]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.update(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:05:09 -Mapped "{[/dh_inspection/delete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.delete(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:05:09 -Mapped "{[/dh_inspection/batchUpdate]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchUpdate(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:05:09 -Mapped "{[/dh_inspection/select]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.select(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:05:09 -Mapped "{[/dh_inspection/batchAdd]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchAdd(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:05:09 -Mapped "{[/dh_inspection/batchDelete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchDelete(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:05:09 -Mapped "{[/dh_inspection/likeSelect]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.likeSelect(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:05:09 -Mapped "{[/dh_inspection/exportExcel]}" onto public void tb_inspection.controller.Dh_inspectionController.exportExcel(tb_inspection.entity.Dh_inspectionEntity,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:05:09 -Mapped "{[/login/doLogin]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogin(tb_inspection.entity.User,javax.servlet.http.HttpSession)
+2020-04-26 08:05:09 -Mapped "{[/login/doLogOut]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogOut(javax.servlet.http.HttpSession)
+2020-04-26 08:05:09 -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-04-26 08:05:09 -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:05:09 -Mapped URL path [/dh_inspection/list] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:05:09 -Mapped URL path [/home] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:05:09 -Mapped URL path [/welcome] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:05:09 -Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:05:09 -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:05:09 -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:05:09 -Detected @ExceptionHandler methods in allExceptionHandler
+2020-04-26 08:05:10 -Started Tb_inspectionApplicationTests in 6.405 seconds (JVM running for 8.359)
+2020-04-26 08:05:11 -Closing org.springframework.web.context.support.GenericWebApplicationContext@3b74ac8: startup date [Sun Apr 26 08:05:04 CST 2020]; root of context hierarchy
+2020-04-26 08:06:38 -Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@47bf0ba0: startup date [Sun Apr 26 08:05:02 CST 2020]; root of context hierarchy
+2020-04-26 08:06:38 -Unregistering JMX-exposed beans on shutdown
+2020-04-26 08:06:38 -Unregistering JMX-exposed beans
+2020-04-26 08:13:54 -Starting Tb_inspectionApplication on LAPTOP-5F6M06KD with PID 1087352 (D:\developEclipse\tb_inspection\target\classes started by lenovo in D:\developEclipse\tb_inspection)
+2020-04-26 08:13:54 -No active profile set, falling back to default profiles: default
+2020-04-26 08:13:55 -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7af2bc7a: startup date [Sun Apr 26 08:13:55 CST 2020]; root of context hierarchy
+2020-04-26 08:13:57 -Tomcat initialized with port(s): 8080 (http)
+2020-04-26 08:13:57 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-26 08:13:57 -Starting service [Tomcat]
+2020-04-26 08:13:57 -Starting Servlet Engine: Apache Tomcat/8.5.34
+2020-04-26 08:13:57 -Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-26 08:13:57 -APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-26 08:13:57 -APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-26 08:13:57 -OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-26 08:13:57 -Initializing Spring embedded WebApplicationContext
+2020-04-26 08:13:57 -Root WebApplicationContext: initialization completed in 2294 ms
+2020-04-26 08:13:57 -Servlet dispatcherServlet mapped to [/]
+2020-04-26 08:13:57 -Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-04-26 08:13:57 -Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-04-26 08:13:57 -Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-04-26 08:13:57 -Mapping filter: 'requestContextFilter' to: [/*]
+2020-04-26 08:13:58 -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:13:58 -Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7af2bc7a: startup date [Sun Apr 26 08:13:55 CST 2020]; root of context hierarchy
+2020-04-26 08:13:58 -Mapped "{[/dh_inspection/add]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.add(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:13:58 -Mapped "{[/dh_inspection/update]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.update(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:13:58 -Mapped "{[/dh_inspection/delete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.delete(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:13:58 -Mapped "{[/dh_inspection/select]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.select(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:13:58 -Mapped "{[/dh_inspection/batchUpdate]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchUpdate(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:13:58 -Mapped "{[/dh_inspection/exportExcel]}" onto public void tb_inspection.controller.Dh_inspectionController.exportExcel(tb_inspection.entity.Dh_inspectionEntity,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:13:58 -Mapped "{[/dh_inspection/likeSelect]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.likeSelect(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:13:58 -Mapped "{[/dh_inspection/batchDelete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchDelete(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:13:58 -Mapped "{[/dh_inspection/batchAdd]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchAdd(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:13:58 -Mapped "{[/login/doLogOut]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogOut(javax.servlet.http.HttpSession)
+2020-04-26 08:13:58 -Mapped "{[/login/doLogin]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogin(tb_inspection.entity.User,javax.servlet.http.HttpSession)
+2020-04-26 08:13:58 -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-04-26 08:13:58 -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:13:58 -Mapped URL path [/dh_inspection/list] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:13:58 -Mapped URL path [/home] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:13:58 -Mapped URL path [/welcome] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:13:58 -Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:13:58 -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:13:58 -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:13:58 -Detected @ExceptionHandler methods in allExceptionHandler
+2020-04-26 08:13:59 -LiveReload server is running on port 35729
+2020-04-26 08:13:59 -Registering beans for JMX exposure on startup
+2020-04-26 08:13:59 -Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-04-26 08:13:59 -Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-04-26 08:13:59 -Starting ProtocolHandler ["http-nio-8080"]
+2020-04-26 08:13:59 -Using a shared selector for servlet write/read
+2020-04-26 08:13:59 -Tomcat started on port(s): 8080 (http) with context path '/tb_inspection'
+2020-04-26 08:13:59 -Started Tb_inspectionApplication in 5.109 seconds (JVM running for 7.349)
+2020-04-26 08:15:56 -Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-04-26 08:15:56 -FrameworkServlet 'dispatcherServlet': initialization started
+2020-04-26 08:15:56 -FrameworkServlet 'dispatcherServlet': initialization completed in 51 ms
+2020-04-26 08:15:57 -======= 开始执行：LoginController — doLogin ========
+2020-04-26 08:15:57 -======= 执行结束：LoginController — doLogin ========
+2020-04-26 08:16:00 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 08:16:00 -{dataSource-1} inited
+2020-04-26 08:16:00 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 08:16:00 -==> Parameters: 
+2020-04-26 08:16:00 -<==      Total: 1
+2020-04-26 08:16:00 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 08:16:00 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 08:16:00 -<==      Total: 2
+2020-04-26 08:16:00 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 08:18:29 -Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7af2bc7a: startup date [Sun Apr 26 08:13:55 CST 2020]; root of context hierarchy
+2020-04-26 08:18:29 -Unregistering JMX-exposed beans on shutdown
+2020-04-26 08:18:29 -Unregistering JMX-exposed beans
+2020-04-26 08:18:29 -{dataSource-1} closed
+2020-04-26 08:18:29 -Neither @ContextConfiguration nor @ContextHierarchy found for test class [tb_inspection.Tb_inspectionApplicationTests], using SpringBootContextLoader
+2020-04-26 08:18:29 -Could not detect default resource locations for test class [tb_inspection.Tb_inspectionApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-04-26 08:18:29 -Could not detect default configuration classes for test class [tb_inspection.Tb_inspectionApplicationTests]: Tb_inspectionApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-04-26 08:18:30 -Found @SpringBootConfiguration tb_inspection.Tb_inspectionApplication for test class tb_inspection.Tb_inspectionApplicationTests
+2020-04-26 08:18:30 -Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2020-04-26 08:18:30 -Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@20ccf40b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2fb3536e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@169e6180, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@35aea049, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7205765b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@47987356, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@22ef9844, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6283d8b8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3b6ddd1d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3f6b0be5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@611889f4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1da2cb77]
+2020-04-26 08:18:30 -Starting Tb_inspectionApplicationTests on LAPTOP-5F6M06KD with PID 1093932 (started by lenovo in D:\developEclipse\tb_inspection)
+2020-04-26 08:18:30 -No active profile set, falling back to default profiles: default
+2020-04-26 08:18:31 -Refreshing org.springframework.web.context.support.GenericWebApplicationContext@4032d386: startup date [Sun Apr 26 08:18:31 CST 2020]; root of context hierarchy
+2020-04-26 08:18:31 -Starting Tb_inspectionApplication on LAPTOP-5F6M06KD with PID 1087352 (D:\developEclipse\tb_inspection\target\classes started by lenovo in D:\developEclipse\tb_inspection)
+2020-04-26 08:18:31 -No active profile set, falling back to default profiles: default
+2020-04-26 08:18:31 -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5003f6c: startup date [Sun Apr 26 08:18:31 CST 2020]; root of context hierarchy
+2020-04-26 08:18:32 -Tomcat initialized with port(s): 8080 (http)
+2020-04-26 08:18:32 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-04-26 08:18:32 -Starting service [Tomcat]
+2020-04-26 08:18:32 -Starting Servlet Engine: Apache Tomcat/8.5.34
+2020-04-26 08:18:32 -Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-26 08:18:32 -APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-26 08:18:32 -APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-26 08:18:32 -OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-26 08:18:32 -Initializing Spring embedded WebApplicationContext
+2020-04-26 08:18:32 -Root WebApplicationContext: initialization completed in 1531 ms
+2020-04-26 08:18:32 -Servlet dispatcherServlet mapped to [/]
+2020-04-26 08:18:32 -Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-04-26 08:18:32 -Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-04-26 08:18:32 -Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-04-26 08:18:32 -Mapping filter: 'requestContextFilter' to: [/*]
+2020-04-26 08:18:32 -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:18:33 -Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5003f6c: startup date [Sun Apr 26 08:18:31 CST 2020]; root of context hierarchy
+2020-04-26 08:18:33 -Mapped "{[/dh_inspection/add]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.add(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:18:33 -Mapped "{[/dh_inspection/update]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.update(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:18:33 -Mapped "{[/dh_inspection/delete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.delete(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:18:33 -Mapped "{[/dh_inspection/select]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.select(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:18:33 -Mapped "{[/dh_inspection/batchUpdate]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchUpdate(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:18:33 -Mapped "{[/dh_inspection/exportExcel]}" onto public void tb_inspection.controller.Dh_inspectionController.exportExcel(tb_inspection.entity.Dh_inspectionEntity,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:18:33 -Mapped "{[/dh_inspection/likeSelect]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.likeSelect(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:18:33 -Mapped "{[/dh_inspection/batchDelete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchDelete(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:18:33 -Mapped "{[/dh_inspection/batchAdd]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchAdd(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:18:33 -Mapped "{[/login/doLogOut]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogOut(javax.servlet.http.HttpSession)
+2020-04-26 08:18:33 -Mapped "{[/login/doLogin]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogin(tb_inspection.entity.User,javax.servlet.http.HttpSession)
+2020-04-26 08:18:33 -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-04-26 08:18:33 -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:18:33 -Mapped URL path [/dh_inspection/list] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:18:33 -Mapped URL path [/home] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:18:33 -Mapped URL path [/welcome] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:18:33 -Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:18:33 -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:18:33 -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:18:33 -Detected @ExceptionHandler methods in allExceptionHandler
+2020-04-26 08:18:33 -LiveReload server is running on port 35729
+2020-04-26 08:18:33 -Registering beans for JMX exposure on startup
+2020-04-26 08:18:33 -Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-04-26 08:18:33 -Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-04-26 08:18:33 -Starting ProtocolHandler ["http-nio-8080"]
+2020-04-26 08:18:33 -Using a shared selector for servlet write/read
+2020-04-26 08:18:33 -Tomcat started on port(s): 8080 (http) with context path '/tb_inspection'
+2020-04-26 08:18:33 -Started Tb_inspectionApplication in 2.703 seconds (JVM running for 281.528)
+2020-04-26 08:18:33 -Condition evaluation unchanged
+2020-04-26 08:18:34 -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:18:35 -Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@4032d386: startup date [Sun Apr 26 08:18:31 CST 2020]; root of context hierarchy
+2020-04-26 08:18:35 -Mapped "{[/dh_inspection/add]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.add(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:18:35 -Mapped "{[/dh_inspection/update]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.update(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:18:35 -Mapped "{[/dh_inspection/delete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.delete(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:18:35 -Mapped "{[/dh_inspection/batchUpdate]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchUpdate(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:18:35 -Mapped "{[/dh_inspection/exportExcel]}" onto public void tb_inspection.controller.Dh_inspectionController.exportExcel(tb_inspection.entity.Dh_inspectionEntity,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:18:35 -Mapped "{[/dh_inspection/batchAdd]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchAdd(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:18:35 -Mapped "{[/dh_inspection/likeSelect]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.likeSelect(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:18:35 -Mapped "{[/dh_inspection/batchDelete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchDelete(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:18:35 -Mapped "{[/dh_inspection/select]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.select(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:18:35 -Mapped "{[/login/doLogOut]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogOut(javax.servlet.http.HttpSession)
+2020-04-26 08:18:35 -Mapped "{[/login/doLogin]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogin(tb_inspection.entity.User,javax.servlet.http.HttpSession)
+2020-04-26 08:18:35 -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-04-26 08:18:35 -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:18:35 -Mapped URL path [/dh_inspection/list] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:18:35 -Mapped URL path [/home] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:18:35 -Mapped URL path [/welcome] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:18:35 -Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:18:35 -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:18:35 -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:18:35 -Detected @ExceptionHandler methods in allExceptionHandler
+2020-04-26 08:18:36 -Started Tb_inspectionApplicationTests in 6.021 seconds (JVM running for 7.392)
+2020-04-26 08:18:36 -Closing org.springframework.web.context.support.GenericWebApplicationContext@4032d386: startup date [Sun Apr 26 08:18:31 CST 2020]; root of context hierarchy
+2020-04-26 08:21:10 -Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5003f6c: startup date [Sun Apr 26 08:18:31 CST 2020]; root of context hierarchy
+2020-04-26 08:21:10 -Unregistering JMX-exposed beans on shutdown
+2020-04-26 08:21:10 -Unregistering JMX-exposed beans
+2020-04-26 08:27:37 -Neither @ContextConfiguration nor @ContextHierarchy found for test class [tb_inspection.Tb_inspectionApplicationTests], using SpringBootContextLoader
+2020-04-26 08:27:37 -Could not detect default resource locations for test class [tb_inspection.Tb_inspectionApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-04-26 08:27:37 -Could not detect default configuration classes for test class [tb_inspection.Tb_inspectionApplicationTests]: Tb_inspectionApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-04-26 08:27:37 -Found @SpringBootConfiguration tb_inspection.Tb_inspectionApplication for test class tb_inspection.Tb_inspectionApplicationTests
+2020-04-26 08:27:37 -Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2020-04-26 08:27:37 -Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@20ccf40b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2fb3536e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@169e6180, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@35aea049, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7205765b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@47987356, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@22ef9844, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6283d8b8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3b6ddd1d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3f6b0be5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@611889f4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1da2cb77]
+2020-04-26 08:27:38 -Starting Tb_inspectionApplicationTests on LAPTOP-5F6M06KD with PID 1091288 (started by lenovo in D:\developEclipse\tb_inspection)
+2020-04-26 08:27:38 -No active profile set, falling back to default profiles: default
+2020-04-26 08:27:38 -Refreshing org.springframework.web.context.support.GenericWebApplicationContext@934b6cb: startup date [Sun Apr 26 08:27:38 CST 2020]; root of context hierarchy
+2020-04-26 08:27:41 -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:27:42 -Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@934b6cb: startup date [Sun Apr 26 08:27:38 CST 2020]; root of context hierarchy
+2020-04-26 08:27:42 -Mapped "{[/dh_inspection/add]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.add(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:27:42 -Mapped "{[/dh_inspection/update]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.update(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:27:42 -Mapped "{[/dh_inspection/delete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.delete(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:27:42 -Mapped "{[/dh_inspection/select]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.select(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:27:42 -Mapped "{[/dh_inspection/likeSelect]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.likeSelect(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:27:42 -Mapped "{[/dh_inspection/batchAdd]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchAdd(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:27:42 -Mapped "{[/dh_inspection/batchDelete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchDelete(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:27:42 -Mapped "{[/dh_inspection/batchUpdate]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchUpdate(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:27:42 -Mapped "{[/dh_inspection/exportExcel]}" onto public void tb_inspection.controller.Dh_inspectionController.exportExcel(tb_inspection.entity.Dh_inspectionEntity,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:27:42 -Mapped "{[/login/doLogOut]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogOut(javax.servlet.http.HttpSession)
+2020-04-26 08:27:42 -Mapped "{[/login/doLogin]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogin(tb_inspection.entity.User,javax.servlet.http.HttpSession)
+2020-04-26 08:27:42 -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-04-26 08:27:42 -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:27:42 -Mapped URL path [/dh_inspection/list] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:27:42 -Mapped URL path [/home] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:27:42 -Mapped URL path [/welcome] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:27:42 -Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:27:42 -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:27:42 -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:27:42 -Detected @ExceptionHandler methods in allExceptionHandler
+2020-04-26 08:27:43 -Started Tb_inspectionApplicationTests in 6.138 seconds (JVM running for 7.491)
+2020-04-26 08:27:43 -Closing org.springframework.web.context.support.GenericWebApplicationContext@934b6cb: startup date [Sun Apr 26 08:27:38 CST 2020]; root of context hierarchy
+2020-04-26 08:33:23 -Neither @ContextConfiguration nor @ContextHierarchy found for test class [tb_inspection.Tb_inspectionApplicationTests], using SpringBootContextLoader
+2020-04-26 08:33:23 -Could not detect default resource locations for test class [tb_inspection.Tb_inspectionApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-04-26 08:33:23 -Could not detect default configuration classes for test class [tb_inspection.Tb_inspectionApplicationTests]: Tb_inspectionApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-04-26 08:33:23 -Found @SpringBootConfiguration tb_inspection.Tb_inspectionApplication for test class tb_inspection.Tb_inspectionApplicationTests
+2020-04-26 08:33:24 -Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2020-04-26 08:33:24 -Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@20ccf40b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2fb3536e, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@169e6180, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@35aea049, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7205765b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@47987356, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@22ef9844, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6283d8b8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3b6ddd1d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@3f6b0be5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@611889f4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@1da2cb77]
+2020-04-26 08:33:24 -Starting Tb_inspectionApplicationTests on LAPTOP-5F6M06KD with PID 1110844 (started by lenovo in D:\developEclipse\tb_inspection)
+2020-04-26 08:33:24 -No active profile set, falling back to default profiles: default
+2020-04-26 08:33:24 -Refreshing org.springframework.web.context.support.GenericWebApplicationContext@3b74ac8: startup date [Sun Apr 26 08:33:24 CST 2020]; root of context hierarchy
+2020-04-26 08:33:28 -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:33:28 -Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@3b74ac8: startup date [Sun Apr 26 08:33:24 CST 2020]; root of context hierarchy
+2020-04-26 08:33:28 -Mapped "{[/dh_inspection/add]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.add(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:33:28 -Mapped "{[/dh_inspection/update]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.update(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:33:28 -Mapped "{[/dh_inspection/delete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.delete(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:33:28 -Mapped "{[/dh_inspection/batchUpdate]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchUpdate(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:33:28 -Mapped "{[/dh_inspection/select]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.select(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:33:28 -Mapped "{[/dh_inspection/likeSelect]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.likeSelect(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:33:28 -Mapped "{[/dh_inspection/batchDelete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchDelete(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:33:28 -Mapped "{[/dh_inspection/exportExcel]}" onto public void tb_inspection.controller.Dh_inspectionController.exportExcel(tb_inspection.entity.Dh_inspectionEntity,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:33:28 -Mapped "{[/dh_inspection/batchAdd]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchAdd(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:33:28 -Mapped "{[/login/doLogin]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogin(tb_inspection.entity.User,javax.servlet.http.HttpSession)
+2020-04-26 08:33:28 -Mapped "{[/login/doLogOut]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogOut(javax.servlet.http.HttpSession)
+2020-04-26 08:33:28 -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-04-26 08:33:28 -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:33:28 -Mapped URL path [/dh_inspection/list] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:33:28 -Mapped URL path [/home] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:33:28 -Mapped URL path [/welcome] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:33:29 -Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:33:29 -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:33:29 -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:33:29 -Detected @ExceptionHandler methods in allExceptionHandler
+2020-04-26 08:33:29 -Started Tb_inspectionApplicationTests in 5.617 seconds (JVM running for 6.848)
+2020-04-26 08:33:30 -Closing org.springframework.web.context.support.GenericWebApplicationContext@3b74ac8: startup date [Sun Apr 26 08:33:24 CST 2020]; root of context hierarchy
+2020-04-26 08:52:09 -Starting Tb_inspectionApplication on LAPTOP-5F6M06KD with PID 1113112 (D:\developEclipse\tb_inspection\target\classes started by lenovo in D:\developEclipse\tb_inspection)
+2020-04-26 08:52:09 -No active profile set, falling back to default profiles: default
+2020-04-26 08:52:09 -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2201ad1c: startup date [Sun Apr 26 08:52:09 CST 2020]; root of context hierarchy
+2020-04-26 08:52:12 -Tomcat initialized with port(s): 8866 (http)
+2020-04-26 08:52:12 -Initializing ProtocolHandler ["http-nio-0.0.0.0-8866"]
+2020-04-26 08:52:12 -Starting service [Tomcat]
+2020-04-26 08:52:12 -Starting Servlet Engine: Apache Tomcat/8.5.34
+2020-04-26 08:52:12 -Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-26 08:52:12 -APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-26 08:52:12 -APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-26 08:52:12 -OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-26 08:52:12 -Initializing Spring embedded WebApplicationContext
+2020-04-26 08:52:12 -Root WebApplicationContext: initialization completed in 2615 ms
+2020-04-26 08:52:12 -Servlet dispatcherServlet mapped to [/]
+2020-04-26 08:52:12 -Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-04-26 08:52:12 -Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-04-26 08:52:12 -Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-04-26 08:52:12 -Mapping filter: 'requestContextFilter' to: [/*]
+2020-04-26 08:52:13 -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:52:13 -Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2201ad1c: startup date [Sun Apr 26 08:52:09 CST 2020]; root of context hierarchy
+2020-04-26 08:52:13 -Mapped "{[/dh_inspection/add]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.add(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:52:13 -Mapped "{[/dh_inspection/update]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.update(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:52:13 -Mapped "{[/dh_inspection/delete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.delete(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:52:13 -Mapped "{[/dh_inspection/select]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.select(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:52:13 -Mapped "{[/dh_inspection/batchUpdate]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchUpdate(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:52:13 -Mapped "{[/dh_inspection/likeSelect]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.likeSelect(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 08:52:13 -Mapped "{[/dh_inspection/batchAdd]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchAdd(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:52:13 -Mapped "{[/dh_inspection/exportExcel]}" onto public void tb_inspection.controller.Dh_inspectionController.exportExcel(tb_inspection.entity.Dh_inspectionEntity,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:52:13 -Mapped "{[/dh_inspection/batchDelete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchDelete(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 08:52:13 -Mapped "{[/login/doLogin]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogin(tb_inspection.entity.User,javax.servlet.http.HttpSession)
+2020-04-26 08:52:13 -Mapped "{[/login/doLogOut]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogOut(javax.servlet.http.HttpSession)
+2020-04-26 08:52:13 -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-04-26 08:52:13 -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-04-26 08:52:13 -Mapped URL path [/dh_inspection/list] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:52:13 -Mapped URL path [/home] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:52:13 -Mapped URL path [/welcome] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:52:13 -Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 08:52:13 -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:52:13 -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 08:52:13 -Detected @ExceptionHandler methods in allExceptionHandler
+2020-04-26 08:52:14 -LiveReload server is running on port 35729
+2020-04-26 08:52:14 -Registering beans for JMX exposure on startup
+2020-04-26 08:52:14 -Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-04-26 08:52:14 -Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-04-26 08:52:14 -Starting ProtocolHandler ["http-nio-0.0.0.0-8866"]
+2020-04-26 08:52:14 -Using a shared selector for servlet write/read
+2020-04-26 08:52:14 -Tomcat started on port(s): 8866 (http) with context path '/tb_inspection'
+2020-04-26 08:52:14 -Started Tb_inspectionApplication in 5.001 seconds (JVM running for 7.431)
+2020-04-26 09:52:00 -Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@2201ad1c: startup date [Sun Apr 26 08:52:09 CST 2020]; root of context hierarchy
+2020-04-26 09:52:00 -Unregistering JMX-exposed beans on shutdown
+2020-04-26 09:52:00 -Unregistering JMX-exposed beans
+2020-04-26 13:15:40 -Starting Tb_inspectionApplication on LAPTOP-5F6M06KD with PID 1151460 (D:\developEclipse\tb_inspection\target\classes started by lenovo in D:\developEclipse\tb_inspection)
+2020-04-26 13:15:40 -No active profile set, falling back to default profiles: default
+2020-04-26 13:15:40 -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6f385260: startup date [Sun Apr 26 13:15:40 CST 2020]; root of context hierarchy
+2020-04-26 13:15:44 -Tomcat initialized with port(s): 8866 (http)
+2020-04-26 13:15:44 -Initializing ProtocolHandler ["http-nio-0.0.0.0-8866"]
+2020-04-26 13:15:44 -Starting service [Tomcat]
+2020-04-26 13:15:44 -Starting Servlet Engine: Apache Tomcat/8.5.34
+2020-04-26 13:15:44 -Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-26 13:15:44 -APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-26 13:15:44 -APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-26 13:15:44 -OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-26 13:15:44 -Initializing Spring embedded WebApplicationContext
+2020-04-26 13:15:44 -Root WebApplicationContext: initialization completed in 4792 ms
+2020-04-26 13:15:45 -Servlet dispatcherServlet mapped to [/]
+2020-04-26 13:15:45 -Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-04-26 13:15:45 -Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-04-26 13:15:45 -Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-04-26 13:15:45 -Mapping filter: 'requestContextFilter' to: [/*]
+2020-04-26 13:15:45 -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 13:15:46 -Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6f385260: startup date [Sun Apr 26 13:15:40 CST 2020]; root of context hierarchy
+2020-04-26 13:15:46 -Mapped "{[/dh_inspection/add]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.add(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 13:15:46 -Mapped "{[/dh_inspection/update]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.update(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 13:15:46 -Mapped "{[/dh_inspection/delete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.delete(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 13:15:46 -Mapped "{[/dh_inspection/select]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.select(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 13:15:46 -Mapped "{[/dh_inspection/batchUpdate]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchUpdate(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 13:15:46 -Mapped "{[/dh_inspection/likeSelect]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.likeSelect(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 13:15:46 -Mapped "{[/dh_inspection/exportExcel]}" onto public void tb_inspection.controller.Dh_inspectionController.exportExcel(tb_inspection.entity.Dh_inspectionEntity,javax.servlet.http.HttpServletResponse)
+2020-04-26 13:15:46 -Mapped "{[/dh_inspection/batchAdd]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchAdd(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 13:15:46 -Mapped "{[/dh_inspection/batchDelete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchDelete(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 13:15:46 -Mapped "{[/login/doLogin]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogin(tb_inspection.entity.User,javax.servlet.http.HttpSession)
+2020-04-26 13:15:46 -Mapped "{[/login/doLogOut]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogOut(javax.servlet.http.HttpSession)
+2020-04-26 13:15:46 -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-04-26 13:15:46 -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-04-26 13:15:46 -Mapped URL path [/dh_inspection/list] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 13:15:46 -Mapped URL path [/home] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 13:15:46 -Mapped URL path [/welcome] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 13:15:46 -Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 13:15:46 -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 13:15:46 -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 13:15:46 -Detected @ExceptionHandler methods in allExceptionHandler
+2020-04-26 13:15:48 -LiveReload server is running on port 35729
+2020-04-26 13:15:48 -Registering beans for JMX exposure on startup
+2020-04-26 13:15:48 -Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-04-26 13:15:48 -Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-04-26 13:15:48 -Starting ProtocolHandler ["http-nio-0.0.0.0-8866"]
+2020-04-26 13:15:48 -Using a shared selector for servlet write/read
+2020-04-26 13:15:48 -Tomcat started on port(s): 8866 (http) with context path '/tb_inspection'
+2020-04-26 13:15:48 -Started Tb_inspectionApplication in 9.014 seconds (JVM running for 13.37)
+2020-04-26 13:16:14 -Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-04-26 13:16:14 -FrameworkServlet 'dispatcherServlet': initialization started
+2020-04-26 13:16:14 -FrameworkServlet 'dispatcherServlet': initialization completed in 46 ms
+2020-04-26 13:16:23 -======= 开始执行：LoginController — doLogin ========
+2020-04-26 13:16:23 -======= 执行结束：LoginController — doLogin ========
+2020-04-26 13:16:29 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 13:16:29 -{dataSource-1} inited
+2020-04-26 13:16:29 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 13:16:29 -==> Parameters: 
+2020-04-26 13:16:29 -<==      Total: 1
+2020-04-26 13:16:29 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 13:16:29 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 13:16:29 -<==      Total: 2
+2020-04-26 13:16:29 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 13:16:39 -======= 开始执行：LoginController — doLogOut ========
+2020-04-26 13:16:39 -======= 执行结束：LoginController — doLogOut ========
+2020-04-26 13:16:41 -======= 开始执行：LoginController — doLogin ========
+2020-04-26 13:16:41 -======= 执行结束：LoginController — doLogin ========
+2020-04-26 13:16:44 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 13:16:44 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 13:16:44 -==> Parameters: 
+2020-04-26 13:16:44 -<==      Total: 1
+2020-04-26 13:16:44 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 13:16:44 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 13:16:44 -<==      Total: 2
+2020-04-26 13:16:44 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 13:16:46 -======= 开始执行：LoginController — doLogOut ========
+2020-04-26 13:16:46 -======= 执行结束：LoginController — doLogOut ========
+2020-04-26 13:16:48 -======= 开始执行：LoginController — doLogin ========
+2020-04-26 13:16:48 -======= 执行结束：LoginController — doLogin ========
+2020-04-26 13:16:50 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 13:16:50 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 13:16:50 -==> Parameters: 
+2020-04-26 13:16:50 -<==      Total: 1
+2020-04-26 13:16:50 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 13:16:50 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 13:16:50 -<==      Total: 2
+2020-04-26 13:16:50 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 13:17:56 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 13:17:56 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 13:17:56 -==> Parameters: 
+2020-04-26 13:17:56 -<==      Total: 1
+2020-04-26 13:17:56 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 13:17:56 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 13:17:56 -<==      Total: 2
+2020-04-26 13:17:56 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 13:17:59 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 13:17:59 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 13:17:59 -==> Parameters: 
+2020-04-26 13:17:59 -<==      Total: 1
+2020-04-26 13:17:59 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 13:17:59 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 13:17:59 -<==      Total: 2
+2020-04-26 13:17:59 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 13:42:57 -======= 开始执行：LoginController — doLogin ========
+2020-04-26 13:42:57 -======= 执行结束：LoginController — doLogin ========
+2020-04-26 13:43:04 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 13:43:04 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 13:43:04 -==> Parameters: 
+2020-04-26 13:43:04 -<==      Total: 1
+2020-04-26 13:43:04 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 13:43:04 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 13:43:04 -<==      Total: 2
+2020-04-26 13:43:04 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 13:49:35 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 13:49:36 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 13:49:36 -==> Parameters: 
+2020-04-26 13:49:36 -<==      Total: 1
+2020-04-26 13:49:36 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 13:49:36 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 13:49:36 -<==      Total: 2
+2020-04-26 13:49:36 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 15:40:23 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 15:40:24 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 15:40:24 -==> Parameters: 
+2020-04-26 15:40:24 -<==      Total: 1
+2020-04-26 15:40:24 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 15:40:24 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 15:40:24 -<==      Total: 2
+2020-04-26 15:40:24 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 16:26:57 -Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6f385260: startup date [Sun Apr 26 13:15:40 CST 2020]; root of context hierarchy
+2020-04-26 16:26:58 -Unregistering JMX-exposed beans on shutdown
+2020-04-26 16:26:58 -Unregistering JMX-exposed beans
+2020-04-26 16:26:58 -{dataSource-1} closed
+2020-04-26 16:27:15 -Starting Tb_inspectionApplication on LAPTOP-5F6M06KD with PID 1181976 (D:\developEclipse\tb_inspection\target\classes started by lenovo in D:\developEclipse\tb_inspection)
+2020-04-26 16:27:15 -No active profile set, falling back to default profiles: default
+2020-04-26 16:27:15 -Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@48fd0fe5: startup date [Sun Apr 26 16:27:15 CST 2020]; root of context hierarchy
+2020-04-26 16:27:19 -Tomcat initialized with port(s): 8866 (http)
+2020-04-26 16:27:19 -Initializing ProtocolHandler ["http-nio-0.0.0.0-8866"]
+2020-04-26 16:27:19 -Starting service [Tomcat]
+2020-04-26 16:27:19 -Starting Servlet Engine: Apache Tomcat/8.5.34
+2020-04-26 16:27:19 -Loaded APR based Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+2020-04-26 16:27:19 -APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-04-26 16:27:19 -APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-04-26 16:27:19 -OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+2020-04-26 16:27:20 -Initializing Spring embedded WebApplicationContext
+2020-04-26 16:27:20 -Root WebApplicationContext: initialization completed in 4390 ms
+2020-04-26 16:27:20 -Servlet dispatcherServlet mapped to [/]
+2020-04-26 16:27:20 -Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-04-26 16:27:20 -Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-04-26 16:27:20 -Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-04-26 16:27:20 -Mapping filter: 'requestContextFilter' to: [/*]
+2020-04-26 16:27:20 -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 16:27:22 -Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@48fd0fe5: startup date [Sun Apr 26 16:27:15 CST 2020]; root of context hierarchy
+2020-04-26 16:27:22 -Mapped "{[/dh_inspection/add]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.add(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 16:27:22 -Mapped "{[/dh_inspection/update]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.update(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 16:27:22 -Mapped "{[/dh_inspection/delete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.delete(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 16:27:22 -Mapped "{[/dh_inspection/select]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.select(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 16:27:22 -Mapped "{[/dh_inspection/batchUpdate]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchUpdate(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 16:27:22 -Mapped "{[/dh_inspection/likeSelect]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.likeSelect(tb_inspection.entity.Dh_inspectionEntity)
+2020-04-26 16:27:22 -Mapped "{[/dh_inspection/exportExcel]}" onto public void tb_inspection.controller.Dh_inspectionController.exportExcel(tb_inspection.entity.Dh_inspectionEntity,javax.servlet.http.HttpServletResponse)
+2020-04-26 16:27:22 -Mapped "{[/dh_inspection/batchAdd]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchAdd(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 16:27:22 -Mapped "{[/dh_inspection/batchDelete]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.Dh_inspectionController.batchDelete(java.util.List<tb_inspection.entity.Dh_inspectionEntity>)
+2020-04-26 16:27:22 -Mapped "{[/login/doLogin]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogin(tb_inspection.entity.User,javax.servlet.http.HttpSession)
+2020-04-26 16:27:22 -Mapped "{[/login/doLogOut]}" onto public tb_inspection.entity.CommonResult tb_inspection.controller.LoginController.doLogOut(javax.servlet.http.HttpSession)
+2020-04-26 16:27:22 -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-04-26 16:27:22 -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-04-26 16:27:22 -Mapped URL path [/dh_inspection/list] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 16:27:22 -Mapped URL path [/home] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 16:27:22 -Mapped URL path [/welcome] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 16:27:22 -Mapped URL path [/login] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2020-04-26 16:27:22 -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 16:27:22 -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-04-26 16:27:22 -Detected @ExceptionHandler methods in allExceptionHandler
+2020-04-26 16:27:23 -LiveReload server is running on port 35729
+2020-04-26 16:27:23 -Registering beans for JMX exposure on startup
+2020-04-26 16:27:23 -Bean with name 'dataSource' has been autodetected for JMX exposure
+2020-04-26 16:27:23 -Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+2020-04-26 16:27:23 -Starting ProtocolHandler ["http-nio-0.0.0.0-8866"]
+2020-04-26 16:27:23 -Using a shared selector for servlet write/read
+2020-04-26 16:27:23 -Tomcat started on port(s): 8866 (http) with context path '/tb_inspection'
+2020-04-26 16:27:23 -Started Tb_inspectionApplication in 8.429 seconds (JVM running for 13.766)
+2020-04-26 16:28:59 -Initializing Spring FrameworkServlet 'dispatcherServlet'
+2020-04-26 16:28:59 -FrameworkServlet 'dispatcherServlet': initialization started
+2020-04-26 16:28:59 -FrameworkServlet 'dispatcherServlet': initialization completed in 47 ms
+2020-04-26 16:29:02 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 16:29:02 -{dataSource-1} inited
+2020-04-26 16:29:02 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 16:29:03 -==> Parameters: 
+2020-04-26 16:29:03 -<==      Total: 1
+2020-04-26 16:29:03 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 16:29:03 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 16:29:03 -<==      Total: 2
+2020-04-26 16:29:03 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 16:29:26 -======= 开始执行：Dh_inspectionController — add ========
+2020-04-26 16:29:26 -==>  Preparing: insert into `dh_inspection` ( sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-04-26 16:29:26 -==> Parameters: 销售公司会议室(String), 幕布(String), 1(String), 123(String), 投影仪(String), 1(String), 321(String), 二楼会议室(String), 一体机(String), 1(String), 1122(String), 三楼培训中心(String), LED大屏幕(String), 1(String), 2233(String), 音响(String), 1(String), 1133(String), 话筒(String), 1(String), 3311(String), 音控室电脑(String), 1(String), (String), 三楼会议室(String), LED大屏幕(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 云控宝(String), 1(String), (String), 五楼会议室(String), 幕布(String), 1(String), (String), 投影仪(String), 1(String), (String), 研究院四楼会议室(String), 幕布(String), 1(String), (String), 投影仪(String), 1(String), (String), 研究院五楼会议室(String), 幕布(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 2020-04-26(String)
+2020-04-26 16:29:26 -<==    Updates: 1
+2020-04-26 16:29:26 -======= 执行结束：Dh_inspectionController — add ========
+2020-04-26 16:29:26 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 16:29:26 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 16:29:26 -==> Parameters: 
+2020-04-26 16:29:26 -<==      Total: 1
+2020-04-26 16:29:26 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 16:29:26 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 16:29:26 -<==      Total: 3
+2020-04-26 16:29:26 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 16:33:26 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 16:33:26 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 16:33:26 -==> Parameters: 
+2020-04-26 16:33:26 -<==      Total: 1
+2020-04-26 16:33:26 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 16:33:26 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 16:33:26 -<==      Total: 3
+2020-04-26 16:33:26 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 16:33:35 -======= 开始执行：Dh_inspectionController — delete ========
+2020-04-26 16:33:35 -==>  Preparing: delete from `dh_inspection` WHERE inspectionId=? 
+2020-04-26 16:33:35 -==> Parameters: 2(Integer)
+2020-04-26 16:33:35 -<==    Updates: 1
+2020-04-26 16:33:35 -======= 执行结束：Dh_inspectionController — delete ========
+2020-04-26 16:33:35 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 16:33:35 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 16:33:35 -==> Parameters: 
+2020-04-26 16:33:35 -<==      Total: 1
+2020-04-26 16:33:35 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 16:33:35 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 16:33:35 -<==      Total: 2
+2020-04-26 16:33:35 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 16:33:38 -======= 开始执行：Dh_inspectionController — delete ========
+2020-04-26 16:33:38 -==>  Preparing: delete from `dh_inspection` WHERE inspectionId=? 
+2020-04-26 16:33:38 -==> Parameters: 3(Integer)
+2020-04-26 16:33:38 -<==    Updates: 1
+2020-04-26 16:33:38 -======= 执行结束：Dh_inspectionController — delete ========
+2020-04-26 16:33:38 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 16:33:38 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 16:33:38 -==> Parameters: 
+2020-04-26 16:33:38 -<==      Total: 1
+2020-04-26 16:33:38 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 16:33:38 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 16:33:38 -<==      Total: 1
+2020-04-26 16:33:38 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 16:42:32 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-04-26 16:42:32 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-04-26 16:42:32 -==> Parameters: 
+2020-04-26 16:42:32 -<==      Total: 1
+2020-04-26 16:42:32 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-04-26 16:42:32 -==> Parameters: 0(Integer), 10(Integer)
+2020-04-26 16:42:32 -<==      Total: 1
+2020-04-26 16:42:32 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-04-26 16:59:19 -Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@48fd0fe5: startup date [Sun Apr 26 16:27:15 CST 2020]; root of context hierarchy
+2020-04-26 16:59:19 -Unregistering JMX-exposed beans on shutdown
+2020-04-26 16:59:19 -Unregistering JMX-exposed beans
+2020-04-26 16:59:19 -{dataSource-1} closed

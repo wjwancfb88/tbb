@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.tubaoapi.dao.MaterialDao">
+  	
+	<resultMap id="materialResult" type="Material" >
+	  <id property="id" column="FID" />
+	  <result property="number" column="FNUMBER"/>
+	  <result property="name" column="FNAME_L2"/>
+		  <result property="materialGroupId" column="FMaterialGroupID"/>
+	  <result property="baseUnitId" column="FBaseUnit"/>
+	  <result property="assistUnitId" column="FAssistUnit"/>
+	  <result property="model" column="FModel"/>
+	  <result property="status" column="fstatus"/>
+	  <result property="thinkerStatus" column="cfthinkerstatus"/>
+	  <result property="lastUpdateTime" column="FLastUpdateTime"/>
+	  <result property="cfDefaultSupplierId" column="CFDEFSUPPLIERID"/>
+
+	  <result property="yzMaterial" column="CFIsYZMaterial"/>
+	  <result property="ycptMaterial" column="CFIsYCptMaterial"/>
+	</resultMap>
+	
+  	<select id="get" parameterType="string" resultMap="materialResult">
+    	select * from T_BD_Material where FID=#{id}
+  	</select>	
+  	
+	
+  	<select id="findBySO" parameterType="MaterialSO"  resultMap="materialResult">
+			select m.* from T_BD_Material m
+		<where>
+			<if test="ids != null">
+			  m.FID in <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>		
+			</if>
+			<if test="id != null">
+			  and m.FID = #{id}			
+			</if>
+			<if test="number != null">
+			  and m.FNUMBER = #{number}			
+			</if>
+			<if test = "q != null">
+			and (
+			  	m.FName_L2 like '%'||#{q}||'%'  or m.FNumber like '%'||#{q}||'%'
+			)
+			</if>
+			<if test="materialGroupIds != null">
+			  and m.FMaterialGroupID in <foreach collection="materialGroupIds" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+			</if>  	
+			<if test="client=='thinker'">
+			  and m.cfthinkerstatus >0
+			</if>
+			<if test="lastUpdateTime!=null">
+				and m.FLastUpdateTime >=to_date(#{lastUpdateTime},'YYYY-MM-dd hh24:mi:ss')
+			</if>
+			<if test="createTime!=null">
+				and m.FCreateTime >=to_date(#{createTime},'YYYY-MM-dd hh24:mi:ss')
+			</if>
+			<if test="ycptMaterial!=null">
+				and m.CFIsYCptMaterial = #{ycptMaterial}
+			</if>
+
+
+
+		</where>
+		order by m.FCreateTime asc
+
+  	</select>
+
+
+	<select id="findByGroup" resultMap="materialResult" parameterType="MaterialSO">
+		select
+		distinct(t1.fid),
+		t1.FNUMBER,
+		t1.fname_l2,
+		t1.FMaterialGroupID,
+		t1.FBaseUnit,
+		t1.FAssistUnit,
+		t1.FModel,
+		t1.fstatus,
+		t1.FLastUpdateTime,
+		t1.CFDEFSUPPLIERID,
+		t1.CFIsYZMaterial,
+		t1.CFIsYCptMaterial
+		FROM T_BD_Material t1,
+		T_BD_MaterialGroupDetial t2,
+		T_BD_MaterialGroup t3
+		where T1.FMATERIALGROUPID=t3.fid  and t2.FMaterialID=t1.fid and t3.FIsLeaf=1
+		<if test="fLongNumber != null">
+		and  t3.FLongNumber like '%'||#{ }||'%'
+		</if>
+		<if test="ids != null">
+			t1.FID in <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+		</if>
+		<if test="id != null">
+			and t1.FID = #{id}
+		</if>
+		<if test="number != null">
+			and t1.FNUMBER = #{number}
+		</if>
+		<if test = "q != null">
+			and (
+			t1.FName_L2 like '%'||#{q}||'%'  or t1.FNumber like '%'||#{q}||'%'
+			)
+		</if>
+		<if test="lastUpdateTime!=null">
+			and t1.FLastUpdateTime >=to_date(#{lastUpdateTime},'YYYY-MM-dd hh24:mi:ss')
+		</if>
+		<if test="createTime!=null">
+			and t1.FCreateTime >=to_date(#{createTime},'YYYY-MM-dd hh24:mi:ss')
+		</if>
+		<if test="ycptMaterial!=null">
+			and t1.CFIsYCptMaterial = #{ycptMaterial}
+		</if>
+		order   by t1.FCreateTime asc
+	</select>
+
+	<update id="update" parameterType="Material">
+		update  T_BD_Material t set
+		t.CFISSAFETYSTOCK='0'
+		<where>
+		<if test="id != null">
+			  t.fid=#{id}
+		</if>
+		</where>
+	</update>
+
+	<select id="findBySupplier" resultType="String" parameterType="MaterialSO">
+		select FMaterialItemID  from T_SM_ApprovedSupplier
+	    where 1=1
+		<if test="ids != null">
+		and FMaterialItemID
+		in <foreach collection="ids" item="id" index="index" open="(" separator="," close=")">#{id}</foreach>
+		</if>
+		<if test="supplierId != null">
+		and FSupplierID= #{supplierId}
+		</if>
+		<if test="lastUpdateTime!=null">
+			and FLastUpdateTime >=to_date(#{lastUpdateTime},'YYYY-MM-dd hh24:mi:ss')
+		</if>
+
+
+	</select>
+  	
+</mapper>

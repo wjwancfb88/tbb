@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>快速回复</title>
+    <style type="text/css">
+        html,body {
+            height: 100%;
+            width:100%
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;background-color: #3e802f;height: 70%">
+        <form method="post" action="../entry/show">
+            <input type="hidden" name="phone" id="phone" th:value="*{phone}"><br>
+            <button type="submit" name="agree" value="0" style="width: 720px;height: 80px;font-size: 40px;margin: 25px">我已知晓,同意放行</button><br>
+            <button type="submit" name="busy" value="1" style="width: 720px;height: 80px;font-size: 40px;margin: 25px">不好意思,我在忙,稍后回复</button><br>
+            <button type="submit" name="meet" value="2" style="width: 720px;height: 80px;font-size: 40px;margin: 25px">不好意思,我正在开会,稍后回复</button><br>
+            <button type="submit" name="outside" value="3" style="width: 720px;height: 80px;font-size: 40px;margin: 25px">不好意思,我临时有事出去了,下次再会</button><br>
+        </form>
+    </div>
+</body>
+</html>

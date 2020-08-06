@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tbb.mapper.DdMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.tbb.entity.Dd">
+		<id column="C__DDID" property="cDdid" />
+		<result column="STATE" property="state" />
+		<result column="RECENTTURNUSERS" property="recentturnusers" />
+		<result column="OWNINGUSER" property="owninguser" />
+		<result column="OWNINGBUSINESSUNIT" property="owningbusinessunit" />
+		<result column="NEXTAUDITERS" property="nextauditers" />
+		<result column="MODIFIEDON" property="modifiedon" />
+		<result column="MODIFIEDBY" property="modifiedby" />
+		<result column="LATESTAUDITTIME" property="latestaudittime" />
+		<result column="LATESTAUDITER" property="latestauditer" />
+		<result column="ISDELETED" property="isdeleted" />
+		<result column="CURRENTFLOWSTEPID" property="currentflowstepid" />
+		<result column="CREATEDON" property="createdon" />
+		<result column="CREATEDBY" property="createdby" />
+		<result column="C__ZONGMIANJI" property="cZongmianji" />
+		<result column="C__ZONGJINE" property="cZongjine" />
+		<result column="C__YUNSHUFEI" property="cYunshufei" />
+		<result column="C__YAOQIUJIAOHUOSHIJIAN" property="cYaoqiujiaohuoshijian" />
+		<result column="C__XIANGGUANYIZHUANGFANKUIDAN" property="cXiangguanyizhuangfankuidan" />
+		<result column="C__WULIUXINXI" property="cWuliuxinxi" />
+		<result column="C__WUJINPEIJIANJINE" property="cWujinpeijianjine" />
+		<result column="C__WUJINFUJIAN" property="cWujinfujian" />
+		<result column="C__WAIDINGMENJINE" property="cWaidingmenjine" />
+		<result column="C__WAIDINGMENFUJIAN" property="cWaidingmenfujian" />
+		<result column="C__SHENGCHANWANGONGRIQI" property="cShengchanwangongriqi" />
+		<result column="C__QITAFEI" property="cQitafei" />
+		<result column="C__PAIDANQINGKUANG" property="cPaidanqingkuang" />
+		<result column="C__KEHUXINGMING" property="cKehuxingming" />
+		<result column="C__KEHUDIZHI" property="cKehudizhi" />
+		<result column="C__KEHUDIANHUA" property="cKehudianhua" />
+		<result column="C__KEHU" property="cKehu" />
+		<result column="C__JINGXIAOSHANG" property="cJingxiaoshang" />
+		<result column="C__JIAGONGZHONGXIN" property="cJiagongzhongxin" />
+		<result column="C__GUITIJINE" property="cGuitijine" />
+		<result column="C__GTJE" property="cGtje" />
+		<result column="C__DINGDANZHUANGTAI" property="cDingdanzhuangtai" />
+		<result column="C__DINGDANLEIXING" property="cDingdanleixing" />
+		<result column="C__DINGDANHAO" property="cDingdanhao" />
+		<result column="C__DINGDANFUJIAN" property="cDingdanfujian" />
+		<result column="C__DDH" property="cDdh" />
+		<result column="C__CHAIDANWANCHENGRIQI" property="cChaidanwanchengriqi" />
+		<result column="C__CHAIDANSHENLINGREN" property="cChaidanshenlingren" />
+		<result column="C__CHAIDANFUJIAN" property="cChaidanfujian" />
+		<result column="C__BEIZHU" property="cBeizhu" />
+		<result column="C__BEIHUOQINGKUANG" property="cBeihuoqingkuang" />
+		<result column="C__BAOZHUANGYANSE" property="cBaozhuangyanse" />
+		<result column="C__BAOJIAFUJIAN" property="cBaojiafujian" />
+		<result column="C__ANZHUANGRENYUAN" property="cAnzhuangrenyuan" />
+		<result column="C__ANZHUANGFEI" property="cAnzhuangfei" />
+		<result column="C__ANZHUANGDANSHULIANG" property="cAnzhuangdanshuliang" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        STATE AS state, RECENTTURNUSERS AS recentturnusers, OWNINGUSER AS owninguser, OWNINGBUSINESSUNIT AS owningbusinessunit, NEXTAUDITERS AS nextauditers, MODIFIEDON AS modifiedon, MODIFIEDBY AS modifiedby, LATESTAUDITTIME AS latestaudittime, LATESTAUDITER AS latestauditer, ISDELETED AS isdeleted, CURRENTFLOWSTEPID AS currentflowstepid, CREATEDON AS createdon, CREATEDBY AS createdby, C__ZONGMIANJI AS cZongmianji, C__ZONGJINE AS cZongjine, C__YUNSHUFEI AS cYunshufei, C__YAOQIUJIAOHUOSHIJIAN AS cYaoqiujiaohuoshijian, C__XIANGGUANYIZHUANGFANKUIDAN AS cXiangguanyizhuangfankuidan, C__WULIUXINXI AS cWuliuxinxi, C__WUJINPEIJIANJINE AS cWujinpeijianjine, C__WUJINFUJIAN AS cWujinfujian, C__WAIDINGMENJINE AS cWaidingmenjine, C__WAIDINGMENFUJIAN AS cWaidingmenfujian, C__SHENGCHANWANGONGRIQI AS cShengchanwangongriqi, C__QITAFEI AS cQitafei, C__PAIDANQINGKUANG AS cPaidanqingkuang, C__KEHUXINGMING AS cKehuxingming, C__KEHUDIZHI AS cKehudizhi, C__KEHUDIANHUA AS cKehudianhua, C__KEHU AS cKehu, C__JINGXIAOSHANG AS cJingxiaoshang, C__JIAGONGZHONGXIN AS cJiagongzhongxin, C__GUITIJINE AS cGuitijine, C__GTJE AS cGtje, C__DINGDANZHUANGTAI AS cDingdanzhuangtai, C__DINGDANLEIXING AS cDingdanleixing, C__DINGDANHAO AS cDingdanhao, C__DINGDANFUJIAN AS cDingdanfujian, C__DDID AS cDdid, C__DDH AS cDdh, C__CHAIDANWANCHENGRIQI AS cChaidanwanchengriqi, C__CHAIDANSHENLINGREN AS cChaidanshenlingren, C__CHAIDANFUJIAN AS cChaidanfujian, C__BEIZHU AS cBeizhu, C__BEIHUOQINGKUANG AS cBeihuoqingkuang, C__BAOZHUANGYANSE AS cBaozhuangyanse, C__BAOJIAFUJIAN AS cBaojiafujian, C__ANZHUANGRENYUAN AS cAnzhuangrenyuan, C__ANZHUANGFEI AS cAnzhuangfei, C__ANZHUANGDANSHULIANG AS cAnzhuangdanshuliang
+    </sql>
+
+	<delete id="deleteAll">
+		delete from E__DD
+	</delete>
+</mapper>

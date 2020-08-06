@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<title>院长信箱</title>
+	<link href="/mail/css/mui.min.css" rel="stylesheet" type="text/css" />
+	<link href="/mail/css/app.css" rel="stylesheet" type="text/css" />
+	<link href="/mail/css/icons-extra.css" rel="stylesheet" type="text/css" />
+	<link href="/mail/css/mui.picker.css" rel="stylesheet" type="text/css" />
+	<link href="/mail/css/mui.poppicker.css" rel="stylesheet" type="text/css" />
+	<link href="/mail/css/mui.picker.min.css" rel="stylesheet" type="text/css" />
+	<link href="/mail/css/vjpage.css" rel="stylesheet" type="text/css" />
+	<link href="/mail/css/config.css" rel="stylesheet" type="text/css" />
+	<link href="/mail/css/validationEngine.jquery.css" rel="stylesheet" type="text/css" />
+</head>
+<body data-curpagename="page9" >
+<header id="page9_jPanel1" class="mui-bar mui-bar-nav">
+	<span id="page9_jIconfont1" class="mui-icon mui-icon-arrowleft mui-pull-left"></span>
+	<div id="page9_jPanel11" class=" mui-pull-left">
+	
+	</div>
+	<span id="page9_jIconfont5" class="mui-icon mui-icon-closeempty mui-pull-left"></span>
+	<h1 id="page9_jLabel1" class="mui-title">院长信箱</h1>
+</header>
+<div id="page9_jPanel5" class="mui-content">
+	<form id="page9_jHtmlForm1" name="page9_jHtmlForm1" method="post" action="../mailbox/add">
+		<div id="page9_jPanel4" class="mui-input-group">
+			<div class="mui-input-row">
+				<label>收件人</label>
+				<select id="receiveName" name="receiveName">
+					<option value="0" selected="selected">吴昭垠</option>
+					<option value="1" selected="selected">汪凯</option>
+				</select>
+			</div>
+		</div>
+		<div id="page9_jPanel6" class="">
+			<div id="page9_jEdit4" class="mui-input-row">
+				<label>发件人：</label>
+				<input type="text" class="validate[required]" placeholder=""  required="required" id="sendName" name="sendName">
+			</div>
+		</div>
+		<div id="page9_jPanel8" class="mui-input-group">
+			<div id="page9_jEdit3" class="mui-input-row">
+				<label>标题：</label>
+				<input class="validate[required]" type="text" placeholder="" id="title" name="title">
+			</div>
+		</div>
+		<div id="page9_jPanel2" class="">
+		
+		</div>
+		<div id="page9_jPanel3" class="">
+			<textarea rows="5"  placeholder="内容：" id="content" name="content" class="validate[required]"></textarea>
+		</div>
+		<ul id="page9_jList1" class="mui-table-view mui-table-view-chevron">
+			<li class="mui-table-view-cell">
+				<div class="mui-input-row"><label>是否公开</label>
+					<div id="isp" class="mui-switch mui-switch-blue mui-pull-left" >
+						<div class="mui-switch-handle"></div>
+					</div>
+				</div>
+			</li>
+			<li class="mui-table-view-cell">
+				<div class="mui-input-row"><label>是否匿名</label>
+				<div id="niming" name='anonymous'class="mui-switch mui-switch-blue mui-pull-left">
+					<div class="mui-switch-handle"></div>
+				</div>
+				</div>
+			</li>
+			<li class="mui-table-view-cell">
+				<div class="mui-input-row"><label>验证码：</label>
+					<input id="code" type="text" width="40px">
+					<div id="ca" name='anonymous'class=" mui-pull-left">
+
+						<canvas width="100" height="30" class="canvas" id="canvas"></canvas>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div id="page9_jPanel10" class="">
+			<div id="page9_jPanel13" class="vjcenterpanel Panel_c">
+				<button id="page9_jButton1" type="button" onclick='add()'class="mui-btn mui-btn-primary btnsize_default mui-btn-block">提交</button>
+			</div>
+		</div>
+	</form>
+</div>
+
+
+</body>
+
+<script type="text/javascript" src="/mail/js/jquery.min.js"></script>
+
+<script type="text/javascript" src="/mail/js/mui.min.js"></script>
+<script type="text/javascript" src="/mail/js/mui.picker.js"></script>
+<script type="text/javascript" src="/mail/js/mui.poppicker.js"></script>
+<script type="text/javascript" src="/mail/js/mui.picker.min.js"></script>
+
+<script type="text/javascript" src="/mail/js/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="/mail/js/jquery.validationEngine.min.js"></script>
+<script type="text/javascript" src="/mail/js/jquery.validationEngine-zh_CN.js"></script>
+
+<script type="text/javascript" src="/mail/page9.js"></script>
+<script type="text/javascript">
+</script>
+</html>

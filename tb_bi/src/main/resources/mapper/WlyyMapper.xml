@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tbb.mapper.WlyyMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.tbb.entity.Wlyy">
+		<id column="C__WLYYID" property="cWlyyid" />
+		<result column="C__BIAOTI" property="cBiaoti" />
+		<result column="C__CHENGSHI" property="cChengshi" />
+		<result column="C__DIANSHANGBUPANDUANYIXIANG" property="cDianshangbupanduanyixiang" />
+		<result column="C__DINGZHICHANPIN" property="cDingzhichanpin" />
+		<result column="C__DINGZHIYIYUAN" property="cDingzhiyiyuan" />
+		<result column="C__FENPEIZHUANGTAI" property="cFenpeizhuangtai" />
+		<result column="C__GENDANKEFUBEIZHU" property="cGendankefubeizhu" />
+		<result column="C__GENJINCISHU" property="cGenjincishu" />
+		<result column="C__HUIFANGKEFUBEIZHU" property="cHuifangkefubeizhu" />
+		<result column="C__HUODONG" property="cHuodong" />
+		<result column="C__KEHU" property="cKehu" />
+		<result column="C__KEHUDENGJI" property="cKehudengji" />
+		<result column="C__KEHUDIZHI" property="cKehudizhi" />
+		<result column="C__KEHUSHOUJI" property="cKehushouji" />
+		<result column="C__KEHUSUOZAICHENGSHI" property="cKehusuozaichengshi" />
+		<result column="C__KEHUXINGMING" property="cKehuxingming" />
+		<result column="C__KEHUXUQIU" property="cKehuxuqiu" />
+		<result column="C__LAIYUAN" property="cLaiyuan" />
+		<result column="C__LASTASSIGNON" property="cLastassignon" />
+		<result column="C__LEIXING" property="cLeixing" />
+		<result column="C__SHENG" property="cSheng" />
+		<result column="C__SHI" property="cShi" />
+		<result column="C__TUIGUANGPINGTAI" property="cTuiguangpingtai" />
+		<result column="C__TYPE" property="cType" />
+		<result column="C__URL" property="cUrl" />
+		<result column="C__XIANQU" property="cXianqu" />
+		<result column="C__XIAOQU" property="cXiaoqu" />
+		<result column="C__YIXIANGFENLEI" property="cYixiangfenlei" />
+		<result column="C__YIXIANGJINGXIAOSHANG" property="cYixiangjingxiaoshang" />
+		<result column="C__YUSUANFANWEI" property="cYusuanfanwei" />
+		<result column="C__ZHUANGTAI" property="cZhuangtai" />
+		<result column="C__ZHUANGXIUJIEDUAN" property="cZhuangxiujieduan" />
+		<result column="C__ZUIJINCHULISHIJIAN" property="cZuijinchulishijian" />
+		<result column="C__ZUIJINGENJINNEIRONG" property="cZuijingenjinneirong" />
+		<result column="CREATED_BY" property="createdBy" />
+		<result column="CREATED_ON" property="createdOn" />
+		<result column="IS_DELETED" property="isDeleted" />
+		<result column="MODIFIED_BY" property="modifiedBy" />
+		<result column="MODIFIED_ON" property="modifiedOn" />
+		<result column="OWNING_BUSINESS_UNIT" property="owningBusinessUnit" />
+		<result column="OWNING_USER" property="owningUser" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        C__WLYYID AS cWlyyid, C__BIAOTI AS cBiaoti, C__CHENGSHI AS cChengshi, C__DIANSHANGBUPANDUANYIXIANG AS cDianshangbupanduanyixiang, C__DINGZHICHANPIN AS cDingzhichanpin, C__DINGZHIYIYUAN AS cDingzhiyiyuan, C__FENPEIZHUANGTAI AS cFenpeizhuangtai, C__GENDANKEFUBEIZHU AS cGendankefubeizhu, C__GENJINCISHU AS cGenjincishu, C__HUIFANGKEFUBEIZHU AS cHuifangkefubeizhu, C__HUODONG AS cHuodong, C__KEHU AS cKehu, C__KEHUDENGJI AS cKehudengji, C__KEHUDIZHI AS cKehudizhi, C__KEHUSHOUJI AS cKehushouji, C__KEHUSUOZAICHENGSHI AS cKehusuozaichengshi, C__KEHUXINGMING AS cKehuxingming, C__KEHUXUQIU AS cKehuxuqiu, C__LAIYUAN AS cLaiyuan, C__LASTASSIGNON AS cLastassignon, C__LEIXING AS cLeixing, C__SHENG AS cSheng, C__SHI AS cShi, C__TUIGUANGPINGTAI AS cTuiguangpingtai, C__TYPE AS cType, C__URL AS cUrl, C__XIANQU AS cXianqu, C__XIAOQU AS cXiaoqu, C__YIXIANGFENLEI AS cYixiangfenlei, C__YIXIANGJINGXIAOSHANG AS cYixiangjingxiaoshang, C__YUSUANFANWEI AS cYusuanfanwei, C__ZHUANGTAI AS cZhuangtai, C__ZHUANGXIUJIEDUAN AS cZhuangxiujieduan, C__ZUIJINCHULISHIJIAN AS cZuijinchulishijian, C__ZUIJINGENJINNEIRONG AS cZuijingenjinneirong, CREATED_BY AS createdBy, CREATED_ON AS createdOn, IS_DELETED AS isDeleted, MODIFIED_BY AS modifiedBy, MODIFIED_ON AS modifiedOn, OWNING_BUSINESS_UNIT AS owningBusinessUnit, OWNING_USER AS owningUser
+    </sql>
+
+	<delete id="deleteAll" >
+		delete from E__WLYY2
+	</delete>
+
+</mapper>

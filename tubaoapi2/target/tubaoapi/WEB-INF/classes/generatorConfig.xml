@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE generatorConfiguration  
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+
+
+<generatorConfiguration>
+
+	<context id="mysqlTables" targetRuntime="MyBatis3" >
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/youcar" userId="root"
+			password="tomcat" />
+			
+
+		<!-- 指定生成的类型为java类型，避免数据库中number等类型字段 -->
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<!-- 生成model模型，对应的包，存放位置可以指定具体的路径,如/ProjectName/src，也可以使用MAVEN来自动生成 -->
+		<javaModelGenerator targetPackage="model"
+			targetProject="MAVEN">
+			<property name="enableSubPackages" value="true" />
+		</javaModelGenerator>
+
+		<!--对应的xml mapper文件 -->
+		<sqlMapGenerator targetPackage="mapper"
+			targetProject="MAVEN">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<!-- 对应的dao接口 -->
+		<!-- 
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="mapper" targetProject="MAVEN">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		 -->
+		<table tableName="long_tail" domainObjectName="LongTail"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />	
+		</table>
+				 
+		<table tableName="task" domainObjectName="Task"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />	
+		</table>	 
+		 
+		<table tableName="user_profile" domainObjectName="UserProfile"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />	
+		</table>
+				 
+		<table tableName="car_model_year" domainObjectName="CarModelYear"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+		</table>
+				 
+		<table tableName="car_model" domainObjectName="CarModel"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+		</table>		 
+		<table tableName="car_brand" domainObjectName="CarBrand"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+		</table>
+				 
+
+				 
+		<table tableName="bot_task" domainObjectName="BotTask"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+		</table>
+				 
+		<table tableName="bot" domainObjectName="Bot"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+		</table>
+				 
+		<table tableName="photo" domainObjectName="Photo"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+		</table>
+				 
+		<table tableName="option" domainObjectName="Option"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+		</table>
+				 
+		<table tableName="option_type" domainObjectName="OptionType"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+		</table>		 
+		 
+		<table tableName="section" domainObjectName="Section"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+		</table>
+				 
+		<table tableName="post_field_post" domainObjectName="PostFieldPost"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+		</table>
+		
+		<table tableName="category" domainObjectName="Category"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+		</table>		
+				 
+		<table tableName="post_field" domainObjectName="PostField"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+		</table>
+				 
+		<table tableName="post_type" domainObjectName="PostType"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+		</table>
+				 
+		<table tableName="tag" domainObjectName="Tag"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+		</table>
+		
+		<table tableName="profile" domainObjectName="Profile"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />	
+		</table>
+				 
+		<table tableName="post" domainObjectName="Post"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />	
+		</table>		
+				 
+		<table tableName="operator" domainObjectName="Operator"
+		
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+		</table>
+		
+		<table tableName="user" domainObjectName="User"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+			<generatedKey column="id" sqlStatement="MySql" identity="true" />	
+		</table>
+				
+		<table tableName="role" domainObjectName="Role"
+		enableDeleteByExample="false"
+		enableCountByExample="false"
+		enableSelectByExample="false"
+		enableUpdateByExample="false"
+		enableSelectByPrimaryKey="false"
+		enableDeleteByPrimaryKey="false"
+		>
+		</table>					 
+		 
+		
+
+		
+	</context>
+</generatorConfiguration>  

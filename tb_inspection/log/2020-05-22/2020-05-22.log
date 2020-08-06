@@ -1,0 +1,499 @@
+2020-05-22 08:44:55 -Starting Tb_inspectionApplication on 陈法彬 with PID 77000 (D:\developEclipse\tb_inspection\target\classes started by lenovo in D:\developEclipse\tb_inspection)
+2020-05-22 08:44:55 -No active profile set, falling back to default profiles: default
+2020-05-22 08:44:55 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-22 08:44:55 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-22 08:44:57 -Tomcat initialized with port(s): 8866 (http)
+2020-05-22 08:44:57 -Initializing ProtocolHandler ["http-nio-0.0.0.0-8866"]
+2020-05-22 08:44:57 -Starting service [Tomcat]
+2020-05-22 08:44:57 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-22 08:44:57 -Initializing Spring embedded WebApplicationContext
+2020-05-22 08:44:57 -Root WebApplicationContext: initialization completed in 2083 ms
+2020-05-22 08:44:57 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 08:44:58 -LiveReload server is running on port 35729
+2020-05-22 08:44:58 -Starting ProtocolHandler ["http-nio-0.0.0.0-8866"]
+2020-05-22 08:44:58 -Tomcat started on port(s): 8866 (http) with context path '/tb_inspection'
+2020-05-22 08:44:58 -Started Tb_inspectionApplication in 3.854 seconds (JVM running for 6.829)
+2020-05-22 08:45:05 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 09:56:22 -Starting Tb_inspectionApplication on 陈法彬 with PID 83008 (D:\developEclipse\tb_inspection\target\classes started by lenovo in D:\developEclipse\tb_inspection)
+2020-05-22 09:56:22 -No active profile set, falling back to default profiles: default
+2020-05-22 09:56:22 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-22 09:56:22 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-22 09:56:24 -Tomcat initialized with port(s): 8866 (http)
+2020-05-22 09:56:24 -Initializing ProtocolHandler ["http-nio-0.0.0.0-8866"]
+2020-05-22 09:56:24 -Starting service [Tomcat]
+2020-05-22 09:56:24 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-22 09:56:24 -Initializing Spring embedded WebApplicationContext
+2020-05-22 09:56:24 -Root WebApplicationContext: initialization completed in 1894 ms
+2020-05-22 09:56:25 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 09:56:25 -LiveReload server is running on port 35729
+2020-05-22 09:56:25 -Starting ProtocolHandler ["http-nio-0.0.0.0-8866"]
+2020-05-22 09:56:25 -Tomcat started on port(s): 8866 (http) with context path '/tb_inspection'
+2020-05-22 09:56:25 -Started Tb_inspectionApplication in 4.264 seconds (JVM running for 6.989)
+2020-05-22 09:56:39 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 09:56:39 -Initializing Servlet 'dispatcherServlet'
+2020-05-22 09:56:39 -Completed initialization in 16 ms
+2020-05-22 09:56:41 -======= 开始执行：LoginController — doLogin ========
+2020-05-22 09:56:41 -======= 执行结束：LoginController — doLogin ========
+2020-05-22 09:56:42 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 09:56:42 -{dataSource-1} inited
+2020-05-22 09:56:42 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 09:56:42 -==> Parameters: 
+2020-05-22 09:56:42 -<==      Total: 1
+2020-05-22 09:56:42 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 09:56:42 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 09:56:42 -<==      Total: 5
+2020-05-22 09:56:42 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 09:56:53 -======= 开始执行：Dh_inspectionController — add ========
+2020-05-22 09:56:53 -==>  Preparing: insert into `dh_inspection` ( sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-05-22 09:56:53 -==> Parameters: 销售公司会议室(String), 幕布(String), 1(String), (String), 投影仪(String), 1(String), (String), 二楼会议室(String), 一体机(String), 1(String), (String), 三楼培训中心(String), LED大屏幕(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 音控室电脑(String), 1(String), (String), 三楼会议室(String), LED大屏幕(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 云控宝(String), 1(String), (String), 五楼会议室(String), 幕布1(String), 1(String), (String), 幕布2(String), 1(String), (String), 投影仪(String), 1(String), (String), 研究院四楼会议室(String), 幕布(String), 1(String), (String), 投影仪(String), 1(String), (String), 研究院五楼会议室(String), 幕布(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 2020-05-01(String)
+2020-05-22 09:56:53 -<==    Updates: 1
+2020-05-22 09:56:53 -======= 执行结束：Dh_inspectionController — add ========
+2020-05-22 09:56:53 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 09:56:53 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 09:56:53 -==> Parameters: 
+2020-05-22 09:56:53 -<==      Total: 1
+2020-05-22 09:56:53 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 09:56:53 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 09:56:53 -<==      Total: 6
+2020-05-22 09:56:53 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 09:57:00 -======= 开始执行：Dh_inspectionController — add ========
+2020-05-22 09:57:00 -==>  Preparing: insert into `dh_inspection` ( sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-05-22 09:57:00 -==> Parameters: 销售公司会议室(String), 幕布(String), 1(String), (String), 投影仪(String), 1(String), (String), 二楼会议室(String), 一体机(String), 1(String), (String), 三楼培训中心(String), LED大屏幕(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 音控室电脑(String), 1(String), (String), 三楼会议室(String), LED大屏幕(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 云控宝(String), 1(String), (String), 五楼会议室(String), 幕布1(String), 1(String), (String), 幕布2(String), 1(String), (String), 投影仪(String), 1(String), (String), 研究院四楼会议室(String), 幕布(String), 1(String), (String), 投影仪(String), 1(String), (String), 研究院五楼会议室(String), 幕布(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 2020-05-02(String)
+2020-05-22 09:57:00 -<==    Updates: 1
+2020-05-22 09:57:00 -======= 执行结束：Dh_inspectionController — add ========
+2020-05-22 09:57:00 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 09:57:00 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 09:57:00 -==> Parameters: 
+2020-05-22 09:57:00 -<==      Total: 1
+2020-05-22 09:57:00 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 09:57:00 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 09:57:00 -<==      Total: 7
+2020-05-22 09:57:00 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 09:57:06 -======= 开始执行：Dh_inspectionController — add ========
+2020-05-22 09:57:06 -==>  Preparing: insert into `dh_inspection` ( sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-05-22 09:57:06 -==> Parameters: 销售公司会议室(String), 幕布(String), 1(String), (String), 投影仪(String), 1(String), (String), 二楼会议室(String), 一体机(String), 1(String), (String), 三楼培训中心(String), LED大屏幕(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 音控室电脑(String), 1(String), (String), 三楼会议室(String), LED大屏幕(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 云控宝(String), 1(String), (String), 五楼会议室(String), 幕布1(String), 1(String), (String), 幕布2(String), 1(String), (String), 投影仪(String), 1(String), (String), 研究院四楼会议室(String), 幕布(String), 1(String), (String), 投影仪(String), 1(String), (String), 研究院五楼会议室(String), 幕布(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 2020-05-03(String)
+2020-05-22 09:57:06 -<==    Updates: 1
+2020-05-22 09:57:06 -======= 执行结束：Dh_inspectionController — add ========
+2020-05-22 09:57:06 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 09:57:06 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 09:57:06 -==> Parameters: 
+2020-05-22 09:57:06 -<==      Total: 1
+2020-05-22 09:57:06 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 09:57:06 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 09:57:06 -<==      Total: 8
+2020-05-22 09:57:06 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 09:57:14 -======= 开始执行：Dh_inspectionController — add ========
+2020-05-22 09:57:14 -==>  Preparing: insert into `dh_inspection` ( sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-05-22 09:57:14 -==> Parameters: 销售公司会议室(String), 幕布(String), 1(String), (String), 投影仪(String), 1(String), (String), 二楼会议室(String), 一体机(String), 1(String), (String), 三楼培训中心(String), LED大屏幕(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 音控室电脑(String), 1(String), (String), 三楼会议室(String), LED大屏幕(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 云控宝(String), 1(String), (String), 五楼会议室(String), 幕布1(String), 1(String), (String), 幕布2(String), 1(String), (String), 投影仪(String), 1(String), (String), 研究院四楼会议室(String), 幕布(String), 1(String), (String), 投影仪(String), 1(String), (String), 研究院五楼会议室(String), 幕布(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 2020-05-04(String)
+2020-05-22 09:57:14 -<==    Updates: 1
+2020-05-22 09:57:14 -======= 执行结束：Dh_inspectionController — add ========
+2020-05-22 09:57:14 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 09:57:14 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 09:57:14 -==> Parameters: 
+2020-05-22 09:57:14 -<==      Total: 1
+2020-05-22 09:57:14 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 09:57:14 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 09:57:14 -<==      Total: 9
+2020-05-22 09:57:14 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 09:57:22 -======= 开始执行：Dh_inspectionController — add ========
+2020-05-22 09:57:22 -==>  Preparing: insert into `dh_inspection` ( sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-05-22 09:57:22 -==> Parameters: 销售公司会议室(String), 幕布(String), 1(String), (String), 投影仪(String), 1(String), (String), 二楼会议室(String), 一体机(String), 1(String), (String), 三楼培训中心(String), LED大屏幕(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 音控室电脑(String), 1(String), (String), 三楼会议室(String), LED大屏幕(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 云控宝(String), 1(String), (String), 五楼会议室(String), 幕布1(String), 1(String), (String), 幕布2(String), 1(String), (String), 投影仪(String), 1(String), (String), 研究院四楼会议室(String), 幕布(String), 1(String), (String), 投影仪(String), 1(String), (String), 研究院五楼会议室(String), 幕布(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 2020-05-05(String)
+2020-05-22 09:57:22 -<==    Updates: 1
+2020-05-22 09:57:22 -======= 执行结束：Dh_inspectionController — add ========
+2020-05-22 09:57:22 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 09:57:22 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 09:57:22 -==> Parameters: 
+2020-05-22 09:57:22 -<==      Total: 1
+2020-05-22 09:57:22 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 09:57:22 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 09:57:22 -<==      Total: 10
+2020-05-22 09:57:22 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 09:57:31 -======= 开始执行：Dh_inspectionController — add ========
+2020-05-22 09:57:31 -==>  Preparing: insert into `dh_inspection` ( sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime ) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2020-05-22 09:57:31 -==> Parameters: 销售公司会议室(String), 幕布(String), 1(String), (String), 投影仪(String), 1(String), (String), 二楼会议室(String), 一体机(String), 1(String), (String), 三楼培训中心(String), LED大屏幕(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 音控室电脑(String), 1(String), (String), 三楼会议室(String), LED大屏幕(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 云控宝(String), 1(String), (String), 五楼会议室(String), 幕布1(String), 1(String), (String), 幕布2(String), 1(String), (String), 投影仪(String), 1(String), (String), 研究院四楼会议室(String), 幕布(String), 1(String), (String), 投影仪(String), 1(String), (String), 研究院五楼会议室(String), 幕布(String), 1(String), (String), 音响(String), 1(String), (String), 话筒(String), 1(String), (String), 2020-05-06(String)
+2020-05-22 09:57:31 -<==    Updates: 1
+2020-05-22 09:57:31 -======= 执行结束：Dh_inspectionController — add ========
+2020-05-22 09:57:31 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 09:57:31 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 09:57:31 -==> Parameters: 
+2020-05-22 09:57:31 -<==      Total: 1
+2020-05-22 09:57:31 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 09:57:31 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 09:57:31 -<==      Total: 10
+2020-05-22 09:57:31 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 09:57:34 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 09:57:34 -发生系统异常，错误信息为：null
+2020-05-22 09:57:34 -Resolved [java.lang.NullPointerException]
+2020-05-22 09:57:37 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 09:57:37 -发生系统异常，错误信息为：null
+2020-05-22 09:57:37 -Resolved [java.lang.NullPointerException]
+2020-05-22 09:58:15 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:01:28 -发生系统异常，错误信息为：null
+2020-05-22 10:01:28 -Resolved [java.lang.NullPointerException]
+2020-05-22 10:02:40 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:03:20 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:03:20 -==> Parameters: 
+2020-05-22 10:03:20 -<==      Total: 1
+2020-05-22 10:03:20 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:03:20 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 10:03:20 -<==      Total: 10
+2020-05-22 10:03:20 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:03:28 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:04:20 -发生系统异常，错误信息为：null
+2020-05-22 10:04:20 -Resolved [java.lang.NullPointerException]
+2020-05-22 10:08:41 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:09:41 -发生系统异常，错误信息为：null
+2020-05-22 10:09:41 -Resolved [java.lang.NullPointerException]
+2020-05-22 10:32:45 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:32:45 -发生系统异常，错误信息为：null
+2020-05-22 10:32:45 -Resolved [java.lang.NullPointerException]
+2020-05-22 10:37:44 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:37:44 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:37:44 -==> Parameters: 
+2020-05-22 10:37:44 -<==      Total: 1
+2020-05-22 10:37:44 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:37:44 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 10:37:44 -<==      Total: 10
+2020-05-22 10:37:44 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:37:47 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:37:47 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:37:47 -==> Parameters: 
+2020-05-22 10:37:47 -<==      Total: 1
+2020-05-22 10:37:47 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:37:47 -==> Parameters: 10(Integer), 10(Integer)
+2020-05-22 10:37:47 -<==      Total: 1
+2020-05-22 10:37:47 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:37:50 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:37:50 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:37:50 -==> Parameters: 
+2020-05-22 10:37:50 -<==      Total: 1
+2020-05-22 10:37:50 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:37:50 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 10:37:50 -<==      Total: 10
+2020-05-22 10:37:50 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:37:53 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:37:53 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:37:53 -==> Parameters: 
+2020-05-22 10:37:53 -<==      Total: 1
+2020-05-22 10:37:53 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:37:53 -==> Parameters: 10(Integer), 10(Integer)
+2020-05-22 10:37:53 -<==      Total: 1
+2020-05-22 10:37:53 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:37:56 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:37:56 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:37:56 -==> Parameters: 
+2020-05-22 10:37:56 -<==      Total: 1
+2020-05-22 10:37:56 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:37:56 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 10:37:56 -<==      Total: 10
+2020-05-22 10:37:56 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:38:11 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:38:11 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:38:11 -==> Parameters: 
+2020-05-22 10:38:11 -<==      Total: 1
+2020-05-22 10:38:11 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:38:11 -==> Parameters: 10(Integer), 10(Integer)
+2020-05-22 10:38:11 -<==      Total: 1
+2020-05-22 10:38:11 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:38:13 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:38:13 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:38:13 -==> Parameters: 
+2020-05-22 10:38:13 -<==      Total: 1
+2020-05-22 10:38:13 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:38:13 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 10:38:13 -<==      Total: 10
+2020-05-22 10:38:13 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:44:27 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 10:44:27 -{dataSource-1} closed
+2020-05-22 10:44:31 -Starting Tb_inspectionApplication on 陈法彬 with PID 97056 (D:\developEclipse\tb_inspection\target\classes started by lenovo in D:\developEclipse\tb_inspection)
+2020-05-22 10:44:31 -No active profile set, falling back to default profiles: default
+2020-05-22 10:44:31 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-05-22 10:44:31 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-05-22 10:44:34 -Tomcat initialized with port(s): 8866 (http)
+2020-05-22 10:44:34 -Initializing ProtocolHandler ["http-nio-0.0.0.0-8866"]
+2020-05-22 10:44:34 -Starting service [Tomcat]
+2020-05-22 10:44:34 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-22 10:44:34 -Initializing Spring embedded WebApplicationContext
+2020-05-22 10:44:34 -Root WebApplicationContext: initialization completed in 2700 ms
+2020-05-22 10:44:35 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 10:44:35 -LiveReload server is running on port 35729
+2020-05-22 10:44:35 -Starting ProtocolHandler ["http-nio-0.0.0.0-8866"]
+2020-05-22 10:44:35 -Tomcat started on port(s): 8866 (http) with context path '/tb_inspection'
+2020-05-22 10:44:35 -Started Tb_inspectionApplication in 4.474 seconds (JVM running for 6.691)
+2020-05-22 10:44:47 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 10:44:47 -Initializing Servlet 'dispatcherServlet'
+2020-05-22 10:44:47 -Completed initialization in 12 ms
+2020-05-22 10:44:48 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:44:48 -{dataSource-1} inited
+2020-05-22 10:44:48 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:44:48 -==> Parameters: 
+2020-05-22 10:44:48 -<==      Total: 1
+2020-05-22 10:44:48 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:44:48 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 10:44:48 -<==      Total: 10
+2020-05-22 10:44:48 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:44:53 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:44:53 -发生系统异常，错误信息为：null
+2020-05-22 10:44:53 -Resolved [java.lang.NullPointerException]
+2020-05-22 10:45:00 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:45:00 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:45:00 -==> Parameters: 
+2020-05-22 10:45:00 -<==      Total: 1
+2020-05-22 10:45:00 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:45:00 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 10:45:00 -<==      Total: 10
+2020-05-22 10:45:00 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:45:12 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:45:12 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:45:12 -==> Parameters: 
+2020-05-22 10:45:12 -<==      Total: 1
+2020-05-22 10:45:12 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:45:12 -==> Parameters: 10(Integer), 10(Integer)
+2020-05-22 10:45:12 -<==      Total: 1
+2020-05-22 10:45:12 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:45:15 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:45:15 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:45:15 -==> Parameters: 
+2020-05-22 10:45:15 -<==      Total: 1
+2020-05-22 10:45:15 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:45:15 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 10:45:15 -<==      Total: 10
+2020-05-22 10:45:15 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:46:55 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:46:55 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:46:55 -==> Parameters: 
+2020-05-22 10:46:55 -<==      Total: 1
+2020-05-22 10:46:55 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:46:55 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 10:46:55 -<==      Total: 10
+2020-05-22 10:46:55 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:46:59 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:46:59 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:46:59 -==> Parameters: 
+2020-05-22 10:46:59 -<==      Total: 1
+2020-05-22 10:46:59 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:46:59 -==> Parameters: 10(Integer), 10(Integer)
+2020-05-22 10:46:59 -<==      Total: 1
+2020-05-22 10:46:59 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:47:04 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:47:04 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:47:04 -==> Parameters: 
+2020-05-22 10:47:04 -<==      Total: 1
+2020-05-22 10:47:04 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:47:04 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 10:47:04 -<==      Total: 10
+2020-05-22 10:47:04 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:47:13 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:47:13 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:47:13 -==> Parameters: 
+2020-05-22 10:47:13 -<==      Total: 1
+2020-05-22 10:47:13 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:47:13 -==> Parameters: 10(Integer), 10(Integer)
+2020-05-22 10:47:13 -<==      Total: 1
+2020-05-22 10:47:13 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:47:16 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:47:16 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:47:16 -==> Parameters: 
+2020-05-22 10:47:16 -<==      Total: 1
+2020-05-22 10:47:16 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:47:16 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 10:47:16 -<==      Total: 10
+2020-05-22 10:47:16 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:47:23 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:47:23 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:47:23 -==> Parameters: 
+2020-05-22 10:47:23 -<==      Total: 1
+2020-05-22 10:47:23 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:47:23 -==> Parameters: 10(Integer), 10(Integer)
+2020-05-22 10:47:23 -<==      Total: 1
+2020-05-22 10:47:23 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:47:32 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:47:32 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:47:32 -==> Parameters: 
+2020-05-22 10:47:32 -<==      Total: 1
+2020-05-22 10:47:32 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:47:32 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 10:47:32 -<==      Total: 10
+2020-05-22 10:47:32 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:55:35 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 10:55:35 -{dataSource-1} closed
+2020-05-22 10:55:37 -Starting Tb_inspectionApplication on 陈法彬 with PID 97056 (D:\developEclipse\tb_inspection\target\classes started by lenovo in D:\developEclipse\tb_inspection)
+2020-05-22 10:55:37 -No active profile set, falling back to default profiles: default
+2020-05-22 10:55:38 -Tomcat initialized with port(s): 8866 (http)
+2020-05-22 10:55:38 -Initializing ProtocolHandler ["http-nio-0.0.0.0-8866"]
+2020-05-22 10:55:38 -Starting service [Tomcat]
+2020-05-22 10:55:38 -Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-22 10:55:38 -Initializing Spring embedded WebApplicationContext
+2020-05-22 10:55:38 -Root WebApplicationContext: initialization completed in 1314 ms
+2020-05-22 10:55:39 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-22 10:55:39 -LiveReload server is running on port 35729
+2020-05-22 10:55:39 -Starting ProtocolHandler ["http-nio-0.0.0.0-8866"]
+2020-05-22 10:55:39 -Tomcat started on port(s): 8866 (http) with context path '/tb_inspection'
+2020-05-22 10:55:39 -Started Tb_inspectionApplication in 2.568 seconds (JVM running for 670.819)
+2020-05-22 10:55:39 -Condition evaluation unchanged
+2020-05-22 10:58:24 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-22 10:58:24 -Initializing Servlet 'dispatcherServlet'
+2020-05-22 10:58:24 -Completed initialization in 10 ms
+2020-05-22 10:58:24 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:58:24 -{dataSource-2} inited
+2020-05-22 10:58:24 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:58:24 -==> Parameters: 
+2020-05-22 10:58:24 -<==      Total: 1
+2020-05-22 10:58:24 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:58:24 -==> Parameters: 10(Integer), 10(Integer)
+2020-05-22 10:58:24 -<==      Total: 1
+2020-05-22 10:58:24 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:58:26 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:58:26 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:58:26 -==> Parameters: 
+2020-05-22 10:58:26 -<==      Total: 1
+2020-05-22 10:58:26 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 10:58:26 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 10:58:27 -<==      Total: 10
+2020-05-22 10:58:27 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:58:41 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:58:41 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:58:41 -==> Parameters: 
+2020-05-22 10:58:41 -<==      Total: 1
+2020-05-22 10:58:41 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` order by creattime ASC limit ?,? 
+2020-05-22 10:58:41 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 10:58:41 -<==      Total: 10
+2020-05-22 10:58:41 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 10:58:44 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 10:58:44 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 10:58:44 -==> Parameters: 
+2020-05-22 10:58:44 -<==      Total: 1
+2020-05-22 10:58:44 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` order by creattime DESC limit ?,? 
+2020-05-22 10:58:44 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 10:58:44 -<==      Total: 10
+2020-05-22 10:58:44 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 13:29:24 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 13:29:25 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 13:29:25 -==> Parameters: 
+2020-05-22 13:29:25 -<==      Total: 1
+2020-05-22 13:29:25 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` order by creattime DESC limit ?,? 
+2020-05-22 13:29:25 -==> Parameters: 10(Integer), 10(Integer)
+2020-05-22 13:29:25 -<==      Total: 1
+2020-05-22 13:29:25 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 13:29:27 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 13:29:27 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 13:29:27 -==> Parameters: 
+2020-05-22 13:29:27 -<==      Total: 1
+2020-05-22 13:29:27 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` order by creattime DESC limit ?,? 
+2020-05-22 13:29:27 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 13:29:27 -<==      Total: 10
+2020-05-22 13:29:27 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 13:29:32 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 13:29:32 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 13:29:32 -==> Parameters: 
+2020-05-22 13:29:32 -<==      Total: 1
+2020-05-22 13:29:32 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 13:29:32 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 13:29:32 -<==      Total: 10
+2020-05-22 13:29:33 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 13:29:38 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 13:29:38 -==>  Preparing: select count(1) from `dh_inspection` WHERE creattime = ? 
+2020-05-22 13:29:38 -==> Parameters: 2020-05-22(String)
+2020-05-22 13:29:38 -<==      Total: 1
+2020-05-22 13:29:38 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` WHERE creattime = ? limit ?,? 
+2020-05-22 13:29:38 -==> Parameters: 2020-05-22(String), 0(Integer), 10(Integer)
+2020-05-22 13:29:38 -<==      Total: 0
+2020-05-22 13:29:38 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 13:29:41 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 13:29:41 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 13:29:41 -==> Parameters: 
+2020-05-22 13:29:41 -<==      Total: 1
+2020-05-22 13:29:41 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 13:29:41 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 13:29:41 -<==      Total: 10
+2020-05-22 13:29:41 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 14:59:56 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 14:59:56 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 14:59:56 -==> Parameters: 
+2020-05-22 14:59:56 -<==      Total: 1
+2020-05-22 14:59:56 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 14:59:56 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 14:59:56 -<==      Total: 10
+2020-05-22 14:59:56 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 15:00:35 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 15:00:35 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 15:00:35 -==> Parameters: 
+2020-05-22 15:00:35 -<==      Total: 1
+2020-05-22 15:00:35 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 15:00:35 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 15:00:35 -<==      Total: 10
+2020-05-22 15:00:35 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 15:11:35 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 15:11:35 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 15:11:35 -==> Parameters: 
+2020-05-22 15:11:35 -<==      Total: 1
+2020-05-22 15:11:35 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 15:11:35 -==> Parameters: 10(Integer), 10(Integer)
+2020-05-22 15:11:35 -<==      Total: 1
+2020-05-22 15:11:35 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 15:11:39 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 15:11:39 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 15:11:39 -==> Parameters: 
+2020-05-22 15:11:39 -<==      Total: 1
+2020-05-22 15:11:39 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 15:11:39 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 15:11:39 -<==      Total: 10
+2020-05-22 15:11:39 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 15:11:45 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 15:11:45 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 15:11:45 -==> Parameters: 
+2020-05-22 15:11:45 -<==      Total: 1
+2020-05-22 15:11:45 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 15:11:45 -==> Parameters: 10(Integer), 10(Integer)
+2020-05-22 15:11:45 -<==      Total: 1
+2020-05-22 15:11:45 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 15:11:47 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 15:11:48 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 15:11:48 -==> Parameters: 
+2020-05-22 15:11:48 -<==      Total: 1
+2020-05-22 15:11:48 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 15:11:48 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 15:11:48 -<==      Total: 10
+2020-05-22 15:11:48 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 15:11:59 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 15:11:59 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 15:11:59 -==> Parameters: 
+2020-05-22 15:11:59 -<==      Total: 1
+2020-05-22 15:11:59 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 15:11:59 -==> Parameters: 10(Integer), 10(Integer)
+2020-05-22 15:11:59 -<==      Total: 1
+2020-05-22 15:11:59 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 15:12:02 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 15:12:02 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 15:12:02 -==> Parameters: 
+2020-05-22 15:12:02 -<==      Total: 1
+2020-05-22 15:12:02 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 15:12:02 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 15:12:02 -<==      Total: 10
+2020-05-22 15:12:02 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 15:14:26 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 15:14:26 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 15:14:26 -==> Parameters: 
+2020-05-22 15:14:26 -<==      Total: 1
+2020-05-22 15:14:26 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 15:14:26 -==> Parameters: 10(Integer), 10(Integer)
+2020-05-22 15:14:26 -<==      Total: 1
+2020-05-22 15:14:26 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 15:45:44 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 15:45:44 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 15:45:44 -==> Parameters: 
+2020-05-22 15:45:44 -<==      Total: 1
+2020-05-22 15:45:44 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 15:45:44 -==> Parameters: 0(Integer), 10(Integer)
+2020-05-22 15:45:44 -<==      Total: 10
+2020-05-22 15:45:44 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 15:45:49 -======= 开始执行：Dh_inspectionController — likeSelect ========
+2020-05-22 15:45:49 -==>  Preparing: select count(1) from `dh_inspection` 
+2020-05-22 15:45:49 -==> Parameters: 
+2020-05-22 15:45:49 -<==      Total: 1
+2020-05-22 15:45:49 -==>  Preparing: select sale, sc, scresult, scremarks, sp, spresult, spremarks, sf, sfa, sfaresult, sfaremarks, tftc, tftcl, tftclresult, tftclremarks, tftcs, tftcsresult, tftcsremarks, tftcm, tftcmresult, tftcmremarks, tftcc, tftccresult, tftccremarks, tfm, tfml, tfmlresult, tfmlremarks, tfms, tfmsresult, tfmsremarks, tfmm, tfmmresult, tfmmremarks, tfmc, tfmcresult, tfmcremarks, ffm, ffmc, ffmcresult, ffmcremarks, ffmc2, ffmc2result, ffmc2remarks, ffmp, ffmpresult, ffmpremarks, ifofm, ifofmc, ifofmcresult, ifofmcremarks, ifofmp, ifofmpresult, ifofmpremarks, iffm, iffmc, iffmcresult, iffmcremarks, iffms, iffmsresult, iffmsremarks, iffmm, iffmmresult, iffmmremarks, creattime, inspectionId from `dh_inspection` limit ?,? 
+2020-05-22 15:45:49 -==> Parameters: 10(Integer), 10(Integer)
+2020-05-22 15:45:49 -<==      Total: 1
+2020-05-22 15:45:49 -======= 执行结束：Dh_inspectionController — likeSelect ========
+2020-05-22 15:49:25 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-22 15:49:25 -{dataSource-2} closed

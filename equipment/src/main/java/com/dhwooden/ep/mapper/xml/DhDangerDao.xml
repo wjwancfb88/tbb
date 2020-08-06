@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dhwooden.ep.mapper.DhDangerDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.dhwooden.ep.modal.DhDanger">
+		<id column="id" property="id" />
+		<result column="img_url" property="imgUrl" />
+		<result column="type" property="type" />
+		<result column="duty_dept" property="dutyDept" />
+		<result column="dept_id" property="deptId" />
+		<result column="danger_descript" property="dangerDescript" />
+		<result column="danger_dealer" property="dangerDealer" />
+		<result column="danger_phone" property="dangerPhone" />
+		<result column="deal_result" property="dealResult" />
+		<result column="danger_status" property="dangerStatus" />
+		<result column="dealer_name" property="dealerName" />
+	</resultMap>
+
+
+	<update id="updateByModal"  parameterType="com.dhwooden.ep.modal.DhDanger">
+		UPDATE dh_danger
+		<trim prefix="set" suffixOverrides=",">
+			<if test="id!=null">id=#{id},</if>
+			<if test="imgUrl!=null">img_url=#{imgUrl},</if>
+			<if test="type!=null">type=#{type},</if>
+			<if test="dutyDept!=null">duty_dept=#{dutyDept},</if>
+			<if test="deptId!=null">dept_id=#{deptId},</if>
+			<if test="dangerDescript!=null">danger_descript=#{dangerDescript},</if>
+			<if test="dangerDealer!=null">danger_dealer=#{dangerDealer},</if>
+			<if test="dangerPhone!=null">danger_phone=#{dangerPhone},</if>
+			<if test="dealResult!=null">deal_result=#{dealResult},</if>
+			<if test="dangerStatus!=null">danger_status=#{dangerStatus},</if>
+			<if test="dealerName!=null">dealer_name=#{dealerName},</if>
+			<if test="dealUrl!=null">deal_url=#{dealUrl},</if>
+			<if test="dealWay!=null">deal_way=#{dealWay},</if>
+			<if test="isHq!=null">is_hq=#{isHq},</if>
+			<if test="isActive!=null">is_active=#{isActive},</if>
+			<if test="isNine!=null">is_nine=#{isNine},</if>
+			<if test="nowManager!=null">now_manager=#{nowManager},</if>
+		</trim>
+		WHERE id=#{id}
+		</update>
+
+
+<select id="selectMap" resultMap="BaseResultMap" parameterType="Map">
+SELECT *  FROM dh_danger
+<where>
+	<if test="id!=null">id=#{id}
+	</if>
+	<if test="imgUrl!=null">and img_url=#{imgUrl}
+	</if>
+	<if test="type!=null">and type=#{type}
+	</if>
+	<if test="dutyDept!=null">and duty_dept=#{dutyDept}
+	</if>
+	<if test="deptId!=null">and dept_id=#{deptId}
+	</if>
+	<if test="dangerDescript!=null">and danger_descript=#{dangerDescript}
+	</if>
+	<if test="dangerDealer!=null">and danger_dealer=#{dangerDealer}
+	</if>
+	<if test="dangerPhone!=null">and danger_phone=#{dangerPhone}
+	</if>
+	<if test="dealResult!=null">and deal_result=#{dealResult}
+	</if>
+	<if test="dangerStatus!=null">and danger_status=#{dangerStatus}
+	</if>
+	<if test="dealerName!=null">and dealer_name=#{dealerName}	</if>
+	<if test="dealManger!=null">and deal_manger=#{dealManger}
+	</if>
+	<if test="isActive!=null">and is_activee=#{isActive}
+	</if>
+	<if test="isHq!=null">and is_hq=#{isHq}
+	</if>
+</where>
+ORDER  by danger_Status
+</select>
+
+		</mapper>

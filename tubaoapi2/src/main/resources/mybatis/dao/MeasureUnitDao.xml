@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.tubaoapi.dao.MeasureUnitDao">
+  	
+	<resultMap id="measureUnitResult" type="MeasureUnit">
+	  <id property="id" column="FID" />
+	  <result property="name" column="FNAME_L2"/>
+	</resultMap>
+  	
+  	
+  	<select id="get" parameterType="string" resultMap="measureUnitResult">
+    	select * from T_BD_MeasureUnit where FID=#{id}
+  	</select>  	
+  	
+	<select id="findBySO" parameterType="BaseSO" resultMap="measureUnitResult">
+		select * from T_BD_MeasureUnit 
+		<where>
+			<if test="ids != null">
+			  FID in <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>		
+			</if>
+			<if test="id != null">
+			  and FID = #{id}			
+			</if>			
+		</where>		
+	</select>    	
+  	
+</mapper>

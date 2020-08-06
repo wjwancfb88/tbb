@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<title>测试</title>
+	<link href="/app/css/mui.min.css" rel="stylesheet" type="text/css" />
+	<link href="/app/css/app.css" rel="stylesheet" type="text/css" />
+	<link href="/app/css/icons-extra.css" rel="stylesheet" type="text/css" />
+	<link href="/app/css/mui.picker.css" rel="stylesheet" type="text/css" />
+	<link href="/app/css/mui.poppicker.css" rel="stylesheet" type="text/css" />
+	<link href="/app/css/mui.picker.min.css" rel="stylesheet" type="text/css" />
+	<link href="/app/css/vjpage.css" rel="stylesheet" type="text/css" />
+	<link href="/app/css/config.css" rel="stylesheet" type="text/css" />
+</head>
+<body data-curpagename="page2" >
+<header id="page2_jPanel1" class="mui-bar mui-bar-nav">
+	<span id="page2_jIconfont1" class="mui-icon mui-icon-arrowleft mui-pull-left"></span>
+	<div id="page2_jPanel11" class=" mui-pull-left">
+	
+	</div>
+	<span id="page2_jIconfont5" class="mui-icon mui-icon-closeempty mui-pull-left" ></span>
+	<h1 id="page2_jLabel1" class="mui-title">测试</h1>
+</header>
+<div id="page2_jPanel5" class="mui-content">
+		<input type="text"  id="connect_redirect" name="connect_redirect" style="display: none;">
+
+        <div id="addwin">
+		<div  >
+			<div id="page2_jEdit1" class="mui-input-row">
+				<label style="width: 100px">题目</label>
+				<textarea   rows="5"  type="text"  id="problem"  style="width: 100%" ></textarea>
+				<!--//<input type="text"  id="problem" name="problem"  >-->
+			</div>
+		</div>
+		<div id="page2_jPanel2" >
+			<div id="page2_jEdit42" class="mui-input-row">
+				<label >答案</label>
+				<textarea   rows="5"  type="text"  id="answer"  style="width: 100%" ></textarea>
+			</div>
+		</div>
+			<button class="mui-btn mui-btn-primary btnsize_default mui-btn-block" onclick="add()">录入</button>
+			</div>
+		<div id="testwin" style="display: none">
+			<div  >
+				<div  class="mui-input-row">
+					<label>测试题目</label>
+					<textfiled   clos=",50" rows="5"  type="text"  id="pro"  ></textfiled>
+				</div>
+			</div>
+			<div >
+				<div  class="mui-input-row" style="display: none">
+					<label>测试答案</label>
+					<input type="text"  id="ans" name="answer"  >
+				</div>
+			</div>
+			<div id="next" class="vjcenterpanel Panel_c">
+				<button class="mui-btn mui-btn-primary btnsize_default mui-btn-block" onclick="changePro()">随机更换</button>
+
+			</div>
+		</div>
+
+		<div id="page2_jPanel9" class="vjcenterpanel Panel_c">
+			<button class="mui-btn mui-btn-primary btnsize_default mui-btn-block" onclick="addwin()">录入题目</button>
+			<button class="mui-btn mui-btn-primary btnsize_default mui-btn-block" onclick="test()">开始测试</button>
+
+	   </div>
+		<!--<div id="page2_jPanel8" class="">-->
+			<!--<div id="page2_jPanel9" class="">-->
+			<!-- -->
+			<!--</div>-->
+
+		<!--</div>-->
+
+
+
+	<!--<div id="page2_jPanel10" class="vjcenterpanel Panel_c">-->
+		<!--<button id="page2_jButton1" type="button"  class="mui-btn mui-btn-primary btnsize_default mui-btn-block" onclick="vistor()">提交</button>-->
+	<!--</div>-->
+</div>
+
+
+</body>
+
+<script type="text/javascript" src="/app/js/jquery.min.js"></script>
+<script type="text/javascript" src="/app/js/mui.min.js"></script>
+<script type="text/javascript" src="/app/js/mui.picker.js"></script>
+<script type="text/javascript" src="/app/js/mui.poppicker.js"></script>
+<script type="text/javascript" src="/app/js/mui.picker.min.js"></script>
+<script src="/js/bootstrap.min.js?v=3.3.6"></script>
+<script type="text/javascript" src="/app/js/test.js"></script>
+<!--<script src="/js/bootstrapValidator.min.js"></script>-->
+<!--<script src="/js/bootstrapValidator.js"></script>-->
+<script type="text/javascript">
+</script>
+</html>

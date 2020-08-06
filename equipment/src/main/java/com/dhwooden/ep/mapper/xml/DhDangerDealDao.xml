@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dhwooden.ep.mapper.DhDangerDealDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.dhwooden.ep.modal.DhDangerDeal">
+		<result column="danger_id" property="dangerId" />
+		<result column="deal_url" property="dealUrl" />
+		<result column="deal_way" property="dealWay" />
+		<result column="dealer" property="dealer" />
+		<result column="deal_date" property="dealDate" />
+	</resultMap>
+
+
+	<update id="updateByModal"  parameterType="com.dhwooden.ep.modal.DhDangerDeal">
+		UPDATE dh_danger_deal
+		<trim prefix="set" suffixOverrides=",">
+			<if test="dangerId!=null">danger_id=#{dangerId},</if>
+			<if test="dealUrl!=null">deal_url=#{dealUrl},</if>
+			<if test="dealWay!=null">deal_way=#{dealWay},</if>
+			<if test="dealer!=null">dealer=#{dealer},</if>
+			<if test="dealDate!=null">deal_date=#{dealDate},</if>
+		</trim>
+		WHERE danger_id=#{dangerId}
+	</update>
+</mapper>

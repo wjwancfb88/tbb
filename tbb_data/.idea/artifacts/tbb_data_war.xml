@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tbb_data:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>tbb_data</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="tbb.sso.war">
+      <element id="artifact" artifact-name="tbb_data:war exploded" />
+    </root>
+  </artifact>
+</component>

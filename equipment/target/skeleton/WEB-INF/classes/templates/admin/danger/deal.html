@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<title>隐患整改</title>
+	<link href="/danger/css/mui.min.css" rel="stylesheet" type="text/css" />
+	<link href="/danger/css/app.css" rel="stylesheet" type="text/css" />
+	<link href="/danger/css/icons-extra.css" rel="stylesheet" type="text/css" />
+	<link href="/danger/css/vjpage.css" rel="stylesheet" type="text/css" />
+	<link href="/danger/css/config.css" rel="stylesheet" type="text/css" />
+</head>
+<body data-curpagename="page4" >
+<header id="page4_jPanel1" class="mui-bar mui-bar-nav">
+	<span id="page4_jIconfont1" class=""></span>
+	<h1 id="page4_jLabel1" class="mui-title">隐患整改</h1>
+</header>
+<div id="page4_jPanel5" class="mui-content">
+	<div id="page4_jPanel4" class="vjcenterpanel Panel_c">
+		<div id="page4_jNavigation1" class="navbar_style2 mui-slider-indicator mui-segmented-control-inverted  mui-segmented-control navbar navimg_circlefill nav-inline" data-col="2">
+			<a id="page4_jNavigation1_item1" class="mui-control-item mui-active" href="#">
+				<span class="mui-tab-label"><label>待整改</label></span>
+			</a>
+		</div>
+	</div>
+	<div id="page4_jPanel12" class="">
+	
+	</div>
+	</div>
+	<ul id="page4_jList1" class="mui-table-view mui-table-view-chevron">
+		<li class="mui-table-view-cell" th:each="dangerList:${dangerList}" >
+			<!--<div id="page4_jLabel3" class="mui-pull-right" th:text="${dangerList.}">2018.9.12</div>-->
+			<img id="page4_jImages1" style="width:72px;height:72px" class="mui-pull-left" th:src=@{${dangerList.imgUrl}} th:onclick="'javascript:DealDanger(\''+${dangerList.id}+'\')' " />
+			<map name="page4_jImages1_map" id="page4_jImages1_map">
+			</map>
+			<div id="page4_jPanel6" class=" mui-pull-left">
+			</div>
+			<div id="page4_jLabel2"  th:text="${dangerList.dangerDescript}" th:onclick="'javascript:DealDanger(\''+${dangerList.id}+'\')' "></div>
+			<!--<div  th:switch="${user.anonymous}" ><span class="page4_jLabel4 "th:case="'0'" th:text="${dangerList.d}">严重</span>
+				　　<span th:case="1" class="page4_jLabel4 ">一般</span></div>
+			&lt;!&ndash;<div id="page4_jLabel4" th:text="${dangerList.type}">严重</div>&ndash;&gt;
+			<div id="page4_jLabel5">未处理</div>-->
+		</li>
+
+	</ul>
+</div>
+<!--<nav id="page4_jNavigation2" class="navbar_style3 mui-slider-indicator  mui-segmented-control navbar" data-col="4">-->
+	<!--<a id="page4_jNavigation2_item1" class="mui-control-item mui-active" href="#">-->
+		<!--<span class="mui-tab-label"><div>首页</div></span>-->
+	<!--</a>-->
+	<!--<a id="page4_jNavigation2_item2" class="mui-control-item" href="#">-->
+		<!--<span class="mui-tab-label"><div>消息</div></span>-->
+	<!--</a>-->
+	<!--<a id="page4_jNavigation2_item3" class="mui-control-item" href="#">-->
+		<!--<span class="mui-tab-label"><div>拍照</div></span>-->
+	<!--</a>-->
+	<!--<a id="page4_jNavigation2_item4" class="mui-control-item" href="#">-->
+		<!--<span class="mui-tab-label"><div>我的</div></span>-->
+	<!--</a>-->
+<!--</nav>-->
+
+
+</body>
+
+<script type="text/javascript" src="/danger/js/jquery.min.js"></script>
+<script type="text/javascript" src="/danger/js/mui.min.js"></script>
+<script type="text/javascript" src="/danger/js/navigation.js"></script>
+<script type="text/javascript" src="/danger/deal.js"></script>
+<script type="text/javascript">
+</script>
+</html>

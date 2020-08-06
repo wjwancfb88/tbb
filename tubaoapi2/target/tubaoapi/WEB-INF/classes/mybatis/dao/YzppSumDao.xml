@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tubaoapi.dao.YzppSumDao">
+
+	<resultMap id="yzppSumResult" type="com.tubaoapi.model.dto.YzppSum" >
+		<result property="customerID" column="fCustomerID"/>
+		<result property="materialID" column="fMaterialID"/>
+		<result property="oemsupplierID" column="CFOEMSUPPLIERID"/>
+		<result property="sum" column="sum"/>
+		<result property="fqty" column="fqty"/>
+		<result property="createTime" column="FCREATETIME"/>
+	</resultMap>
+
+	<select id="findOtherIssueBillData" resultMap="yzppSumResult">
+		select  e.FCustomerID customerID,e.FMaterialID materialID,sum(e.FQty) sum from T_IM_OtherIssueBillEntry e
+		inner join T_IM_OtherIssueBill o on e.FParentID = o.FID
+		where e.FMaterialID in ('1roAAAIUFSpECefw','1roAAAJ2XcNECefw','1roAAALJHXpECefw')
+		and o.FBaseStatus = 4
+		group by e.FCustomerID,e.FMaterialID
+	</select>
+
+	<select id="findOrderData" parameterType="YzppSum" resultMap="yzppSumResult">
+		SELECT s.CFOEMSUPPLIERID oemsupplierID,o.FMATERIALID FMATERIALID,o.FQTY fqty,s.FCREATETIME createTime
+		FROM T_SD_SALEORDER s
+		INNER JOIN T_SD_SALEORDERENTRY o
+		on s.FID = o.FPARENTID
+		where o.FMATERIALID in ('1roAAAIWJO1ECefw','1roAAAKz0AhECefw','1roAAAMYBd9ECefw')
+		and s.FBASESTATUS in(4,7)
+		and s.CFOEMSUPPLIERID = #{0}
+		and s.FCREATETIME >= to_date(#{1}, 'YYYY-MM-DD HH24:MI:SS')
+		GROUP BY s.CFOEMSUPPLIERID,o.FMATERIALID,o.FQTY,s.FCREATETIME
+	</select>
+
+</mapper>

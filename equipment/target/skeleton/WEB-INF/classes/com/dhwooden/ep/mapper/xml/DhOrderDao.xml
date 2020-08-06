@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dhwooden.ep.mapper.DhOrderDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.dhwooden.ep.modal.DhOrder">
+        <result column="order_id" property="orderId" />
+        <result column="order_name" property="orderName" />
+        <result column="order_type" property="orderType" />
+        <result column="account_id" property="accountId" />
+        <result column="order_date" property="orderDate" />
+        <result column="remark" property="remark" />
+        <result column="total" property="total" />
+        <result column="paid" property="paid" />
+        <result column="unpaid" property="unpaid" />
+        <result column="invoiced" property="invoiced" />
+        <result column="uninvoiced" property="uninvoiced" />
+        <result column="owning_user" property="owningUser" />
+        <result column="owning_business_unit" property="owningBusinessUnit" />
+        <result column="created_by" property="createdBy" />
+        <result column="created_on" property="createdOn" />
+        <result column="modified_by" property="modifiedBy" />
+        <result column="modified_on" property="modifiedOn" />
+        <result column="is_deleted" property="isDeleted" />
+        <result column="chance_id" property="chanceId" />
+        <result column="jihuijindugengxin" property="jihuijindugengxin" />
+        <result column="c_baozhuangfangshi" property="cBaozhuangfangshi" />
+        <result column="c_shengchanjiaohuoqi" property="cShengchanjiaohuoqi" />
+        <result column="c_fujian" property="cFujian" />
+        <result column="c_zhiliangyaoqiu" property="cZhiliangyaoqiu" />
+        <result column="c_zongshuliangzhang" property="cZongshuliangzhang" />
+        <result column="c_zongshulianglifang" property="cZongshulianglifang" />
+        <result column="c_zongshuliangjianshu" property="cZongshuliangjianshu" />
+        <result column="c_dizhi" property="cDizhi" />
+        <result column="c_dingdanleixing" property="cDingdanleixing" />
+        <result column="c_bizhong" property="cBizhong" />
+        <result column="c_yufukuan" property="cYufukuan" />
+    </resultMap>
+
+    <select id="selectEmpByName" resultMap="BaseResultMap" parameterType="Map">
+        select * from dh_order
+        where order_name like CONCAT('%', #{orderName}, '%')
+
+    </select>
+    <select id="selectOrderById" resultType="com.dhwooden.ep.modal.DhOrder" parameterType="String">
+        select * from dh_order
+        where order_id = #{orderId}
+    </select>
+    <update id="updateByModal"  parameterType="com.dhwooden.ep.modal.DhOrder">
+        UPDATE dh_order
+        <trim prefix="set" suffixOverrides=",">
+            <if test="orderName!=null">order_name=#{orderName},</if>
+            <if test="orderType!=null">order_type=#{orderType},</if>
+            <if test="accountId!=null">account_id=#{accountId},</if>
+            <if test="orderDate!=null">order_date=#{orderDate},</if>
+            <if test="remark!=null">remark=#{remark},</if>
+            <if test="total!=null">total=#{total},</if>
+            <if test="paid!=null">paid=#{paid},</if>
+            <if test="unpaid!=null">unpaid=#{unpaid},</if>
+            <if test="invoiced!=null">invoiced=#{invoiced},</if>
+            <if test="uninvoiced!=null">uninvoiced=#{uninvoiced},</if>
+            <if test="owningUser!=null">owning_user=#{owningUser},</if>
+            <if test="owningBusinessUnit!=null">owning_business_unit=#{owningBusinessUnit},</if>
+            <if test="createdBy!=null">created_by=#{createdBy},</if>
+            <if test="createdOn!=null">created_on=#{createdOn},</if>
+            <if test="modifiedBy!=null">modified_by=#{modifiedBy},</if>
+            <if test="modifiedOn!=null">modified_on=#{modifiedOn},</if>
+            <if test="isDeleted!=null">is_deleted=#{isDeleted},</if>
+            <if test="chanceId!=null">chance_id=#{chanceId},</if>
+            <if test="jihuijindugengxin!=null">jihuijindugengxin=#{jihuijindugengxin},</if>
+            <if test="cBaozhuangfangshi!=null">c_baozhuangfangshi=#{cBaozhuangfangshi},</if>
+            <if test="cShengchanjiaohuoqi!=null">c_shengchanjiaohuoqi=#{cShengchanjiaohuoqi},</if>
+            <if test="cFujian!=null">c_fujian=#{cFujian},</if>
+            <if test="cZhiliangyaoqiu!=null">c_zhiliangyaoqiu=#{cZhiliangyaoqiu},</if>
+            <if test="cZongshuliangzhang!=null">c_zongshuliangzhang=#{cZongshuliangzhang},</if>
+            <if test="cZongshulianglifang!=null">c_zongshulianglifang=#{cZongshulianglifang},</if>
+            <if test="cZongshuliangjianshu!=null">c_zongshuliangjianshu=#{cZongshuliangjianshu},</if>
+            <if test="cDizhi!=null">c_dizhi=#{cDizhi},</if>
+            <if test="cDingdanleixing!=null">c_dingdanleixing=#{cDingdanleixing},</if>
+            <if test="cBizhong!=null">c_bizhong=#{cBizhong},</if>
+            <if test="cYufukuan!=null">c_yufukuan=#{cYufukuan},</if>
+        </trim>
+        WHERE order_id=#{orderId}
+    </update>
+</mapper>

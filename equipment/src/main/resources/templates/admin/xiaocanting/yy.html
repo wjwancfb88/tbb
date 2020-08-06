@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<title>点餐服务</title>
+	<link href="/xiaocanting/css/mui.min.css" rel="stylesheet" type="text/css" />
+	<link href="/xiaocanting/css/app.css" rel="stylesheet" type="text/css" />
+	<link href="/xiaocanting/css/icons-extra.css" rel="stylesheet" type="text/css" />
+	<link href="/xiaocanting/css/mui.picker.css" rel="stylesheet" type="text/css" />
+	<link href="/xiaocanting/css/mui.poppicker.css" rel="stylesheet" type="text/css" />
+	<link href="/xiaocanting/css/mui.picker.min.css" rel="stylesheet" type="text/css" />
+	<link href="/xiaocanting/css/vjpage.css" rel="stylesheet" type="text/css" />
+	<link href="/xiaocanting/css/config.css" rel="stylesheet" type="text/css" />
+	<script src="//static.yunzhijia.com/public/js/qing/latest/qing.js"></script>
+
+</head>
+<body data-curpagename="page2" >
+<header id="page2_jPanel1" class="mui-bar mui-bar-nav">
+	<span id="page2_jIconfont1" class=""></span>
+	<h1 id="page2_jLabel1" class="mui-title">兔宝宝家居产业园就餐预约</h1>
+</header>
+<div id="page2_jPanel5" class="mui-content">
+	<form id="page2_jHtmlForm1" name="page2_jHtmlForm1" method="post" action="../dhCanteen/addData">
+		<div id="page2_jPanel2" class="">
+			<div id="page2_jEdit2" class="mui-input-row">
+				<label>预约人员</label>
+				<input type="text" placeholder="请输入人员">
+			</div>
+			<div class="mui-input-row"><label>预约人数：</label>
+			<div id="page2_jUpDownEdit2" class="mui-numbox" data-numbox-step="" data-numbox-min="" data-numbox-max="">
+				<button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+				<input class="mui-input-numbox" type="number" name="number" value="" />
+				<button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+			</div>
+			</div>
+			<ul id="page2_jList1" class="mui-table-view mui-table-view-chevron">	
+				<li class="mui-table-view-cell">
+					<a id="page2_jLinkAarrow1" class="mui-navigate-right">
+						<div id="page2_jLabel2" class="mui-pull-left">预约部门</div>
+						<input  id="deptInput" type="text" name="dept" value=""  style="display: none"/>
+						<div id="dept" class="mui-pull-right" name="dept">请选择（必填）</div>
+					</a>
+					</li>
+				<li class="mui-table-view-cell">
+					<a id="page2_jLinkAarrow2" class="mui-navigate-right">
+						<div id="page2_jLabel6" class="mui-pull-left">就餐时间</div>
+						<input  id="orderTimeInput" type="text" name="orderTime" value=""  style="display: none"/>
+						<div id="orderTime" class="mui-pull-right">请选择（必填）</div>
+					</a>
+					</li>
+				<li class="mui-table-view-cell">
+					<a id="page2_jLinkAarrow3" class="mui-navigate-right">
+						<div id="page2_jLabel4" class="mui-pull-left">菜品</div>
+						<input  id="typeInput" type="text" name="type" value=""  style="display: none"/>
+						<div id="type" class="mui-pull-right">请选择（必填）</div>
+					</a>
+					</li>
+				<li class="mui-table-view-cell">
+					<a id="page2_jLinkAarrow4" class="mui-navigate-right">
+						<div id="page2_jLabel8" class="mui-pull-left">预约餐位</div>
+						<input  id="seatInput" type="text" name="seat" value=""  style="display: none"/>
+						<div id="seat" class="mui-pull-right">请选择（必填）</div>
+					</a>
+				</li>
+
+			</ul>
+		</div>
+
+
+					<div id="page2_jPanel28" class="">
+						<div id="page2_jPanel30" class="vjcenterpanel Panel_c">
+							<button id="page2_jButton2" type="submit" class="mui-btn mui-btn-primary btnsize_default mui-btn-block">提交</button>
+						</div>
+					</div>
+
+
+
+		<div id="page2_jPanel10" class="">
+		
+		</div>
+	</form>
+</div>
+
+
+</body>
+
+<script type="text/javascript" src="/xiaocanting/js/jquery.min.js"></script>
+<script type="text/javascript" src="/xiaocanting/js/mui.min.js"></script>
+<script type="text/javascript" src="/xiaocanting/js/mui.picker.js"></script>
+<script type="text/javascript" src="/xiaocanting/js/mui.poppicker.js"></script>
+<script type="text/javascript" src="/xiaocanting/js/mui.picker.min.js"></script>
+<script type="text/javascript" src="/xiaocanting/page2.js"></script>
+<script type="text/javascript">
+</script>
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.tubaoapi.dao.PersonDao">
+  	
+	<resultMap id="PersonResult" type="Person">
+	  <id property="id" column="FID" />
+	  <result property="number" column="FNumber"/>
+	  <result property="name" column="FNAME_L2"/>
+	  <result property="cell" column="FCell"/>
+	  <result property="dbOemPinkongUser" column="CFISDBOEMPINKONGUSER"/>
+	  <result property="ertjjPinguan" column="CFIsErtjjPinguan"/>
+	  <result property="ertjjYunying" column="CFIsErtjjYunying"/>
+	  <result property="ertjjPurchasManager" column="CFIsErtjjPurchasManager"/>
+
+	</resultMap>
+	
+  	<select id="findBySO"  resultMap="PersonResult" parameterType="PersonSO">
+    	select  b.* from T_BD_Person b
+		<where>
+             <if test = "q != null and q !=''  ">
+             b.FNAME_L2 like '%'||#{q}||'%'
+             </if>
+			<if test="id != null">
+				and b.FID = #{id}
+			</if>
+			<if test="ids != null">
+				and b.FID in <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+			</if>
+			<if test="dbOemPinkongUser != null">
+				and b.CFISDBOEMPINKONGUSER = #{dbOemPinkongUser}
+			</if>
+			<if test="ertjjPinguan != null">
+				and b.CFIsErtjjPinguan = #{ertjjPinguan}
+			</if>
+			<if test="ertjjYunying != null">
+				and b.CFIsErtjjYunying = #{ertjjYunying}
+			</if>
+			<if test="ertjjPurchasManager != null">
+				and b.CFIsErtjjPurchasManager = #{ertjjPurchasManager}
+			</if>
+			<if test="createTime!=null">
+				and FCreateTime >=to_date(#{createTime},'YYYY-MM-dd hh24:mi:ss')
+			</if>
+		</where>
+		order by b.FCreateTime asc
+  	</select>	
+  	
+  	<select id="get" parameterType="string" resultMap="PersonResult">
+    	select * from T_BD_Person where FID=#{id}
+  	</select>
+ 
+</mapper>

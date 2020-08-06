@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dhwooden.ep.mapper.DhWlyyDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.dhwooden.ep.modal.WLYY">
+        <result column="c__biaoti" property="biaoti" />
+        <result column="c__chengshi" property="chengshi" />
+        <result column="c__dianshangbupanduanyixiang" property="dianshangbupanduanyixiang" />
+        <result column="c__dingzhichanpin" property="dingzhichanpin" />
+        <result column="c__dingzhiyiyuan" property="dingzhiyiyuan" />
+        <result column="c__fenpeizhuangtai" property="fenpeizhuangtai" />
+        <result column="c__gendankefubeizhu" property="gendankefubeizhu" />
+        <result column="c__genjincishu" property="genjincishu" />
+        <result column="c__huifangkefubeizhu" property="huifangkefubeizhu" />
+        <result column="c__huodong" property="huodong" />
+        <result column="c__kehu" property="kehu" />
+        <result column="c__kehudengji" property="kehudengji" />
+        <result column="c__kehudizhi" property="kehudizhi" />
+        <result column="c__kehushouji" property="kehushouji" />
+        <result column="c__kehusuozaichengshi" property="kehusuozaichengshi" />
+        <result column="c__kehuxingming" property="kehuxingming" />
+        <result column="c__kehuxuqiu" property="kehuxuqiu" />
+        <result column="c__laiyuan" property="laiyuan" />
+        <result column="c__lastAssignOn" property="lastAssignOn" />
+        <result column="c__leixing" property="leixing" />
+        <result column="c__sheng" property="sheng" />
+        <result column="c__shi" property="shi" />
+        <result column="c__tuiguangpingtai" property="tuiguangpingtai" />
+        <result column="c__type" property="type" />
+        <result column="c__url" property="url" />
+        <result column="c__wlyyId" property="wlyyId" />
+        <result column="c__xianqu" property="xianqu" />
+        <result column="c__xiaoqu" property="xiaoqu" />
+        <result column="c__yixiangfenlei" property="yixiangfenlei" />
+        <result column="c__yixiangjingxiaoshang" property="yixiangjingxiaoshang" />
+        <result column="c__yusuanfanwei" property="yusuanfanwei" />
+        <result column="c__zhuangtai" property="zhuangtai" />
+        <result column="c__zhuangxiujieduan" property="zhuangxiujieduan" />
+        <result column="c__zuijinchulishijian" property="zuijinchulishijian" />
+        <result column="c__zuijingenjinneirong" property="zuijingenjinneirong" />
+        <result column="created_by" property="createdBy" />
+        <result column="created_on" property="createdOn" />
+        <result column="is_deleted" property="isDeleted" />
+        <result column="modified_by" property="modifiedBy" />
+        <result column="modified_on" property="modifiedOn" />
+        <result column="owning_business_unit" property="owningBusinessUnit" />
+        <result column="owning_user" property="owningUser" />
+    </resultMap>
+
+    <select id="selectWlyyById" resultType="com.dhwooden.ep.modal.WLYY" parameterType="String">
+        select * from e__wlyy
+        where c__wlyyId = #{wlyyId}
+    </select>
+
+    <delete id="deleteAll" parameterType="object">
+        delete from e__wlyy
+    </delete>
+
+</mapper>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.tubaoapi.dao.UserDao">
+  	
+	<resultMap id="userResult" type="User">
+	  <id property="id" column="FID" />
+	  <result property="number" column="FNUMBER"/>
+	  <result property="name" column="FNAME_L2"/>
+	  <result property="personId" column="FPERSONID"/>
+	  <result property="customerId" column="FCUSTOMERID"/>
+	  <result property="supplierId" column="FSupplierID"/>
+	  <result property="lastUpdateTime" column="FLastUpdateTime"/>
+		<result property="type" column="FType"/>
+		<result property="org" column="org"/>
+		<result property="phone" column="fcell"/>
+	</resultMap>
+  	
+	<select id="findBySO" parameterType="BaseSO" resultMap="userResult">
+		select * from t_pm_user
+		<where>
+			<if test="ids != null">
+			  FID in <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+			</if>
+			<if test="id != null">
+			  and FID = #{id}
+			</if>
+			<if test="number != null">
+			  and FNUMBER = #{number}
+			</if>
+			<if test="customerId != null">
+				and FCustomerID = #{customerId}
+			</if>
+			<if test = "q != null">
+			and (
+			  	FName_L2 like '%'||#{q}||'%'  or FNumber like '%'||#{q}||'%'
+			)
+			</if>
+			<if test="lastUpdateTime!=null">
+				and FLastUpdateTime >=to_date(#{lastUpdateTime},'YYYY-MM-dd hh24:mi:ss')
+			</if>
+			<if test="createTime!=null">
+				and FCreateTime >=to_date(#{createTime},'YYYY-MM-dd hh24:mi:ss')
+			</if>
+
+		</where>
+		order by FCreateTime asc
+	</select>
+
+
+  	<select id="get" parameterType="string" resultMap="userResult">
+    	select * from T_PM_USER where FID=#{id}
+  	</select>
+  	
+  	<select id="getByNumber" parameterType="string" resultMap="userResult">
+    	select * from T_PM_USER where FNUMBER=#{number}
+  	</select>
+
+	<select id="findByStaff" parameterType="BaseSO" resultMap="userResult">
+		select
+		distinct(a.fid),
+		a.FNUMBER,a.FNAME_L2,a.FCUSTOMERID,a.FSupplierID,a.FLastUpdateTime,a.FType,fdisplayname_l2 org
+		from t_pm_user a
+		left join T_ORG_PositionMember f on f.fpersonid=a.fpersonid
+		left join T_ORG_Position g on g.fid=f.fpositionid
+		left join T_ORG_BaseUnit h on h.fid=g.FAdminOrgUnitID
+		<where>
+			a.FType='20'
+			and f.fisprimary='1'
+			and fdisplayname_l2 is not null
+			<if test="ids != null">
+				a.FID in <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+			</if>
+			<if test="id != null">
+				and a.FID = #{id}
+			</if>
+			<if test="number != null">
+				and a.FNUMBER = #{number}
+			</if>
+			<if test = "q != null">
+				and (
+				a.FName_L2 like '%'||#{q}||'%'  or FNumber like '%'||#{q}||'%'
+				)
+			</if>
+			<if test="lastUpdateTime!=null">
+				and a.FLastUpdateTime >=to_date(#{lastUpdateTime},'YYYY-MM-dd hh24:mi:ss')
+			</if>
+		</where>
+	</select>
+
+</mapper>

@@ -1,0 +1,187 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+ - Typography
+
+- Project:	GoodFood - HTML Template
+- Version:	1.1
+- Author:  Andrey Sokoltsov
+
+-------------------------------------------------------------------*/
+/*Typography*/
+@font-face {
+  font-family: Annabelle;
+  src: url("fonts/Annabelle/Annabelle.ttf");
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.b-logo {
+  font-family: 'Annabelle', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+}
+.b-logo a {
+  display: inline-block;
+}
+
+h3 {
+  margin: 0 0 24px;
+}
+
+p {
+  color: #7a7979;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.first-title {
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 5px 0 25px;
+  line-height: 1.4;
+}
+
+.second-title {
+  font-family: 'Annabelle', sans-serif;
+  font-size: 36px;
+  margin: 0 0 15px;
+}
+
+.third-title {
+  font-family: 'Lora', serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.article-title {
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 0 35px;
+}
+
+.additional-title {
+  font-family: 'Lora', serif;
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0 0 45px;
+}
+
+.little-title {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 10px;
+}
+
+.aside-title {
+  text-transform: uppercase;
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 20px;
+}
+
+.line-title {
+  text-transform: uppercase;
+  font-family: 'Lora', serif;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 78px;
+  position: relative;
+  padding-bottom: 33px;
+}
+.line-title:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 173px;
+  height: 2px;
+  background: #ebebeb;
+  margin: 0 auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.line-title:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 75px;
+  height: 4px;
+  margin: 0 auto;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.b-menu-heading .title {
+  text-transform: uppercase;
+  font-family: 'Lora', serif;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0 0 24px;
+  position: relative;
+}
+.b-menu-heading .subtitle {
+  font-family: 'Annabelle', sans-serif;
+  font-size: 36px;
+  margin: 0;
+  color: #464545;
+}
+
+.hamburger {
+  background-color: #111;
+  height: 40px;
+  padding: 7px;
+  width: 40px;
+}
+
+.hamburger:hover {
+  opacity: 1;
+}
+
+.hamburger-box {
+  height: 100%;
+  width: 100%;
+}
+
+.hamburger-inner,
+.hamburger-inner:after,
+.hamburger-inner:before {
+  background-color: #fff;
+  height: 3px;
+  width: 100%;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+.hamburger-inner:before {
+  top: -8px;
+}
+
+.hamburger-inner:after {
+  bottom: -8px;
+}
+
+.b-back-link {
+  font-size: 18px;
+  color: #858585;
+}
+.b-back-link i {
+  margin-right: 3px;
+  font-size: 16px;
+}

@@ -1,0 +1,3 @@
+10:25:57.829 [main] DEBUG com.tubaoapi.modules.http.HttpClient - http://61.153.182.58:1266/api/crm/yzppSum/order?oemsupplierID=1roAAAI9nkM3xn38&createTime=2019-01-01&client=crm&time=1591842353834&token=f17ad4d13a9147bdfe6d87bf49ea3441
+10:27:08.082 [main] DEBUG com.tubaoapi.modules.http.HttpClient - http://61.153.182.58:1266/api/crm/yzppSum?client=crm&time=1591842424805&token=f7dd10cb2d22cd5b6d84bc9681a09efe
+13:23:15.398 [main] DEBUG com.tubaoapi.modules.http.HttpClient - http://61.153.182.58:1266/api/crm/yzppSum/order?oemsupplierID=1roAAAI9nkM3xn38&createTime=2019-01-01&client=crm&time=1591852992359&token=163941ff0bdcef27eb8960f30b287b04

@@ -1,0 +1,616 @@
+.lapp-person-select-wrap button{
+	background: none;
+	border: none;
+}
+.lapp-person-select-wrap img{
+	border: none;
+}
+
+.lapp-person-select-wrap ul{
+	list-style-type: none;
+}
+.lapp-person-select-wrap input, .lapp-person-select-wrap textarea{
+	appearance:none;
+	-webkit-appearance:none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	border: none;
+}
+
+.lapp-person-select-wrap a, .lapp-person-select-wrap a:link, .lapp-person-select-wrap a:visited {
+    text-decoration: none;
+    outline: 0;
+}
+
+.lapp-person-select-wrap .clearfix{
+	zoom: 1;
+}
+.lapp-person-select-wrap .clearfix::after{
+	content: '';
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	display: block;
+}
+.lapp-person-select-wrap .ellipsis{
+	text-overflow: ellipsis;
+    overflow: hidden;
+    white-space:nowrap;
+}
+
+.lapp-person-select-wrap{
+	width: 100%;
+	background-color: #e9ecf1;
+	font-size: 14px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 5000;
+	overflow: hidden;
+}
+
+.lapp-person-select-wrap .person-search-wrap,
+.session-search-wrap {
+	margin: 0 10px 5px;
+	height: 26px;
+	border: 1px solid #d1d4d8;
+	background-color: #ffffff;
+	position: relative;
+}
+
+.lapp-person-select-wrap .person-search-wrap .search-icon,
+.session-search-wrap .search-icon {
+	position: absolute;
+	display: block;
+	left: 6px;
+	top: 6px;
+	width: 16px;
+	height: 14px;
+	background: url(../images/icons-default.png) no-repeat -86px 0;
+}
+
+.lapp-person-select-wrap .person-search-wrap .search-input,
+.session-search-wrap .search-input {
+	padding: 1px 0;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    width: 100%;
+    text-indent: 26px;
+}
+
+.lapp-person-select-wrap .contact-list-wrap{
+	position: absolute;
+	top: 33px;
+	bottom: 0;
+	width: 100%;
+}
+
+.lapp-person-select-wrap .contact-list-wrap .link-list{
+	background-color: #ffffff;
+	padding-left: 14px;
+}
+
+.lapp-person-select-wrap .link-list .link{
+	padding: 6px 0;
+	cursor: pointer;
+}
+
+.lapp-person-select-wrap .link-list .link > img{
+	float: left;
+	width: 40px;
+	height: 40px;
+	display: block;
+}
+
+.lapp-person-select-wrap .link-list .link > h3{
+	float: left;
+	line-height: 40px;
+    margin-left: 12px;
+}
+
+.lapp-person-select-wrap .organization-link{
+	border-bottom: 1px solid #dce1e8;
+}
+
+.lapp-person-select-wrap .contact-list .contact-detail-wrap{
+	width: 100%;
+	height: 100%;
+}
+
+.lapp-person-select-wrap .contact-list-wrap > h3{
+	font-size: 12px;
+	padding: 5px 14px;
+}
+
+.lapp-person-select-wrap .contact-list-wrap .contact-list{
+	position: absolute;
+	top: 131px;
+	bottom: 0;
+	width: 100%;
+}
+.lapp-person-select-wrap .contact-list-wrap .no-need-session{
+	top: 80px;
+}
+
+.lapp-person-select-wrap .contact-list-wrap .lapp-search-loading{
+	position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.lapp-person-select-wrap .lapp-result-none{
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	width: 160px;
+	margin-left: -80px;
+    display: none;
+}
+
+.lapp-person-select-wrap .lapp-result-none > img{
+	display: block;
+	width: 60px;
+	height: 60px;
+	margin: 0 auto;
+}
+
+.lapp-person-select-wrap .lapp-result-none > span{
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	font-size: 12px;
+	color: #808080;
+}
+
+.lapp-person-select-wrap .contact-detail-wrap > ul{
+	position: absolute;
+	width: 100%;
+	top: 33px;
+	bottom: 0;
+	overflow-y: auto;
+}
+
+.person-select-contacts .contact-detail-wrap > ul {
+	top: 0;
+}
+
+.lapp-person-select-wrap .contact-detail-wrap li{
+	padding-left: 14px;
+	background-color: #ffffff;
+	cursor: pointer;
+}
+
+.lapp-person-select-wrap .contact-detail-wrap li .contact-detail-inner{
+	border-bottom: 1px solid #dce1e8;
+}
+
+.lapp-person-select-wrap .contact-detail-wrap li:last-child .contact-detail-inner{
+	border-bottom: none;
+}
+
+.lapp-person-select-wrap .contact-detail-wrap li.contact-detail .contact-detail-inner, .lapp-person-select-wrap .contact-detail-wrap li.group-detail .contact-detail-inner{
+	padding: 8px 0;
+}
+
+.lapp-person-select-wrap .contact-detail .contact-checkbox{
+	width: 18px;
+	height: 18px;
+	margin-top: 11px;
+	border-radius: 11px;
+	border: 2px solid #3cbaff;
+	float:left;
+}
+
+.lapp-person-select-wrap .contact-detail-wrap li.checked .contact-checkbox{
+	width: 22px;
+	height: 22px;
+	background: url(../images/contact-selected-icon.png) 0 0 no-repeat;
+	border-radius: 0;
+	border: 0;
+}
+
+.lapp-person-select-wrap .contact-detail-inner > img{
+	float: left;
+    margin-left: 12px;
+    width: 44px;
+    height: 44px;
+    border-radius: 5px;
+}
+
+.lapp-person-select-wrap .contact-detail .contact-content{
+	float: left;
+	margin-left: 14px;
+	padding: 2px 0;
+}
+
+.lapp-person-select-wrap .contact-detail .contact-content > p{
+	margin-top: 5px;
+	font-size: 12px;
+    color: #9a9a9a;
+}
+
+.lapp-person-select-wrap .contact-detail .contact-content .search-name-text{
+	float: left;
+}
+
+.lapp-person-select-wrap .contact-detail .contact-content .search-department-text{
+	float: left; 
+    margin-left: 20px;
+    font-size: 12px;
+    color: #9a9a9a;
+    margin-top: 2px;
+}
+
+.lapp-person-select-wrap .selected-persons-toolbar{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	background-color: #ffffff;
+	border-top: 1px solid #e3e3ea;
+}
+
+.lapp-person-select-wrap .selected-persons-toolbar .selected-persons-toolbar-left{
+	float: left;
+    width: 40%;
+    overflow: hidden;
+}
+
+.lapp-person-select-wrap .selected-persons-toolbar .person-move-left{
+	float: left;
+    display: none;
+    width: 12px;
+    height: 32px;
+    background: url(../images/move-left.png) no-repeat 0 0;
+    margin-left: 12px;
+    margin-top: 9px;
+    cursor: pointer;
+}
+
+.lapp-person-select-wrap .selected-persons-toolbar .person-move-right{
+	float: left;
+    display: none;
+    width: 12px;
+    height: 32px;
+    background: url(../images/move-right.png) no-repeat 0 0;
+    margin-top: 9px;
+    cursor: pointer;
+}
+
+.lapp-person-select-wrap .selected-persons-toolbar .selected-persons-scroll-wrap{
+	float: left;
+    overflow: hidden;
+    width: 240px;
+}
+
+.lapp-person-select-wrap .selected-persons-toolbar .selected-persons-four{
+    width: 196px;
+}
+
+.lapp-person-select-wrap .selected-persons-toolbar .selected-persons-wrap{
+	width: 2500px;
+	height: 34px;
+	padding-top: 8px;
+	overflow: hidden;
+}
+
+.lapp-person-select-wrap .selected-persons-toolbar .selected-persons-wrap > li{
+	float: left;
+	margin-left: 12px;
+	position: relative;
+}
+
+.lapp-person-select-wrap .selected-persons-toolbar .selected-persons-wrap img{
+	display: block;
+	width: 34px;
+	height: 34px;
+	border-radius: 5px;
+}
+
+.lapp-person-select-wrap .select-persons-button-list .selected{
+	color: #ffffff !important;
+	background-color: #3cbaff !important;
+	cursor: pointer;
+}
+
+.lapp-person-select-wrap .search-list-wrap, .lapp-person-select-wrap .person-select-exist-sessions, .lapp-person-select-wrap .person-select-organization{
+	display: none;
+}
+
+.lapp-person-select-wrap .selected-persons-wrap li .delete-selected-person{
+	width: 17px;
+    height: 14px;
+    background: url(../images/icons-default.png) no-repeat -207px -34px;
+    position: absolute;
+    right: -5px;
+    top: -6px;
+    cursor: pointer;
+    display: none;
+}
+
+.lapp-person-select-wrap .selected-persons-wrap li:hover .delete-selected-person{
+    display: block;
+}
+
+.lapp-person-select-wrap .search-list-wrap{
+    position: absolute;
+    top: 33px;
+    bottom: 0;
+    width: 100%;
+}
+
+.lapp-person-select-wrap .search-list-wrap .contact-detail-wrap{
+	width: 100%;
+	height: 100%;
+}
+
+.lapp-person-select-wrap .search-list-wrap .lapp-search-loading{
+	position: absolute;
+    top: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.lapp-person-select-wrap .group-detail .group-avatar{
+	float: left;
+    width: 44px;
+    height: 44px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.lapp-person-select-wrap .group-detail .group-avatar > img{
+	float: left;
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+.lapp-person-select-wrap .group-detail .group-content{
+ 	float: left;
+    margin-left: 14px;
+    height: 44px;
+    line-height: 44px;
+    width: 80%;
+}
+
+.lapp-person-select-wrap .person-select-overlay{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.3);
+	display: none;
+	z-index: 5010;
+}
+
+.lapp-person-select-wrap .content-box{
+	width: 288px;
+	height: 167px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -144px;
+	margin-top: -120px;
+	background-color: #ffffff;
+	border-radius: 5px;
+	display: none;
+	z-index: 5020;
+}
+
+.lapp-person-select-wrap .content-box-footer{
+	position: absolute;
+    bottom: 0;
+    height: 36px;
+    width: 100%;
+    border-top: 1px solid #e9ecf2;
+}
+
+.lapp-person-select-wrap .content-box-footer > button{
+	width: 50%;
+    float: left;
+    height: 100%;
+    cursor: pointer;
+}
+
+.lapp-person-select-wrap .content-box-footer .content-box-confirm{
+	position: relative;
+	color: #3cbaff;
+}
+
+.lapp-person-select-wrap .content-box-footer .content-box-cancel{
+	color: #9a9a9a;
+}
+
+.lapp-person-select-wrap .content-box-footer .content-box-confirm:before{
+	content: '';
+	display: block;
+	height: 40%;
+	border-left: 1px solid #dce1e8;
+	position: absolute;
+	vertical-align: middle;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+
+.lapp-person-select-wrap .content-box > h3{
+	padding: 8px 0 10px 10px;
+	height: 21px;
+}
+
+.lapp-person-select-wrap .content-box .content-box-wrap{
+	padding: 0 10px;
+}
+
+.lapp-person-select-wrap .content-box-wrap .content-box-source{
+	font-size: 12px;
+	color: #9a9a9a;
+	margin-top: 7px;
+}
+
+.lapp-person-select-wrap .content-box-wrap .content-box-main{
+	position: relative;
+}
+
+.lapp-person-select-wrap .content-box-wrap .content-box-main > img{
+	width: 57px;
+	height: 57px;
+	border-radius: 5px;
+	display: block;
+	float: left;
+}
+
+.lapp-person-select-wrap .content-box-wrap .content-box-main > p{
+	position: absolute;
+	left: 72px;
+	right: 0;
+	height: 57px;
+	line-height: 19px;
+	font-size: 14px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.lapp-person-select-wrap .person-select-container{
+	position: absolute;
+    top: 5px;
+    bottom: 50px;
+    width: 100%;
+}
+
+.lapp-person-select-wrap .person-select-exist-sessions .contact-detail-wrap{
+	width: 100%;
+    height: 100%;
+}
+
+.lapp-person-select-wrap .person-select-organization .contact-detail-wrap{
+	width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position:relative;
+}
+
+.lapp-person-select-wrap .person-select-organization .contact-detail-wrap .contact-detail-ul{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+.lapp-person-select-wrap .person-select-organization .contact-detail-wrap .contact-detail-ul-org-index{
+	left: 0;
+}
+
+.lapp-person-select-wrap .contact-detail-wrap li.parent-org .contact-detail-inner, .lapp-person-select-wrap .contact-detail-wrap li.department .contact-detail-inner{
+	height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    position: relative;
+}
+
+.lapp-person-select-wrap .contact-detail-wrap .dep-name {
+    color: #3b3b3b;
+    width: 80%;
+}
+
+.lapp-person-select-wrap .contact-detail-wrap .next-arrow {
+    width: 20px;
+    height: 14px;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    background: url('../images/icons-default.png') -186px -31px;
+}
+
+.lapp-person-select-wrap .contact-detail-wrap .prev-arrow {
+	display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    background: url('../images/icons-default.png') -167px -33px;
+}
+
+.lapp-person-select-wrap .contact-detail-wrap .contact-detail-ul .parent-name {
+    color: #00a5fa;
+    display: inline-block;
+    vertical-align: middle;
+    width: 80%;
+}
+
+.lapp-person-select-wrap .select-persons-button-list{
+	width: 150px;
+    float: right;
+    margin: 10px 10px 0 0;
+    height: 30px;
+}
+
+.lapp-person-select-wrap .select-persons-button-list button{
+	height: 30px;
+    width: 70px;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.lapp-person-select-wrap .select-persons-button-list .select-persons-button-start{
+	color: #ffffff;
+    background-color: #7cd1ff;
+    float: left;
+}
+
+.lapp-person-select-wrap .select-persons-button-list .select-persons-button-close{
+	color: #ffffff;
+	background-color: #bdc1c7;
+	cursor: pointer;
+	float: right;
+}
+
+.lapp-person-select-wrap .person-select-exist-sessions .contact-detail-ul li.selected{
+	background-color: #e0eefb !important;
+}
+
+.lapp-person-select-wrap .person-select-prompt-msg{
+	position: fixed;
+	margin: auto;
+	top: 45%;
+	left: 27%;
+	background: rgba(0, 0, 0, 0.7);
+	border-radius: 4px;
+	width: 40%;
+	text-align: center;
+	color: #fff;
+	line-height: 24px;
+	display: none;
+	z-index: 5030;
+	padding: 3%;
+}
+
+.lapp-person-select-wrap .person-select-organization .lapp-search-loading{
+	position: absolute;
+    top: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.lapp-person-select-wrap .person-select-exist-sessions .lapp-search-loading{
+	position: absolute;
+    top: 33px;
+    width: 100%;
+    text-align: center;
+    display: none;
+}

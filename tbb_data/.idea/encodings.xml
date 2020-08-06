@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/modal/CloudyUserInfo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/modal/Constant.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/modal/Contacter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/modal/Department.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/modal/Parameter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/modal/UserContext.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/modal/UserInfo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/modal/YxtDepartment.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/scheduler/UserDataJob.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/scheduler/yzjUserInfo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/sso/BI/BIOpen.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/sso/BI/BIToken.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/sso/Crm/CrmOpen.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/sso/Crm/CrmToken.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/sso/Yxt/YxtOpen.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/sso/Yxt/YxtToken.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/sso/Yxt/YxtWebJump.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/util/CustomPostMethod.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/util/EncryptUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/util/HtmlUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/util/HttpClientHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/yzjCommon/YzjDataApi.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/Spring/SqlMapConfig.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/Spring/project.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/Spring/spring.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/config/534488.key" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/config/application.dev.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/config/config.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/config/lightappdemo.properties" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/config/mybatis-config.xml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/add.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/crmopen.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/dingcan/add.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/dingcan/count.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/dingcan/detail.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/dingcan/index.jsp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/jquery-1.11.1.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/js/jquery-1.11.1.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/lib/http4j.jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/open.jsp" charset="UTF-8" />
+  </component>
+</project>

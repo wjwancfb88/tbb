@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tbb.mapper.CdmxmxMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.tbb.entity.Cdmxmx">
+		<id column="C__CDMXMXID" property="cdmxmxId" />
+		<result column="C__MX1ID" property="mx1Id" />
+		<result column="C__BANMIANJIM" property="banmianjim" />
+		<result column="C__MIANBANYANSE" property="mianbanyanse" />
+		<result column="CREATEDON" property="createdOn" />
+		<result column="C__BANHOUMM" property="banhoumm" />
+	</resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+		C__CDMXMXID AS cdmxmxId, C__BANMIANJIM AS banmianjim, C__MX1ID AS mx1Id, C__MIANBANYANSE AS mianbanyanse, CREATEDON AS createdOn, C__BANHOUMM AS banhoumm
+    </sql>
+
+	<delete id="deleteAll" parameterType="String">
+		delete from E__CDMXMX where CREATEDON > #{createdOn}
+	</delete>
+
+	<insert id="insertList">
+		INSERT INTO E__CDMXMX
+		(C__CDMXMXID, C__MX1ID, C__BANMIANJIM, C__MIANBANYANSE, C__BANHOUMM, CREATEDON)
+		VALUES
+		<foreach collection ="list" item="cdmxmx" separator =",">
+			(#{cdmxmx.cdmxmxId}, #{cdmxmx.mx1Id}, #{cdmxmx.banmianjim}, #{cdmxmx.mianbanyanse}, #{cdmxmx.banhoumm}, #{cdmxmx.createdOn})
+		</foreach >
+	</insert>
+</mapper>

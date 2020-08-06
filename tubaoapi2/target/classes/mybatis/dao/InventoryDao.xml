@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.tubaoapi.dao.InventoryDao">
+  	
+	<resultMap id="InventoryResult" type="Inventory" >
+	    <id property="id" column="FID" />
+	    <result property="warehouseID" column="FWarehouseID"/>
+		<result property="storageOrgUnitID" column="FSTORAGEORGUNITID"/>
+		<result property="locationId" column="FLOCATIONID"/>
+		<result property="storeTypeID" column="FSTORETYPEID"/>
+		<result property="storeStatusID" column="FSTORESTATUSID"/>
+		<result property="supplierID" column="FSUPPLIERID"/>
+		<result property="customerID" column="FcustomerID"/>
+		<result property="projectId" column="FPROJECTID"/>
+		<result property="trackNumberID" column="FTRACKNUMBERID"/>
+		<result property="unitId" column="FUNITID"/>
+		<result property="assistUnitID" column="FASSISTUNITID"/>
+		<result property="curStoreAssistQty" column="FCURSTOREASSISTQTY"/>
+		<result property="baseQty" column="FBASEQTY"/>
+		<result property="amount" column="FAMOUNT"/>
+		<result property="baseUnitID" column="FBASEUNITID"/>
+		<result property="exp" column="FEXP"/>
+		<result property="assistPropertyID" column="FASSISTPROPERTYID"/>
+		<result property="lockBaseQty" column="FLOCKBASEQTY"/>
+		<result property="lockAssistQty" column="FLOCKASSISTQTY"/>
+		<result property="uniqueKey" column="FUNIQUEKEY"/>
+		<result property="creatorID" column="FCREATORID"/>
+		<result property="createTime" column="FCREATETIME"/>
+		<result property="lastUpdateUserID" column="FLASTUPDATEUSERID"/>
+		<result property="controlUnitID" column="FCONTROLUNITID"/>
+		<result property="materialID" column="FMaterialID"/>
+		<result property="curStoreQty" column="FCurStoreQty"/>
+		<result property="lockQty" column="FLockQty"/>
+		<result property="lot" column="FLot"/>
+		<result property="lastUpdateTime" column="FLastUpdateTime"/>
+
+	</resultMap>
+
+  	<select id="findBySO" parameterType="InventorySO"  resultMap="InventoryResult">
+		select
+		*
+	    from T_IM_INVENTORY
+		<where>
+			<if test="fStorageOrgUnitID != null">
+					and FStorageOrgUnitID = #{fStorageOrgUnitID}
+			</if>
+			<if test="warehouseIds != null">
+				and FWarehouseID in <foreach collection="warehouseIds" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>
+			</if>
+
+			<if test="lastUpdateTime!=null">
+				and FLastUpdateTime >=to_date(#{lastUpdateTime},'YYYY-MM-dd hh24:mi:ss')
+			</if>
+		</where>
+		order   by FID
+
+  	</select>
+  	
+</mapper>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.tubaoapi.dao.CityDao">
+  	
+	<resultMap id="cityResult" type="City" >
+	    <id property="id" column="FID" />
+	    <result property="number" column="FNUMBER"/>
+		<result property="name" column="FNAME_L2"/>
+		<result property="provinceId" column="FProvinceID"/>
+		<result property="deletedStatus" column="FDeletedStatus"/>
+		<result property="lastUpdateTime" column="FLastUpdateTime"/>
+	</resultMap>
+
+  	<select id="findBySO" parameterType="CitySO"  resultMap="cityResult">
+		select m.* from T_BD_City m
+		<where>
+			<if test="ids != null">
+			  m.FID in <foreach collection="ids" item="item" index="index" open="(" separator="," close=")">#{item}</foreach>		
+			</if>
+			<if test="id != null">
+			  and m.FID = #{id}			
+			</if>
+			<if test="number != null">
+			  and m.FNUMBER = #{number}			
+			</if>
+			<if test="name != null">
+				and m.FName_L2 = #{name}
+			</if>
+			<if test="provinceId != null">
+				and m.FProvinceID = #{provinceId}
+			</if>
+			<if test="lastUpdateTime!=null">
+				and m.FLastUpdateTime >=to_date(#{lastUpdateTime},'YYYY-MM-dd hh24:mi:ss')
+			</if>
+		</where>
+		order   by m.FID	
+
+  	</select>
+  	
+</mapper>

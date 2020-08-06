@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dhwooden.ep.mapper.UserDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.dhwooden.ep.modal.User">
+        <id column="id" property="id" />
+        <result column="department" property="department" />
+        <result column="status" property="status" />
+        <result column="orgId" property="orgId" />
+        <result column="name" property="name" />
+        <result column="jobTitle" property="jobTitle" />
+        <result column="orgUserType" property="orgUserType" />
+        <result column="email" property="email" />
+        <result column="phone" property="phone" />
+        <result column="open_id" property="openId" />
+    </resultMap>
+
+    <select id="selectEmpByName" resultMap="BaseResultMap" parameterType="Map">
+        select * from dh_user
+        where name like CONCAT('%', #{name}, '%')
+    </select>
+
+    <select id="selectByOpenId" resultMap="BaseResultMap" parameterType="com.dhwooden.ep.modal.User">
+        select * from dh_user
+        where open_id = #{openId}
+    </select>
+
+    <update id="updateByModal"  parameterType="com.dhwooden.ep.modal.User">
+        UPDATE dh_user
+        <trim prefix="set" suffixOverrides=",">
+            <if test="department!=null">department=#{department},</if>
+            <if test="status!=null">status=#{status},</if>
+            <if test="orgId!=null">org_Id=#{orgId},</if>
+            <if test="name!=null">name=#{name},</if>
+            <if test="phone!=null">phone=#{phone},</if>
+            <if test="jobTitle!=null">job_Title=#{jobTitle},</if>
+            <if test="orgUserType!=null">org_User_Type=#{orgUserType},</if>
+            <if test="openId!=null">open_id=#{openId},</if>
+            <if test="email!=null">email=#{email},</if>
+        </trim>
+        WHERE id=#{id}
+    </update>
+    <delete id="deleteAll">
+        delete from dh_user
+    </delete>
+</mapper>

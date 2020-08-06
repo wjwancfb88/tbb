@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/layouts/">
+	<excludes>
+		<pattern>/static/*</pattern>
+		<pattern>/api/*</pattern>
+		<pattern>/admin/role/check_value*</pattern>
+		<pattern>/weixin*</pattern>
+		<pattern>/note*</pattern>
+		<pattern>/favicon.ico</pattern>
+		<pattern>/*.html</pattern>
+		<pattern>/submit_post</pattern>			
+	</excludes>
+	
+	<decorator name="mobile" page="mobile.jsp">
+		<pattern>/mobile</pattern>
+		<pattern>/mobile/*</pattern>
+	</decorator>
+	
+	<decorator name="mip" page="mip.jsp">
+		<pattern>/mip</pattern>
+		<pattern>/mip/*</pattern>
+	</decorator>		
+	
+	<decorator name="default" page="default.jsp">
+		<pattern>/*</pattern>
+	</decorator>
+	
+	<decorator name="admin" page="admin.jsp">
+		<pattern>/admin</pattern>
+		<pattern>/admin/*</pattern>
+	</decorator>
+
+	<decorator name="blank" page="blank.jsp">
+		<pattern>/login</pattern>
+		<pattern>/validate_human</pattern>
+	</decorator>
+</decorators>

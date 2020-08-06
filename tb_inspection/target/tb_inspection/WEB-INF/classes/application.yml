@@ -1,0 +1,20 @@
+server:
+  servlet:
+    context-path: /tb_inspection
+    session:
+      timeout: 1440m
+  port: 8866
+  address: 0.0.0.0
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/cn_dhtbb?connectTimeout=10000&socketTimeout=10000&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowMultiQueries=true&zeroDateTimeBehavior=convertToNull
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+mybatis:
+  config-location: classpath:sqlmapper/mybatis-config.xml
+  mapper-locations: classpath:sqlmapper/*Mapper.xml

@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+	<title>到访登记</title>
+	<link href="/app/css/mui.min.css" rel="stylesheet" type="text/css" />
+	<link href="/app/css/app.css" rel="stylesheet" type="text/css" />
+	<link href="/app/css/icons-extra.css" rel="stylesheet" type="text/css" />
+	<link href="/app/css/mui.picker.css" rel="stylesheet" type="text/css" />
+	<link href="/app/css/mui.poppicker.css" rel="stylesheet" type="text/css" />
+	<link href="/app/css/mui.picker.min.css" rel="stylesheet" type="text/css" />
+	<link href="/app/css/vjpage.css" rel="stylesheet" type="text/css" />
+	<link href="/app/css/config.css" rel="stylesheet" type="text/css" />
+</head>
+<body data-curpagename="page2" >
+<header id="page2_jPanel1" class="mui-bar mui-bar-nav">
+	<span id="page2_jIconfont1" class="mui-icon mui-icon-arrowleft mui-pull-left"></span>
+	<div id="page2_jPanel11" class=" mui-pull-left">
+	
+	</div>
+	<span id="page2_jIconfont5" class="mui-icon mui-icon-closeempty mui-pull-left" onclick="closewin()"></span>
+	<h1 id="page2_jLabel1" class="mui-title">到访登记</h1>
+</header>
+<div id="page2_jPanel5" class="mui-content">
+	<form id="page2_jHtmlForm1" name="page2_jHtmlForm1" method="post" action="../entry/add">
+		<input type="text"  id="connect_redirect" name="connect_redirect" style="display: none;">
+		<input type="hidden" id="openId" name="openId" value="${dataList.openId}">
+		<input type="hidden" id="flag" name="flag" th:value="*{flag}">
+
+		<div id="page2_jPanel3" class="">
+			<div id="page2_jEdit4" class="mui-input-row">
+				<label>来访者电话</label>
+				<input type="text"  th:value="${dataList.vistorPhone}" id="vphone" name="vphone" placeholder="请输入（必填）[格式：11位手机号码]"  required="required"  pattern="^1[3|4|5|8|7|9|6][0-9]\d{8}"
+					   >
+			</div>
+		</div>
+		<div id="page2_jPanel2" class="mui-input-group">
+			<div id="page2_jEdit1" class="mui-input-row">
+				<label>来访者姓名</label>
+				<input type="text"  th:value="${dataList.vistor}" id="vistorname" name="vistorname" placeholder="请输入来访者姓名" required="required">
+			</div>
+		</div>
+		<div  class="mui-input-group">
+			<div  class="mui-input-row">
+				<label>来访者身份证</label>
+				<input type="text"  th:value="${dataList.idCard}"  id="idCard" name="idCard" placeholder="请输入身份证号码" required="required">
+			</div>
+		</div>
+		<div  class="mui-input-group">
+			<div  class="mui-input-row">
+				<label>车牌号码</label>
+				<input type="text"  th:value="${dataList.plateNo}"  id="plateNo" name="plateNo" placeholder="车牌号码">
+			</div>
+		</div>
+		<div id="" class="mui-input-group">
+			<div class="mui-input-row">
+				<label>到访类型</label>
+				<select id="type" name="type">
+					<option value="0" selected="selected" th:selected="${type=='0'}">客户</option>
+					<option value="1" th:selected="${type=='1'}">参观</option>
+					<option value="2" th:selected="${type=='2'}">拜访</option>
+					<option value="3" th:selected="${type=='3'}">其他</option>
+				</select>
+			</div>
+		</div>
+
+		<ul id="page2_jList1" class="mui-table-view mui-table-view-chevron">
+
+			<li class="mui-table-view-cell">
+				<div id="page2_jEdit7" class="mui-input-row">
+					<label>被访人姓名</label>
+					<input type="text"  th:value="${dataList.user}" id="username" name="username" placeholder="请输入（必填）" oninput="findEmp()" required="required">
+				</div>
+			</li>
+
+			<div id="page2_jMenuPop2" class="mui-popover " style="width: 100%;height:100%;overflow:scroll; ">
+				<ul class="mui-table-view" id="namelist">
+				</ul>
+			</div>
+			<li class="mui-table-view-cell">
+				<div id="page2_jEdit8" class="mui-input-row">
+					<label>被访人电话</label>
+					<input type="text" th:value="${dataList.userPhone}" id="phone" name="phone" pattern="^1(3|4|5|6|7|8|9)\d{9}" oninvalid="setCustomValidity('请输入11位手机号');"
+							  />
+				</div>
+			</li>
+			<li class="mui-table-view-cell">
+				<div id="page2_jEdit6" class="mui-input-row">
+					<label>被访人部门</label>
+					<input type="text"  th:value="${dataList.dept}" id="dept" name="dept" placeholder="">
+				</div>
+			</li>
+		</ul>
+
+		<div id="page2_jPanel6" class="mui-input-group">
+			<!--<div id="page2_jEdit2" class="mui-input-row">-->
+				<!--<label>到访时间</label>-->
+				<!--<input type="text" id="vistortime" placeholder="">-->
+			<!--</div>-->
+			<div id="page2_jEdit3" class="mui-input-row">
+				<label>到访原因</label>
+				<input type="text" id="reason" placeholder="" th:value="${dataList.reason}">
+			</div>
+		</div>
+		<div id="page2_jPanel7" class="">
+		
+		</div>
+		<div id="page2_jPanel9" class="vjcenterpanel Panel_c">
+
+		<input  type="submit"  class="mui-btn mui-btn-primary btnsize_default mui-btn-block"/>
+	   </div>
+		<!--<div id="page2_jPanel8" class="">-->
+			<!--<div id="page2_jPanel9" class="">-->
+			<!-- -->
+			<!--</div>-->
+
+		<!--</div>-->
+
+
+	</form>
+	<!--<div id="page2_jPanel10" class="vjcenterpanel Panel_c">-->
+		<!--<button id="page2_jButton1" type="button"  class="mui-btn mui-btn-primary btnsize_default mui-btn-block" onclick="vistor()">提交</button>-->
+	<!--</div>-->
+</div>
+
+
+</body>
+
+<script type="text/javascript" src="/app/js/jquery.min.js"></script>
+<script type="text/javascript" src="/app/js/mui.min.js"></script>
+<script type="text/javascript" src="/app/js/mui.picker.js"></script>
+<script type="text/javascript" src="/app/js/mui.poppicker.js"></script>
+<script type="text/javascript" src="/app/js/mui.picker.min.js"></script>
+<script type="text/javascript" src="/app/js/page2.js"></script>
+<script src="/js/bootstrap.min.js?v=3.3.6"></script>
+<!--<script src="/js/bootstrapValidator.min.js"></script>-->
+<!--<script src="/js/bootstrapValidator.js"></script>-->
+<script type="text/javascript">
+</script>
+</html>

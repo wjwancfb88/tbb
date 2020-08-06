@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dhwooden.ep.mapper.DhCanteenDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.dhwooden.ep.modal.DhCanteen">
+		<result column="id" property="id" />
+		<result column="pnum" property="pnum" />
+		<result column="dept" property="dept" />
+		<result column="order_time" property="orderTime" />
+		<result column="type" property="type" />
+		<result column="seat" property="seat" />
+		<result column="create_time" property="createTime" />
+		<result column="creator" property="creator" />
+		<result column="deleted" property="deleted" />
+		<result column="remark" property="remark" />
+	</resultMap>
+
+</mapper>

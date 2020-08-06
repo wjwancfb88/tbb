@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="tb_inspection.dao.IDh_inspectionDao">
+
+	<insert id="add" parameterType="tb_inspection.entity.Dh_inspectionEntity">
+		insert into `dh_inspection`
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+				<if test="inspectionId != null">
+					inspectionId,
+				</if>
+				<if test="sale != null">
+					sale,
+				</if>
+				<if test="sc != null">
+					sc,
+				</if>
+				<if test="scresult != null">
+					scresult,
+				</if>
+				<if test="scremarks != null">
+					scremarks,
+				</if>
+				<if test="sp != null">
+					sp,
+				</if>
+				<if test="spresult != null">
+					spresult,
+				</if>
+				<if test="spremarks != null">
+					spremarks,
+				</if>
+				<if test="sf != null">
+					sf,
+				</if>
+				<if test="sfa != null">
+					sfa,
+				</if>
+				<if test="sfaresult != null">
+					sfaresult,
+				</if>
+				<if test="sfaremarks != null">
+					sfaremarks,
+				</if>
+				<if test="tftc != null">
+					tftc,
+				</if>
+				<if test="tftcl != null">
+					tftcl,
+				</if>
+				<if test="tftclresult != null">
+					tftclresult,
+				</if>
+				<if test="tftclremarks != null">
+					tftclremarks,
+				</if>
+				<if test="tftcs != null">
+					tftcs,
+				</if>
+				<if test="tftcsresult != null">
+					tftcsresult,
+				</if>
+				<if test="tftcsremarks != null">
+					tftcsremarks,
+				</if>
+				<if test="tftcm != null">
+					tftcm,
+				</if>
+				<if test="tftcmresult != null">
+					tftcmresult,
+				</if>
+				<if test="tftcmremarks != null">
+					tftcmremarks,
+				</if>
+				<if test="tftcc != null">
+					tftcc,
+				</if>
+				<if test="tftccresult != null">
+					tftccresult,
+				</if>
+				<if test="tftccremarks != null">
+					tftccremarks,
+				</if>
+				<if test="tfm != null">
+					tfm,
+				</if>
+				<if test="tfml != null">
+					tfml,
+				</if>
+				<if test="tfmlresult != null">
+					tfmlresult,
+				</if>
+				<if test="tfmlremarks != null">
+					tfmlremarks,
+				</if>
+				<if test="tfms != null">
+					tfms,
+				</if>
+				<if test="tfmsresult != null">
+					tfmsresult,
+				</if>
+				<if test="tfmsremarks != null">
+					tfmsremarks,
+				</if>
+				<if test="tfmm != null">
+					tfmm,
+				</if>
+				<if test="tfmmresult != null">
+					tfmmresult,
+				</if>
+				<if test="tfmmremarks != null">
+					tfmmremarks,
+				</if>
+				<if test="tfmc != null">
+					tfmc,
+				</if>
+				<if test="tfmcresult != null">
+					tfmcresult,
+				</if>
+				<if test="tfmcremarks != null">
+					tfmcremarks,
+				</if>
+				<if test="ffm != null">
+					ffm,
+				</if>
+				<if test="ffmc != null">
+					ffmc,
+				</if>
+				<if test="ffmcresult != null">
+					ffmcresult,
+				</if>
+				<if test="ffmcremarks != null">
+					ffmcremarks,
+				</if>
+				<if test="ffmc2 != null">
+					ffmc2,
+				</if>
+				<if test="ffmc2result != null">
+					ffmc2result,
+				</if>
+				<if test="ffmc2remarks != null">
+					ffmc2remarks,
+				</if>
+				<if test="ffmp != null">
+					ffmp,
+				</if>
+				<if test="ffmpresult != null">
+					ffmpresult,
+				</if>
+				<if test="ffmpremarks != null">
+					ffmpremarks,
+				</if>
+				<if test="ifofm != null">
+					ifofm,
+				</if>
+				<if test="ifofmc != null">
+					ifofmc,
+				</if>
+				<if test="ifofmcresult != null">
+					ifofmcresult,
+				</if>
+				<if test="ifofmcremarks != null">
+					ifofmcremarks,
+				</if>
+				<if test="ifofmp != null">
+					ifofmp,
+				</if>
+				<if test="ifofmpresult != null">
+					ifofmpresult,
+				</if>
+				<if test="ifofmpremarks != null">
+					ifofmpremarks,
+				</if>
+				<if test="iffm != null">
+					iffm,
+				</if>
+				<if test="iffmc != null">
+					iffmc,
+				</if>
+				<if test="iffmcresult != null">
+					iffmcresult,
+				</if>
+				<if test="iffmcremarks != null">
+					iffmcremarks,
+				</if>
+				<if test="iffms != null">
+					iffms,
+				</if>
+				<if test="iffmsresult != null">
+					iffmsresult,
+				</if>
+				<if test="iffmsremarks != null">
+					iffmsremarks,
+				</if>
+				<if test="iffmm != null">
+					iffmm,
+				</if>
+				<if test="iffmmresult != null">
+					iffmmresult,
+				</if>
+				<if test="iffmmremarks != null">
+					iffmmremarks,
+				</if>
+				<if test="creattime != null">
+					creattime,
+				</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+				<if test="inspectionId != null">
+					#{inspectionId},
+				</if>
+				<if test="sale != null">
+					#{sale},
+				</if>
+				<if test="sc != null">
+					#{sc},
+				</if>
+				<if test="scresult != null">
+					#{scresult},
+				</if>
+				<if test="scremarks != null">
+					#{scremarks},
+				</if>
+				<if test="sp != null">
+					#{sp},
+				</if>
+				<if test="spresult != null">
+					#{spresult},
+				</if>
+				<if test="spremarks != null">
+					#{spremarks},
+				</if>
+				<if test="sf != null">
+					#{sf},
+				</if>
+				<if test="sfa != null">
+					#{sfa},
+				</if>
+				<if test="sfaresult != null">
+					#{sfaresult},
+				</if>
+				<if test="sfaremarks != null">
+					#{sfaremarks},
+				</if>
+				<if test="tftc != null">
+					#{tftc},
+				</if>
+				<if test="tftcl != null">
+					#{tftcl},
+				</if>
+				<if test="tftclresult != null">
+					#{tftclresult},
+				</if>
+				<if test="tftclremarks != null">
+					#{tftclremarks},
+				</if>
+				<if test="tftcs != null">
+					#{tftcs},
+				</if>
+				<if test="tftcsresult != null">
+					#{tftcsresult},
+				</if>
+				<if test="tftcsremarks != null">
+					#{tftcsremarks},
+				</if>
+				<if test="tftcm != null">
+					#{tftcm},
+				</if>
+				<if test="tftcmresult != null">
+					#{tftcmresult},
+				</if>
+				<if test="tftcmremarks != null">
+					#{tftcmremarks},
+				</if>
+				<if test="tftcc != null">
+					#{tftcc},
+				</if>
+				<if test="tftccresult != null">
+					#{tftccresult},
+				</if>
+				<if test="tftccremarks != null">
+					#{tftccremarks},
+				</if>
+				<if test="tfm != null">
+					#{tfm},
+				</if>
+				<if test="tfml != null">
+					#{tfml},
+				</if>
+				<if test="tfmlresult != null">
+					#{tfmlresult},
+				</if>
+				<if test="tfmlremarks != null">
+					#{tfmlremarks},
+				</if>
+				<if test="tfms != null">
+					#{tfms},
+				</if>
+				<if test="tfmsresult != null">
+					#{tfmsresult},
+				</if>
+				<if test="tfmsremarks != null">
+					#{tfmsremarks},
+				</if>
+				<if test="tfmm != null">
+					#{tfmm},
+				</if>
+				<if test="tfmmresult != null">
+					#{tfmmresult},
+				</if>
+				<if test="tfmmremarks != null">
+					#{tfmmremarks},
+				</if>
+				<if test="tfmc != null">
+					#{tfmc},
+				</if>
+				<if test="tfmcresult != null">
+					#{tfmcresult},
+				</if>
+				<if test="tfmcremarks != null">
+					#{tfmcremarks},
+				</if>
+				<if test="ffm != null">
+					#{ffm},
+				</if>
+				<if test="ffmc != null">
+					#{ffmc},
+				</if>
+				<if test="ffmcresult != null">
+					#{ffmcresult},
+				</if>
+				<if test="ffmcremarks != null">
+					#{ffmcremarks},
+				</if>
+				<if test="ffmc2 != null">
+					#{ffmc2},
+				</if>
+				<if test="ffmc2result != null">
+					#{ffmc2result},
+				</if>
+				<if test="ffmc2remarks != null">
+					#{ffmc2remarks},
+				</if>
+				<if test="ffmp != null">
+					#{ffmp},
+				</if>
+				<if test="ffmpresult != null">
+					#{ffmpresult},
+				</if>
+				<if test="ffmpremarks != null">
+					#{ffmpremarks},
+				</if>
+				<if test="ifofm != null">
+					#{ifofm},
+				</if>
+				<if test="ifofmc != null">
+					#{ifofmc},
+				</if>
+				<if test="ifofmcresult != null">
+					#{ifofmcresult},
+				</if>
+				<if test="ifofmcremarks != null">
+					#{ifofmcremarks},
+				</if>
+				<if test="ifofmp != null">
+					#{ifofmp},
+				</if>
+				<if test="ifofmpresult != null">
+					#{ifofmpresult},
+				</if>
+				<if test="ifofmpremarks != null">
+					#{ifofmpremarks},
+				</if>
+				<if test="iffm != null">
+					#{iffm},
+				</if>
+				<if test="iffmc != null">
+					#{iffmc},
+				</if>
+				<if test="iffmcresult != null">
+					#{iffmcresult},
+				</if>
+				<if test="iffmcremarks != null">
+					#{iffmcremarks},
+				</if>
+				<if test="iffms != null">
+					#{iffms},
+				</if>
+				<if test="iffmsresult != null">
+					#{iffmsresult},
+				</if>
+				<if test="iffmsremarks != null">
+					#{iffmsremarks},
+				</if>
+				<if test="iffmm != null">
+					#{iffmm},
+				</if>
+				<if test="iffmmresult != null">
+					#{iffmmresult},
+				</if>
+				<if test="iffmmremarks != null">
+					#{iffmmremarks},
+				</if>
+				<if test="creattime != null">
+					#{creattime},
+				</if>
+		</trim>
+	</insert>
+
+	<delete id="delete" parameterType="tb_inspection.entity.Dh_inspectionEntity">
+		delete from `dh_inspection`
+		<where>
+				<if test="inspectionId != null">
+					and inspectionId=#{inspectionId}
+				</if>
+		</where>
+	</delete>
+
+	<update id="update" parameterType="tb_inspection.entity.Dh_inspectionEntity">
+		update `dh_inspection`
+		<trim prefix="set" suffixOverrides=",">
+				<if test="inspectionId != null">
+					inspectionId=#{inspectionId},
+				</if>
+				<if test="sale != null">
+					sale=#{sale},
+				</if>
+				<if test="sc != null">
+					sc=#{sc},
+				</if>
+				<if test="scresult != null">
+					scresult=#{scresult},
+				</if>
+				<if test="scremarks != null">
+					scremarks=#{scremarks},
+				</if>
+				<if test="sp != null">
+					sp=#{sp},
+				</if>
+				<if test="spresult != null">
+					spresult=#{spresult},
+				</if>
+				<if test="spremarks != null">
+					spremarks=#{spremarks},
+				</if>
+				<if test="sf != null">
+					sf=#{sf},
+				</if>
+				<if test="sfa != null">
+					sfa=#{sfa},
+				</if>
+				<if test="sfaresult != null">
+					sfaresult=#{sfaresult},
+				</if>
+				<if test="sfaremarks != null">
+					sfaremarks=#{sfaremarks},
+				</if>
+				<if test="tftc != null">
+					tftc=#{tftc},
+				</if>
+				<if test="tftcl != null">
+					tftcl=#{tftcl},
+				</if>
+				<if test="tftclresult != null">
+					tftclresult=#{tftclresult},
+				</if>
+				<if test="tftclremarks != null">
+					tftclremarks=#{tftclremarks},
+				</if>
+				<if test="tftcs != null">
+					tftcs=#{tftcs},
+				</if>
+				<if test="tftcsresult != null">
+					tftcsresult=#{tftcsresult},
+				</if>
+				<if test="tftcsremarks != null">
+					tftcsremarks=#{tftcsremarks},
+				</if>
+				<if test="tftcm != null">
+					tftcm=#{tftcm},
+				</if>
+				<if test="tftcmresult != null">
+					tftcmresult=#{tftcmresult},
+				</if>
+				<if test="tftcmremarks != null">
+					tftcmremarks=#{tftcmremarks},
+				</if>
+				<if test="tftcc != null">
+					tftcc=#{tftcc},
+				</if>
+				<if test="tftccresult != null">
+					tftccresult=#{tftccresult},
+				</if>
+				<if test="tftccremarks != null">
+					tftccremarks=#{tftccremarks},
+				</if>
+				<if test="tfm != null">
+					tfm=#{tfm},
+				</if>
+				<if test="tfml != null">
+					tfml=#{tfml},
+				</if>
+				<if test="tfmlresult != null">
+					tfmlresult=#{tfmlresult},
+				</if>
+				<if test="tfmlremarks != null">
+					tfmlremarks=#{tfmlremarks},
+				</if>
+				<if test="tfms != null">
+					tfms=#{tfms},
+				</if>
+				<if test="tfmsresult != null">
+					tfmsresult=#{tfmsresult},
+				</if>
+				<if test="tfmsremarks != null">
+					tfmsremarks=#{tfmsremarks},
+				</if>
+				<if test="tfmm != null">
+					tfmm=#{tfmm},
+				</if>
+				<if test="tfmmresult != null">
+					tfmmresult=#{tfmmresult},
+				</if>
+				<if test="tfmmremarks != null">
+					tfmmremarks=#{tfmmremarks},
+				</if>
+				<if test="tfmc != null">
+					tfmc=#{tfmc},
+				</if>
+				<if test="tfmcresult != null">
+					tfmcresult=#{tfmcresult},
+				</if>
+				<if test="tfmcremarks != null">
+					tfmcremarks=#{tfmcremarks},
+				</if>
+				<if test="ffm != null">
+					ffm=#{ffm},
+				</if>
+				<if test="ffmc != null">
+					ffmc=#{ffmc},
+				</if>
+				<if test="ffmcresult != null">
+					ffmcresult=#{ffmcresult},
+				</if>
+				<if test="ffmcremarks != null">
+					ffmcremarks=#{ffmcremarks},
+				</if>
+				<if test="ffmc2 != null">
+					ffmc2=#{ffmc2},
+				</if>
+				<if test="ffmc2result != null">
+					ffmc2result=#{ffmc2result},
+				</if>
+				<if test="ffmc2remarks != null">
+					ffmc2remarks=#{ffmc2remarks},
+				</if>
+				<if test="ffmp != null">
+					ffmp=#{ffmp},
+				</if>
+				<if test="ffmpresult != null">
+					ffmpresult=#{ffmpresult},
+				</if>
+				<if test="ffmpremarks != null">
+					ffmpremarks=#{ffmpremarks},
+				</if>
+				<if test="ifofm != null">
+					ifofm=#{ifofm},
+				</if>
+				<if test="ifofmc != null">
+					ifofmc=#{ifofmc},
+				</if>
+				<if test="ifofmcresult != null">
+					ifofmcresult=#{ifofmcresult},
+				</if>
+				<if test="ifofmcremarks != null">
+					ifofmcremarks=#{ifofmcremarks},
+				</if>
+				<if test="ifofmp != null">
+					ifofmp=#{ifofmp},
+				</if>
+				<if test="ifofmpresult != null">
+					ifofmpresult=#{ifofmpresult},
+				</if>
+				<if test="ifofmpremarks != null">
+					ifofmpremarks=#{ifofmpremarks},
+				</if>
+				<if test="iffm != null">
+					iffm=#{iffm},
+				</if>
+				<if test="iffmc != null">
+					iffmc=#{iffmc},
+				</if>
+				<if test="iffmcresult != null">
+					iffmcresult=#{iffmcresult},
+				</if>
+				<if test="iffmcremarks != null">
+					iffmcremarks=#{iffmcremarks},
+				</if>
+				<if test="iffms != null">
+					iffms=#{iffms},
+				</if>
+				<if test="iffmsresult != null">
+					iffmsresult=#{iffmsresult},
+				</if>
+				<if test="iffmsremarks != null">
+					iffmsremarks=#{iffmsremarks},
+				</if>
+				<if test="iffmm != null">
+					iffmm=#{iffmm},
+				</if>
+				<if test="iffmmresult != null">
+					iffmmresult=#{iffmmresult},
+				</if>
+				<if test="iffmmremarks != null">
+					iffmmremarks=#{iffmmremarks},
+				</if>
+				<if test="creattime != null">
+					creattime=#{creattime},
+				</if>
+		</trim>
+		<where>
+				<if test="inspectionId != null">
+					and inspectionId=#{inspectionId}
+				</if>
+		</where>
+	</update>
+
+	<select id="select" parameterType="tb_inspection.entity.Dh_inspectionEntity"
+		resultType="tb_inspection.entity.Dh_inspectionEntity">
+			select 
+				sale,
+				sc,
+				scresult,
+				scremarks,
+				sp,
+				spresult,
+				spremarks,
+				sf,
+				sfa,
+				sfaresult,
+				sfaremarks,
+				tftc,
+				tftcl,
+				tftclresult,
+				tftclremarks,
+				tftcs,
+				tftcsresult,
+				tftcsremarks,
+				tftcm,
+				tftcmresult,
+				tftcmremarks,
+				tftcc,
+				tftccresult,
+				tftccremarks,
+				tfm,
+				tfml,
+				tfmlresult,
+				tfmlremarks,
+				tfms,
+				tfmsresult,
+				tfmsremarks,
+				tfmm,
+				tfmmresult,
+				tfmmremarks,
+				tfmc,
+				tfmcresult,
+				tfmcremarks,
+				ffm,
+				ffmc,
+				ffmcresult,
+				ffmcremarks,
+				ffmc2,
+				ffmc2result,
+				ffmc2remarks,
+				ffmp,
+				ffmpresult,
+				ffmpremarks,
+				ifofm,
+				ifofmc,
+				ifofmcresult,
+				ifofmcremarks,
+				ifofmp,
+				ifofmpresult,
+				ifofmpremarks,
+				iffm,
+				iffmc,
+				iffmcresult,
+				iffmcremarks,
+				iffms,
+				iffmsresult,
+				iffmsremarks,
+				iffmm,
+				iffmmresult,
+				iffmmremarks,
+				creattime,
+				inspectionId
+			from `dh_inspection`
+			
+			<where>
+	
+					<if test="inspectionId != null">
+						and inspectionId=#{inspectionId}
+					</if>
+					<if test="sale != null">
+						and sale=#{sale}
+					</if>
+					<if test="sc != null">
+						and sc=#{sc}
+					</if>
+					<if test="scresult != null">
+						and scresult=#{scresult}
+					</if>
+					<if test="scremarks != null">
+						and scremarks=#{scremarks}
+					</if>
+					<if test="sp != null">
+						and sp=#{sp}
+					</if>
+					<if test="spresult != null">
+						and spresult=#{spresult}
+					</if>
+					<if test="spremarks != null">
+						and spremarks=#{spremarks}
+					</if>
+					<if test="sf != null">
+						and sf=#{sf}
+					</if>
+					<if test="sfa != null">
+						and sfa=#{sfa}
+					</if>
+					<if test="sfaresult != null">
+						and sfaresult=#{sfaresult}
+					</if>
+					<if test="sfaremarks != null">
+						and sfaremarks=#{sfaremarks}
+					</if>
+					<if test="tftc != null">
+						and tftc=#{tftc}
+					</if>
+					<if test="tftcl != null">
+						and tftcl=#{tftcl}
+					</if>
+					<if test="tftclresult != null">
+						and tftclresult=#{tftclresult}
+					</if>
+					<if test="tftclremarks != null">
+						and tftclremarks=#{tftclremarks}
+					</if>
+					<if test="tftcs != null">
+						and tftcs=#{tftcs}
+					</if>
+					<if test="tftcsresult != null">
+						and tftcsresult=#{tftcsresult}
+					</if>
+					<if test="tftcsremarks != null">
+						and tftcsremarks=#{tftcsremarks}
+					</if>
+					<if test="tftcm != null">
+						and tftcm=#{tftcm}
+					</if>
+					<if test="tftcmresult != null">
+						and tftcmresult=#{tftcmresult}
+					</if>
+					<if test="tftcmremarks != null">
+						and tftcmremarks=#{tftcmremarks}
+					</if>
+					<if test="tftcc != null">
+						and tftcc=#{tftcc}
+					</if>
+					<if test="tftccresult != null">
+						and tftccresult=#{tftccresult}
+					</if>
+					<if test="tftccremarks != null">
+						and tftccremarks=#{tftccremarks}
+					</if>
+					<if test="tfm != null">
+						and tfm=#{tfm}
+					</if>
+					<if test="tfml != null">
+						and tfml=#{tfml}
+					</if>
+					<if test="tfmlresult != null">
+						and tfmlresult=#{tfmlresult}
+					</if>
+					<if test="tfmlremarks != null">
+						and tfmlremarks=#{tfmlremarks}
+					</if>
+					<if test="tfms != null">
+						and tfms=#{tfms}
+					</if>
+					<if test="tfmsresult != null">
+						and tfmsresult=#{tfmsresult}
+					</if>
+					<if test="tfmsremarks != null">
+						and tfmsremarks=#{tfmsremarks}
+					</if>
+					<if test="tfmm != null">
+						and tfmm=#{tfmm}
+					</if>
+					<if test="tfmmresult != null">
+						and tfmmresult=#{tfmmresult}
+					</if>
+					<if test="tfmmremarks != null">
+						and tfmmremarks=#{tfmmremarks}
+					</if>
+					<if test="tfmc != null">
+						and tfmc=#{tfmc}
+					</if>
+					<if test="tfmcresult != null">
+						and tfmcresult=#{tfmcresult}
+					</if>
+					<if test="tfmcremarks != null">
+						and tfmcremarks=#{tfmcremarks}
+					</if>
+					<if test="ffm != null">
+						and ffm=#{ffm}
+					</if>
+					<if test="ffmc != null">
+						and ffmc=#{ffmc}
+					</if>
+					<if test="ffmcresult != null">
+						and ffmcresult=#{ffmcresult}
+					</if>
+					<if test="ffmcremarks != null">
+						and ffmcremarks=#{ffmcremarks}
+					</if>
+					<if test="ffmc2 != null">
+						and ffmc2=#{ffmc2}
+					</if>
+					<if test="ffmc2result != null">
+						and ffmc2result=#{ffmc2result}
+					</if>
+					<if test="ffmc2remarks != null">
+						and ffmc2remarks=#{ffmc2remarks}
+					</if>
+					<if test="ffmp != null">
+						and ffmp=#{ffmp}
+					</if>
+					<if test="ffmpresult != null">
+						and ffmpresult=#{ffmpresult}
+					</if>
+					<if test="ffmpremarks != null">
+						and ffmpremarks=#{ffmpremarks}
+					</if>
+					<if test="ifofm != null">
+						and ifofm=#{ifofm}
+					</if>
+					<if test="ifofmc != null">
+						and ifofmc=#{ifofmc}
+					</if>
+					<if test="ifofmcresult != null">
+						and ifofmcresult=#{ifofmcresult}
+					</if>
+					<if test="ifofmcremarks != null">
+						and ifofmcremarks=#{ifofmcremarks}
+					</if>
+					<if test="ifofmp != null">
+						and ifofmp=#{ifofmp}
+					</if>
+					<if test="ifofmpresult != null">
+						and ifofmpresult=#{ifofmpresult}
+					</if>
+					<if test="ifofmpremarks != null">
+						and ifofmpremarks=#{ifofmpremarks}
+					</if>
+					<if test="iffm != null">
+						and iffm=#{iffm}
+					</if>
+					<if test="iffmc != null">
+						and iffmc=#{iffmc}
+					</if>
+					<if test="iffmcresult != null">
+						and iffmcresult=#{iffmcresult}
+					</if>
+					<if test="iffmcremarks != null">
+						and iffmcremarks=#{iffmcremarks}
+					</if>
+					<if test="iffms != null">
+						and iffms=#{iffms}
+					</if>
+					<if test="iffmsresult != null">
+						and iffmsresult=#{iffmsresult}
+					</if>
+					<if test="iffmsremarks != null">
+						and iffmsremarks=#{iffmsremarks}
+					</if>
+					<if test="iffmm != null">
+						and iffmm=#{iffmm}
+					</if>
+					<if test="iffmmresult != null">
+						and iffmmresult=#{iffmmresult}
+					</if>
+					<if test="iffmmremarks != null">
+						and iffmmremarks=#{iffmmremarks}
+					</if>
+					<if test="creattime != null">
+						and creattime=#{creattime}
+					</if>
+	
+			</where>
+			<if test="orderStr != '' and orderStr != null">
+				order by ${orderStr}
+			</if>
+			<if test="start != null and pageSize != null">
+				limit #{start},#{pageSize}
+			</if>
+		
+		
+	</select>
+	
+	<select id="likeSelect" parameterType="tb_inspection.entity.Dh_inspectionEntity"
+		resultType="tb_inspection.entity.Dh_inspectionEntity">
+			select
+			
+				sale,
+				sc,
+				scresult,
+				scremarks,
+				sp,
+				spresult,
+				spremarks,
+				sf,
+				sfa,
+				sfaresult,
+				sfaremarks,
+				tftc,
+				tftcl,
+				tftclresult,
+				tftclremarks,
+				tftcs,
+				tftcsresult,
+				tftcsremarks,
+				tftcm,
+				tftcmresult,
+				tftcmremarks,
+				tftcc,
+				tftccresult,
+				tftccremarks,
+				tfm,
+				tfml,
+				tfmlresult,
+				tfmlremarks,
+				tfms,
+				tfmsresult,
+				tfmsremarks,
+				tfmm,
+				tfmmresult,
+				tfmmremarks,
+				tfmc,
+				tfmcresult,
+				tfmcremarks,
+				ffm,
+				ffmc,
+				ffmcresult,
+				ffmcremarks,
+				ffmc2,
+				ffmc2result,
+				ffmc2remarks,
+				ffmp,
+				ffmpresult,
+				ffmpremarks,
+				ifofm,
+				ifofmc,
+				ifofmcresult,
+				ifofmcremarks,
+				ifofmp,
+				ifofmpresult,
+				ifofmpremarks,
+				iffm,
+				iffmc,
+				iffmcresult,
+				iffmcremarks,
+				iffms,
+				iffmsresult,
+				iffmsremarks,
+				iffmm,
+				iffmmresult,
+				iffmmremarks,
+				creattime,
+				inspectionId
+			from `dh_inspection`
+			
+			<where>
+	
+						<if test="creattime != null and creattime != '' ">
+						and creattime = #{creattime}
+						</if>
+	
+			</where>
+			
+			<if test="orderStr != '' and orderStr != null">
+				order by ${orderStr}
+			</if>
+			<if test="start != null and pageSize != null">
+				limit #{start},#{pageSize}
+			</if>
+		
+		
+	</select>
+	
+	<select id="likeSelectCount" parameterType="tb_inspection.entity.Dh_inspectionEntity"
+		resultType="java.lang.Long">
+		select 
+			count(1)
+		from `dh_inspection`
+		
+		<where>
+
+				<if test="creattime != null and creattime != '' ">
+				and creattime = #{creattime}
+				</if>
+			
+		</where>
+	</select>
+	
+</mapper>
