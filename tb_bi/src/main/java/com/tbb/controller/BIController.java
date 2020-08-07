@@ -78,7 +78,6 @@ public class BIController {
         int i2 = 0;
         int num = 0;
         List<Wlyy> list = new ArrayList<Wlyy>();
-//        List<Wlyy> updateList = new ArrayList<Wlyy>();
         while (true) {
             Map<String, String> params = OpenApiSDK.baseApiParams();
             params.put("page_no",i+++"");
@@ -138,14 +137,8 @@ public class BIController {
                 wlyy.setCLaiyuan(obj.getString("c__laiyuan"));
                 wlyy.setOwningBusinessUnit(obj.getString("owningBusinessUnit"));
 
-//                Wlyy tempWlyy = wlyyService.selectById(wlyy.getCWlyyid());
-//                if (tempWlyy == null){
-                    list.add(wlyy);
-                    num++;
-//                }else{
-//                    updateList.add(wlyy);
-//                    i1++;
-//                }
+                list.add(wlyy);
+                num++;
             }
         }
         if (list.size() > 0){
