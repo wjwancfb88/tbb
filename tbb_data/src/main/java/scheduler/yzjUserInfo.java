@@ -252,4 +252,6 @@ public class yzjUserInfo {
         return fixLenthString.substring(1,3 + 1);
     }
 
+
+
 }

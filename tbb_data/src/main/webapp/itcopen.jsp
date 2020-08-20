@@ -15,11 +15,12 @@
   <script src="/laydate-v1.1/laydate/laydate.js"></script>
   <script>
     $(function() {
-      <%--var token="${key}";--%>
+      var value3="${value3}";
       var useagent = (navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/) ? 'iOS' :
               navigator.userAgent.match(/Android/i) ? 'Android' : '' );
       if (useagent == "Android") {
-        var aurl = "itc://android.itc.conference?itc_user=10018&itc_pw=18&itc_ip=60.163.137.107&itc_port=8089";
+        // var aurl = "itc://android.itc.conference?itc_user=10018&itc_pw=18&itc_ip=60.163.137.107&itc_port=8089";
+        var aurl = "itc://android.itc.conference?itc_user="+value3+"&itc_pw=1&itc_ip=183.63.112.236&itc_port=2020";
         XuntongJSBridge.call('gotoApp', {
           "data": aurl
         }, function (result) {

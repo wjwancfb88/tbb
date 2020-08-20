@@ -46,6 +46,8 @@ public class CrmOpen {
     @RequestMapping(value="/crm/sso.do")
     public void sso(HttpServletRequest request,HttpServletResponse response) throws Exception {
         String ticket = request.getParameter("ticket");
+//        String ticket = "APPURLWITHTICKETc5b68b9bff048b6bf020ff86437ac785";
+
         Map<String,Object> info = new HashMap<String,Object>();
         try{
             String accesstoken = getAccessToken();
