@@ -101,7 +101,7 @@ public class ITCToken {
      * @param value6 已选成员ID(终端或云用户ID)  多个;隔开   1;2;3
      * @param value7 扩展字段
      * @param value8 最大成员数,默认最大8
-     * @param value9 用户ID
+     * @param value9 用户ID 为空是admin用户
      */
     public static void createMeeting(String value1,String value3,String value4,String value5,String value6,String value7,String value8,String value9){
         JSONObject jsonObject = new JSONObject();
@@ -112,7 +112,7 @@ public class ITCToken {
         jsonObject.put("value6", value6);//已选成员ID(终端或云用户ID)  多个;隔开   1;2;3
         jsonObject.put("value7", value7);//扩展字段
         jsonObject.put("value8", value8);//最大成员数
-        jsonObject.put("value9", value9);//用户ID
+        jsonObject.put("value9", value9);//用户ID,为空是admin用户
         System.out.println(API_URL + "createMeeting.do?_json=" + jsonObject);
 //        JSONObject object = ITCToken.apiGet(API_URL + "createMeeting.do?_json=" + jsonObject);
 
@@ -121,27 +121,46 @@ public class ITCToken {
             JSONObject object = ITCToken.apiGet(API_URL + "createMeeting.do?_json=" + tem);
             String value = object.getJSONObject("data").getString("value1");//会议ID
 //            System.out.println(value);
-            int start = 0;
-            int end = 1000;
-            List<List<DhPerson>> lists = new ArrayList<List<DhPerson>>();
-            while(true){
-                List<DhPerson> list = PostJson.getAllPerson(start, end);
-                if (list.size() == 0){
-                    break;
-                }
-                lists.add(list);
-                start += 1000;
-                end += 1000;
-            }
-            for(int i = 0;i < lists.size();i++){
-                for (DhPerson person:lists.get(i)) {
-                    System.out.println(person.getName() + " " + person.getDepartment() + " " + person.getOpenId() + " " + person.getJobNo());
+            List<DhPerson> persons = getPersons();
+            for (DhPerson p:persons) {
+                String openId = p.getOpenId();
+                String jobNo = p.getJobNo();
+                String[] split = value6.split(";");//已选人员工号数组
+                for (String s:split) {
+                    if (s.equals(jobNo)){
+
+                    }
                 }
             }
 //            PostJson.getSmsNews(value1,value9,value6,value9);
         }catch(Exception e){
             e.getStackTrace();
         }
+    }
+
+    /**
+     * 获取云之家所有用户
+     * @return
+     */
+    public static List<DhPerson> getPersons(){
+        try {
+            int start = 0;
+            int end = 1000;
+            List<DhPerson> lists = new ArrayList<DhPerson>();
+            while (true) {
+                List<DhPerson> list = PostJson.getAllPerson(start, end);
+                if (list.size() == 0) {
+                    break;
+                }
+                lists.addAll(list);
+                start += 1000;
+                end += 1000;
+            }
+            return lists;
+        }catch (Exception e){
+            e.getStackTrace();
+        }
+        return null;
     }
 
     public static String doGet(String httpurl) {
@@ -370,5 +389,15 @@ public class ITCToken {
             method.releaseConnection();
         }
         return responseText;
+    }
+
+    public static void main(String[] args) throws Exception {
+        List<DhPerson> persons = getPersons();
+        int i = 1;
+        for (DhPerson p:persons) {
+            if (StringUtils.isNotBlank(p.getDepartment()) && StringUtils.isNotBlank(p.getJobNo())){
+                System.out.println(i++ + " " + p.getName() + " " + p.getDepartment() + " " + p.getOpenId() + " " + p.getJobNo());
+            }
+        }
     }
 }
