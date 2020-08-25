@@ -22,19 +22,22 @@ public class CrmCustomerTest {
 		String client = API.CLIENT_CRM;
 		String time = String.valueOf(System.currentTimeMillis());
 		String token = API.buildToken(API.CLIENT_CRM, API.CLIENT_CRM_KEY, time);
-//		String number = "21713025";
+//		String number = "23501382";
 		String q = "李纯东";
-		
+		//http://61.153.182.58:1266/api/crm/customers?number=23501382&customerKind=0&maxResults=50&client=crm&page=0&time=1597718105645&token=22142cca165584f1677e83cb07db1f03
 		
 		Map<String, Object> params = new HashMap<>();
 		params.put("client", client);
 		params.put("time", time);
 		params.put("token", token);
-//		params.put("id", Encodes.urlEncode("1roAAAKFnw6/DAQO"));
-		params.put("number", "20309003");
+//		params.put("id", Encodes.urlEncode("1roAAAEaLt6/DAQO"));
+		params.put("number", "23501382");
 //		params.put("jxs", true);
 //		params.put("loadUsers", true);
 //		params.put("q", Encodes.urlEncode(q));
+		params.put("page", 0);
+		params.put("customerKind", "0");
+		params.put("maxResults", 50);
 
 		String url = APITest.buildUrl(uri, params);
 		System.out.println(url);

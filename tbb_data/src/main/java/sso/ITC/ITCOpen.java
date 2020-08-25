@@ -3,6 +3,7 @@ package sso.ITC;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import modal.Constant;
+import modal.DhPerson;
 import modal.Parameter;
 import modal.UserContext;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -42,7 +43,7 @@ public class ITCOpen {
     @RequestMapping(value="/itc/jobNo.do")
     public ModelAndView jobNo(HttpServletRequest request,HttpServletResponse response) throws Exception {
 //        String ticket = request.getParameter("ticket");
-        String ticket = "APPURLWITHTICKETe0ca144aeac8bae37fa15070b02539f9";
+        String ticket = "APPURLWITHTICKET565a21a98b0fc582dfac28f89ab070a0";
 
 //        Map<String,Object> info = new HashMap<String,Object>();
         try{
@@ -57,6 +58,7 @@ public class ITCOpen {
             JSONObject job = JSONObject.parseObject(simpleInfo);
             String jobNo = job.getString("jobNo");//工号
             String orgId = job.getString("orgId");
+            String name = job.getString("name");
             String orgs = getOrgs(orgId, eid);
 
             String user1 = ITCToken.getUsers("");//获取所有用户(value1为空查所有)
@@ -70,7 +72,7 @@ public class ITCOpen {
                 map.put(value7, value3);
             }
             if (!map.containsKey(jobNo)){
-                ITCToken.addUser(jobNo,orgs);//新增用户
+                ITCToken.addUser(jobNo,orgs,name);//新增用户
             }
             String value3 = map.get(jobNo);//账号
             //工号已存在登陆携带参会信息如参会密码,工号,等等
@@ -83,25 +85,35 @@ public class ITCOpen {
         return null;
     }
 
-    @RequestMapping(value = "/itc/createMeeting.do")
-    public void createMeeting(HttpServletRequest request,HttpServletResponse response){
-//        String value1 = request.getParameter("value1");//会议名称
-//        String value3 = request.getParameter("value3");//结束时间
-//        String value4 = request.getParameter("value4");//会议模板
-//        String value5 = request.getParameter("value5");//会议说明
-//        String value6 = request.getParameter("value6");//已选成员ID
-//        String value7 = request.getParameter("value7");//扩展字段
-//        String value8 = request.getParameter("value8");//最大成员数
-//        String value9 = request.getParameter("value9");//用户ID
-        String value1 = "日常例会";//会议名称
-        String value3 = "2020-12-12 12:12:12";//结束时间
-        String value4 = "1";//会议模板
-        String value5 = "日常会议";//会议说明
-        String value6 = "020760;10001;10012";//已选成员ID
-        String value7 = "";//扩展字段
-        String value8 = "8";//最大成员数
-        String value9 = "";//用户ID
-        ITCToken.createMeeting(value1,value3,value4,value5,value6,value7,value8,value9);
+    @RequestMapping(value = "/itc/smsMeeting.do")
+    public void smsMeeting(String meetId,String meetName,String createUser,String startTime,String endTime,String participants,String meetpwd,String zhibopwd,String zhuxipwd,String url){
+        //会议名称、创建人、开始时间、结束时间、与会人员、会议密码、直播密码、主席密码、快速参会链接
+        meetId = "123";
+        meetName = "测试会议";
+        createUser = "020760";
+        startTime = "2020-01-01 00:00:00";
+        endTime = "2020-01-01 01:00:00";
+        participants = "021471;022160;021438";
+        meetpwd = "c4ca4238a0b923820dcc509a6f75849b";
+        zhibopwd = "c4ca4238a0b923820dcc509a6f75849b";
+        zhuxipwd = "c4ca4238a0b923820dcc509a6f75849b";
+        url = "http://183.63.112.236:2020/meeting/join.do?n=787198335";
+        ITCToken.smsMeeting(meetId,meetName,createUser,startTime,endTime,participants,meetpwd,zhibopwd,zhuxipwd,url);
+    }
+
+    @RequestMapping("/itc.do")
+    public void addPersons() throws Exception {
+        List<DhPerson> persons = ITCToken.getPersons();
+        String eid = "534488";
+        for (DhPerson p:persons) {
+            if (StringUtils.isNotBlank(p.getDepartment()) && StringUtils.isNotBlank(p.getJobNo())){
+                String orgId = p.getOrgId();
+                String jobNo = p.getJobNo();
+                String name = p.getName();
+                String orgs = getOrgs(orgId, eid);
+                ITCToken.addUser(jobNo,orgs,name);
+            }
+        }
     }
 
     private ModelAndView error(String content){

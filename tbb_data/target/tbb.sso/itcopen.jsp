@@ -20,6 +20,7 @@
               navigator.userAgent.match(/Android/i) ? 'Android' : '' );
       if (useagent == "Android") {
         // var aurl = "itc://android.itc.conference?itc_user=10018&itc_pw=18&itc_ip=60.163.137.107&itc_port=8089";
+        // var aurl = "itc://conference.phone?scheme=http&ip=183.63.112.236&port=2020&number=1001";
         var aurl = "itc://android.itc.conference?itc_user="+value3+"&itc_pw=1&itc_ip=183.63.112.236&itc_port=2020";
         XuntongJSBridge.call('gotoApp', {
           "data": aurl

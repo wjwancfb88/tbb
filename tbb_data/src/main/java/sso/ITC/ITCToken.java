@@ -57,7 +57,7 @@ public class ITCToken {
      * @param orgs
      * @throws Exception
      */
-    public static void addUser(String jobNo,String orgs)throws Exception{
+    public static void addUser(String jobNo,String orgs,String name)throws Exception{
         JSONObject jsonObject = new JSONObject();
         List list = new ArrayList();
         JSONArray jsonArray = JSONArray.parseArray(orgs);
@@ -75,64 +75,61 @@ public class ITCToken {
         String jt = "d7ff078a-ddea-4a26-918c-1a15d0c4118e";
         String qd = "dd37e5be-1952-4830-be3e-4488091fc38b";
 
-        jsonObject.put("value1", "admin");//默认用户名
+        jsonObject.put("value1", name);//默认用户名
         jsonObject.put("value2", "c4ca4238a0b923820dcc509a6f75849b");//默认密码1,MD5加密,32位小写
         jsonObject.put("value3", jobNo);//手机号码/邮箱/工号
         if (list.contains(qd)){//青岛
-            jsonObject.put("value4","10");//企业id
+            jsonObject.put("value4","15");//企业id
         }else {
             if (list.contains(tbb)){
-                jsonObject.put("value4", "9");//兔宝宝
+                jsonObject.put("value4", "13");//兔宝宝
             }else if (list.contains(jt)){
-                jsonObject.put("value4", "8");//集团
+                jsonObject.put("value4", "14");//集团
             }
         }
         jsonObject.put("value5", "0");//使用天数,默认为空,0为永久
 //        jsonObject.put("value6", jobNo);//账号
-        ITCToken.apiGet(API_URL + "addCloudUser.do?_json=" + jsonObject);
+//        System.out.println(jsonObject.toJSONString());
+        String string = URLEncoder.encode(jsonObject.toJSONString(),"UTF-8");
+        ITCToken.apiGet(API_URL + "addCloudUser.do?_json=" + string);
     }
 
     /**
-     * 创建会议
-     * @param value1 会议名称
-     * @param value3 结束时间 yyyy-MM-dd HH:mm:ss 2018-02-26 13:05:56
-     * @param value4 会议模板
-     * @param value5 会议说明
-     * @param value6 已选成员ID(终端或云用户ID)  多个;隔开   1;2;3
-     * @param value7 扩展字段
-     * @param value8 最大成员数,默认最大8
-     * @param value9 用户ID 为空是admin用户
+     * 发送会议信息
+     * @param meetId 会议ID
+     * @param meetName 会议名称
+     * @param createUser 创建人 工号
+     * @param startTime 开始时间 2020-01-01 00:00:00
+     * @param endTime 结束时间 2020-01-01 01:00:00
+     * @param participants 参会人员(1;2;3;4) 工号
+     * @param meetpwd 会议密码
+     * @param zhibopwd 直播密码
+     * @param zhuxipwd 主席密码
+     * @param url 快速参会链接
      */
-    public static void createMeeting(String value1,String value3,String value4,String value5,String value6,String value7,String value8,String value9){
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("value1", value1);//会议名称   测试会议
-        jsonObject.put("value3", value3);//结束时间 yyyy-MM-dd HH:mm:ss 2018-02-26 13:05:56
-        jsonObject.put("value4", value4);//会议模板   1
-        jsonObject.put("value5", value5);//会议说明
-        jsonObject.put("value6", value6);//已选成员ID(终端或云用户ID)  多个;隔开   1;2;3
-        jsonObject.put("value7", value7);//扩展字段
-        jsonObject.put("value8", value8);//最大成员数
-        jsonObject.put("value9", value9);//用户ID,为空是admin用户
-        System.out.println(API_URL + "createMeeting.do?_json=" + jsonObject);
-//        JSONObject object = ITCToken.apiGet(API_URL + "createMeeting.do?_json=" + jsonObject);
-
+    public static void smsMeeting(String meetId,String meetName,String createUser,String startTime,String endTime,String participants,String meetpwd,String zhibopwd,String zhuxipwd,String url){
+        //会议名称、创建人、开始时间、结束时间、与会人员、会议密码、直播密码、主席密码、快速参会链接
         try{
-            String tem = URLEncoder.encode(jsonObject.toJSONString(), "UTF-8");
-            JSONObject object = ITCToken.apiGet(API_URL + "createMeeting.do?_json=" + tem);
-            String value = object.getJSONObject("data").getString("value1");//会议ID
-//            System.out.println(value);
-            List<DhPerson> persons = getPersons();
+            List<DhPerson> persons = getPersons();//获取所有人员信息
+            String content = "";
+            String fromOpenId = "";
             for (DhPerson p:persons) {
-                String openId = p.getOpenId();
-                String jobNo = p.getJobNo();
-                String[] split = value6.split(";");//已选人员工号数组
-                for (String s:split) {
-                    if (s.equals(jobNo)){
+                String openId = p.getOpenId();//用户唯一识别码
+                String jobNo = p.getJobNo();//工号
+                String name = p.getName();//用户名
 
-                    }
+                if (createUser.equals(jobNo)){
+                    content = name + "邀请您加入会议!\n" +
+                            "会议名称：" + meetName + "\n" +
+                            "开始时间：" + startTime + "\n" +
+                            "结束时间：" + endTime + "\n" +
+                            "会议密码：" + meetpwd + "\n" +
+                            "直播密码：" + zhibopwd + "\n" +
+                            "主席密码：" + zhuxipwd;
+                    fromOpenId = openId;
                 }
             }
-//            PostJson.getSmsNews(value1,value9,value6,value9);
+            PostJson.getSmsNews(content,fromOpenId,participants,meetId,url);
         }catch(Exception e){
             e.getStackTrace();
         }
@@ -161,6 +158,10 @@ public class ITCToken {
             e.getStackTrace();
         }
         return null;
+    }
+
+    public static void getSms(){
+        //会议名称、创建人、开始时间、结束时间、与会人员、会议密码、直播密码、主席密码、快速参会链接
     }
 
     public static String doGet(String httpurl) {
@@ -242,6 +243,8 @@ public class ITCToken {
         } catch (Exception e) {
             LOG.error("HTTP/GET", e);
             return null;
+        } finally {
+            method.releaseConnection();
         }
     }
 
@@ -396,7 +399,9 @@ public class ITCToken {
         int i = 1;
         for (DhPerson p:persons) {
             if (StringUtils.isNotBlank(p.getDepartment()) && StringUtils.isNotBlank(p.getJobNo())){
-                System.out.println(i++ + " " + p.getName() + " " + p.getDepartment() + " " + p.getOpenId() + " " + p.getJobNo());
+//                System.out.println(i++ + " " + p.getName() + " " + p.getDepartment() + " " + p.getOpenId() + " " + p.getJobNo() + " " + p.getOrgId());
+//                addUser(p.getJobNo(),p.getOrgId());
+                System.out.println(p);
             }
         }
     }

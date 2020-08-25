@@ -501,9 +501,9 @@ public class PostJson {
         return jsonObject.toString();
     }
 
-    public static void getSmsNews(String content,String fromOpenId,String toOpenId,String sourceId) throws KeyManagementException, NoSuchAlgorithmException, IOException{
+    public static void getSmsNews(String content,String fromOpenId,String toOpenId,String sourceId,String url) throws KeyManagementException, NoSuchAlgorithmException, IOException{
         byte[] post = post(TODONEWS_URL + getAccesstoken(), getParams(content, fromOpenId,
-                toOpenId,sourceId), charset);
+                toOpenId,sourceId,url), charset);
         String a = new String(post);
         JSONObject jsonObject = JSONObject.parseObject(a);
 //        System.out.println("发送:"+jsonObject);
@@ -548,15 +548,15 @@ public class PostJson {
         return query;
     }
 
-    public static String getParams(String content,String fromOpenId,String toOpenId,String sourceId) throws KeyManagementException, NoSuchAlgorithmException, IOException{
+    public static String getParams(String content,String fromOpenId,String toOpenId,String sourceId,String url) throws KeyManagementException, NoSuchAlgorithmException, IOException{
         JSONObject params = new JSONObject();
         params.put("content", content);
-        params.put("title", "待办测试");//必填
-        params.put("itemtitle", "拜访审批");
+        params.put("title", "参会信息");//必填
+//        params.put("itemtitle", "拜访审批");
         params.put("headImg", "https://www.yunzhijia.com/space/c/photo/load?id=5a2f7ad750f8dd7810e79981");//必填
         params.put("appId", "500065577");//必填
         params.put("senderId", fromOpenId);
-        params.put("url", getNewsHandle(toOpenId));//必填
+        params.put("url", url);//必填
         params.put("sourceId", sourceId);//必填
         params.put("sync", true);//同步代办
 
@@ -564,12 +564,14 @@ public class PostJson {
         test.put("DO",0);
         test.put("READ",0);
 
-        JSONObject jb = new JSONObject();
-        jb.put("status", test);
-        jb.put("openId", toOpenId);//必填
-
         JSONArray ja = new JSONArray();
-        ja.add(jb);
+        String[] split = toOpenId.split(";");
+        for (String s:split) {
+            JSONObject jb = new JSONObject();
+            jb.put("status", test);
+            jb.put("openId", s);//必填
+            ja.add(jb);
+        }
 
         params.put("params", ja);
 //        System.out.println("发送时生成的sourceId:"+sourceId);
