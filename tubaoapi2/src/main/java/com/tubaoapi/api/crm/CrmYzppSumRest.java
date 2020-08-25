@@ -26,6 +26,7 @@ public class CrmYzppSumRest {
     @RequestMapping(value="", method= RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     @JsonView(Views.PublicView.class)
     public Result<YzppSum> findOtherIssueBillData(){
+        String test = "";
         List<String> list = new ArrayList<String>();
         list.add("1roAAAIUFSpECefw");
         list.add("1roAAAJ2XcNECefw");
